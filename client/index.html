@@ -27,12 +27,17 @@
     <script type="text/javascript" src="http://yui.yahooapis.com/combo?2.6.0/build/yahoo/yahoo-min.js&amp;2.6.0/build/event/event-min.js&amp;2.6.0/build/connection/connection-min.js"></script>
 </head>
 <body>
+
     <div id="init" ng-show="!loaded"></div>
 
     <div class="container" ng-cloak ng-show="loaded" ng-controller="testController">
         <h1>Hallo Welt</h1>
 
-        {{ testMessage }}
+        <p>{{ testMessage }}</p>
+        <p>Click Counter: {{ clickCount}}</p>
+
+        <button type="button" class="btn btn-primary" data-ng-click="test()">Click me!</button>
     </div>
+
 </body>
 </html>
