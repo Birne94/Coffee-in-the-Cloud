@@ -43,7 +43,6 @@ requirejs( [
 	"angular",
 	"app",
 	"bootstrap",
-	"routes",
 ], function($, angular, app) {
 	"use strict";
 	$(document).ready(function () {

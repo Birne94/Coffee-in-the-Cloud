@@ -1,6 +1,6 @@
 # Coffee-in-the-Cloud
 
-This application will support the BPM chair at Hasso-Plattner-Institut with their coffee-tracking.
+This application will support the BPM chair at Hasso-Plattner-Institute with their coffee-tracking.
 
 
 ## Dependencies
