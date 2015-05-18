@@ -49,16 +49,8 @@
         </div><!-- /.container-fluid -->
       </nav>
   </header>
-
-  <div id="init" ng-show="!loaded"></div>
-  <div class="container" ng-cloak ng-show="loaded" ng-controller="testController">
-    <h1>Hallo Welt</h1>
-
-    <p>{{ testMessage }}</p>
-    <p>Click Counter: {{ clickCount}}</p>
-
-    <button type="button" class="btn btn-primary" data-ng-click="test()">Click me!</button>
+  <div ng-app="coffeeCloud">
+    <div ng-view></div>
   </div>
-
 </body>
 </html>
