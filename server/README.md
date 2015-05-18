@@ -9,7 +9,7 @@ Query API version
 * ```version``` version string (e.g. ```1.0```)
 
 
-## /user
+## /api/user
 
 Get user status
 
@@ -22,7 +22,7 @@ Get user status
 	* ```Balance```
 
 	
-## /user/login
+## /api/user/login
 
 Login user
 
@@ -31,14 +31,14 @@ POST parameters: ```user_id```
 * ```status``` true if the request was successful
 
 
-## /user/logout
+## /api/user/logout
 
 Logout user
 
 * ```status``` true if the request was successful
 
 
-## /tally
+## /api/tally
 
 Get tally entry for the current user
 
@@ -49,7 +49,7 @@ Get tally entry for the current user
 	* ```Time```
 
 
-## /tally/add
+## /api/tally/add
 
 Add coffee(s) to the list for the current user
 
