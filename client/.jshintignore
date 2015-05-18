@@ -1,0 +1,3 @@
+js/bower_components/**
+js/lib/jerasurelib.js
+js/lib/filesaver.js

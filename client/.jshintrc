@@ -1,0 +1,32 @@
+{
+	"globals": {
+		"XMLHttpRequest": true,
+		"define": true,
+		"FileReader": true,
+		"confirm": true,
+		"Blob": true,
+		"requirejs": true,
+		"importScripts": true,
+		"localStorage": true,
+		"document": true,
+		"XMLSerializer": true
+	},
+	"browser": true,
+	"undef": true,
+	"node": true,
+	"bitwise": true,
+	"curly": true,
+	"eqeqeq": true,
+	"forin": true,
+	"freeze": true,
+	"immed": true,
+	"newcap": true,
+	"noarg": true,
+	"noempty": true,
+	"nonew": true,
+	"unused": true,
+	"strict": true,
+	"trailing": true,
+	"latedef": true,
+	"maxstatements": false
+}

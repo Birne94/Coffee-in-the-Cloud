@@ -1,8 +1,8 @@
-if (window.location.href.indexOf("file:///") === 0) {
+/*if (window.location.href.indexOf("file:///") === 0) {
 	var base = window.location.href.replace("file://", "");
 	base = base.replace(/\#\!(.*)/g, "");
 	document.getElementsByTagName("base")[0].setAttribute("href", base);
-}
+}*/
 
 requirejs.config({
 	paths: {
