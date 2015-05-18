@@ -1,6 +1,20 @@
-npm install
+@echo off
 
-bower install
+echo.
+echo **Installing node.js packages**
+echo.
 
-grunt less
+call npm install
+
+echo.
+echo **Installing bower components**
+echo.
+
+call bower install
+
+echo.
+echo **Building less**
+echo.
+
+call grunt less
 

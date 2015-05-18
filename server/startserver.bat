@@ -1,10 +1,16 @@
 @echo off
 
-echo "making migrations"
+echo.
+echo **making migrations**
+echo.
 manage.py makemigrations
 
-echo "migrating database"
+echo.
+echo **migrating database**
+echo.
 manage.py migrate
 
-echo "starting server"
+echo.
+echo **starting server**
+echo.
 manage.py runserver localhost:8000
