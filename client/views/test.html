@@ -1,5 +1,6 @@
 <div class="container" ng-cloak ng-show="loaded" ng-controller="testController">
     <h1>Hallo Welt</h1>
+    <h3 ng-cloak ng-show="currentUser.pk >= 0">Hello {{ currentUser.FirstName }} {{ currentUser.LastName}}!</h3>
 
     <p>{{ testMessage }}</p>
 

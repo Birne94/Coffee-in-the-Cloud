@@ -1,7 +1,8 @@
 (function () {
     "use strict";
     var services = [
-        "alert"
+        "alert",
+        "coffeeCloud"
     ];
 
     var includes = ["angular"];

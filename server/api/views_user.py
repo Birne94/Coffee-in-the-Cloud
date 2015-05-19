@@ -18,7 +18,7 @@ def status(request):
     else:
         return JsonResponse({"status": True,
                              "user_id": user_id,
-                             "user": user.json("FirstName", "LastName", "Balance", "Email")},
+                             "user": user.json("pk", "FirstName", "LastName", "Balance", "Email")},
                             safe=False)
 
 
