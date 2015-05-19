@@ -25,6 +25,9 @@
                 .when('/', {
                     templateUrl : 'views/test.html',
                     controller  : 'testController'
+                })
+                .otherwise({
+                    redirectTo: '/'
                 });
         });
 
