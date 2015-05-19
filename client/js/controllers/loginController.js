@@ -2,39 +2,55 @@ define(["jquery"], function (jQuery) {
     "use strict";
 
     function loginController($scope, $rootScope, alerts, service) {
-        $rootScope.currentUser = null;
+        $rootScope.user = null;
+        $rootScope.tally = null;
 
-        $scope.update = function () {
-            service.checkUser().done(function (result) {
+        $scope.updateUser = function () {
+            service.user.check().done(function (result) {
                 if (result.status === true) {
-                    $rootScope.currentUser = result.user;
+                    $rootScope.user = result.user;
+                    $rootScope.updateTally();
                 } else {
-                    $rootScope.currentUser = null;
+                    $rootScope.user = null;
                 }
 
                 $scope.$apply();
             });
-        }
+        };
+
+        $rootScope.updateTally = function () {
+            service.tally.status().done(function (result) {
+                if (result.status === true) {
+                    $rootScope.tally = result.coffees;
+                    $rootScope.user.coffees = result.coffee_count;
+                } else {
+                    $rootScope.tally = null;
+                    $rootScope.user.coffees = null;
+                }
+
+                $scope.$apply();
+            })
+        };
 
         $scope.login = function(userId) {
             userId = userId || 1; // Test
 
-            service.loginUser(userId).done(function (status) {
+            service.user.login(userId).done(function (status) {
                 if (status === true) {
-                    $scope.update();
+                    $scope.updateUser();
                 }
             });
         };
 
         $scope.logout = function() {
-            service.logoutUser().done(function (status) {
+            service.user.logout().done(function (status) {
                 if (status === true) {
-                    $scope.update();
+                    $scope.updateUser();
                 }
             });
         };
 
-        $scope.update();
+        $scope.updateUser();
     }
 
     loginController.$inject = ["$scope", "$rootScope", "seed.alert", "seed.coffeeCloud"];

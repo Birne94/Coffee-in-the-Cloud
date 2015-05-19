@@ -31,6 +31,11 @@
                 });
         });
 
+        cons.filter("parseDate", function() {
+            return function (value) {
+                return new Date(value).toLocaleString();
+            }
+        });
         return cons;
     });
 })();

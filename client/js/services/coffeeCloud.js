@@ -23,25 +23,46 @@ define(["jquery"], function ($) {
 
     var service = function($rootScope) {
         var coffeeCloudServices = {
-            loginUser: function (userId) {
-                var user_obj = {
-                    user_id: userId
-                };
-                return request("POST", "user/login", user_obj).then(function (data) {
-                    return data.status;
-                });
+            user: {
+                login: function (userId) {
+                    var user_obj = {
+                        user_id: userId
+                    };
+                    return request("POST", "user/login", user_obj).then(function (data) {
+                        return data.status;
+                    });
+                },
+
+                logout: function () {
+                    return request("GET", "user/logout").then(function (data) {
+                        return data.status;
+                    });
+                },
+
+                check: function() {
+                    return request("GET", "user");
+                },
+
+                list: function() {
+                    return request("GET", "users");
+                }
             },
 
-            logoutUser: function () {
-                return request("POST", "user/logout").then(function (data) {
-                    return data.status;
-                });
-            },
+            tally: {
+                status: function() {
+                    return request("GET", "tally");
+                },
 
-            checkUser: function() {
-                return request("POST", "user");
+                add: function(amount) {
+                    var tally_obj = {
+                        amount: amount || 1
+                    };
+                    return request("POST", "tally/add", tally_obj).then(function (data) {
+                        return data.status;
+                    });
+                }
             }
-        };
+        }
 
         return coffeeCloudServices;
     };

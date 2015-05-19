@@ -1,6 +1,17 @@
 <div class="container" ng-cloak ng-show="loaded" ng-controller="testController">
     <h1>Hallo Welt</h1>
-    <h3 ng-cloak ng-show="currentUser">Hello {{ currentUser.FirstName }} {{ currentUser.LastName}}!</h3>
+    <h3 ng-cloak ng-show="user">
+        Hello {{ user.FirstName }} {{ user.LastName}}!
+        <button type="button" class="btn btn-default" data-ng-click="addCoffee(1)">Add coffee!</button>
+    </h3>
+    <div ng-cloak ng-show="user.coffees">
+        <p class="alert alert-info">You have {{ user.coffees }} coffees on the list!</p>
+        <ul>
+            <li ng-repeat="coffee in tally">
+                {{ coffee.Amount }} coffee<span ng-show="coffee.Amount > 1">s</span> (<em>{{ coffee.Time | parseDate }}</em>)
+            </li>
+        </ul>
+    </div>
 
     <p>{{ testMessage }}</p>
 
