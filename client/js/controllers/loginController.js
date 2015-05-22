@@ -1,7 +1,7 @@
 define(["jquery"], function (jQuery) {
     "use strict";
 
-    function loginController($scope, $rootScope, alerts, service) {
+    function loginController($scope, $rootScope, alert, service) {
         $rootScope.user = null;
         $rootScope.tally = null;
 
@@ -13,6 +13,8 @@ define(["jquery"], function (jQuery) {
                 } else {
                     $rootScope.user = null;
                 }
+            }).error(function (result) {
+                alert.error("Error fetching user data.");
             });
         };
 
@@ -25,29 +27,35 @@ define(["jquery"], function (jQuery) {
                     $rootScope.tally.push(entry);
                     $rootScope.user.coffees += entry.amount;
                 });
-            })
+            }).error(function (result) {
+                alert.error("Error fetching tally list data.");
+            });
         };
 
-        $scope.login = function(userId) { // TODO
-            userId = userId || 1; // Test
-
-            service.user.login(userId).success(function (user) {
+        $scope.login = function(username, password) {
+            service.user.login(username, password).success(function (user) {
                 $scope.updateUser();
+
+                alert.success("Welcome!");
             }).error(function (data, status, headers, config) {
-                // TODO
+                alert.error("Login failed.");
             });
         };
 
         $scope.logout = function() {
             service.user.logout().success(function (status) {
                 $scope.updateUser();
+
+                alert.success("Logout succeeded.");
+            }).error(function (result) {
+                alert.error("Logout failed.");
             });
         };
 
         $scope.updateUser();
     }
 
-    loginController.$inject = ["$scope", "$rootScope", "seed.alert", "seed.coffeeCloud"];
+    loginController.$inject = ["$scope", "$rootScope", "seed.status", "seed.coffeeCloud"];
 
     return loginController;
 });

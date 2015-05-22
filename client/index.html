@@ -56,8 +56,8 @@
                     <li><a href="#">Test item</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right" ng-controller="loginController">
-                    <button type="button" class="btn btn-default navbar-btn" ng-hide="currentUser" ng-click="login()">Sign in</button>
-                    <button type="button" class="btn btn-default navbar-btn" ng-cloak ng-show="currentUser" ng-click="logout()">Sign out</button>
+                    <button type="button" class="btn btn-default navbar-btn" ng-hide="user" data-toggle="modal" data-target="#modal-login">Sign in</button>
+                    <button type="button" class="btn btn-default navbar-btn" ng-cloak ng-show="user" ng-click="logout()">Sign out</button>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -65,8 +65,10 @@
         <!-- /.container-fluid -->
     </nav>
 </header>
-<div>
+<div class="container">
+    <div id="status"></div>
     <div ng-view></div>
 </div>
+<ng-include src="'views/login-popup.html'"></ng-include>
 </body>
 </html>
