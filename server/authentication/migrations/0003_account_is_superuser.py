@@ -7,13 +7,13 @@ from django.db import models, migrations
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('core', '0002_tallylistentry_processed'),
+        ('authentication', '0002_account_is_staff'),
     ]
 
     operations = [
-        migrations.AlterField(
-            model_name='tallylistentry',
-            name='Time',
-            field=models.DateTimeField(auto_now=True),
+        migrations.AddField(
+            model_name='account',
+            name='is_superuser',
+            field=models.BooleanField(default=False),
         ),
     ]

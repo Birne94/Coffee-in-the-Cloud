@@ -37,8 +37,9 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'core',
-    'api'
+    'rest_framework',
+    'authentication',
+    'tallylist'
 )
 
 MIDDLEWARE_CLASSES = (
@@ -110,6 +111,7 @@ STATICFILES_DIRS = (
         os.path.dirname(__file__),
         os.path.join(BASE_DIR,  'static'),
     ),
+    os.path.join(BASE_DIR, '..', 'client'),
 )
 
 CACHES = {
@@ -125,3 +127,5 @@ TEMPLATE_DIRS = (
 )
 
 SESSION_ENGINE = "django.contrib.sessions.backends.signed_cookies"
+
+AUTH_USER_MODEL = 'authentication.Account'

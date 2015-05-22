@@ -1,12 +1,23 @@
 from django.conf.urls import include, url
 from django.contrib import admin
-import api.urls
+from rest_framework_nested import routers
+from authentication.views import AccountViewSet, LoginView, LogoutView, StatusView
+from tallylist.views import TallyListEntryViewSet, AccountTallyListEntryViewSet
+
+router = routers.SimpleRouter()
+router.register("accounts", AccountViewSet)
+router.register("tally", TallyListEntryViewSet)
+
+accounts_router = routers.NestedSimpleRouter(
+    router, "accounts", lookup="user"
+)
+accounts_router.register("tally", AccountTallyListEntryViewSet)
 
 urlpatterns = [
-    # Examples:
-    # url(r'^$', 'server.views.home', name='home'),
-    # url(r'^blog/', include('blog.urls')),
-
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^api/', include(api.urls)),
-]
+    url(r'^api/v1/', include(router.urls)),
+    url(r'^api/v1/', include(accounts_router.urls)),
+    url(r'^api/v1/auth/login/$', LoginView.as_view(), name='login'),
+    url(r'^api/v1/auth/logout/$', LogoutView.as_view(), name='logout'),
+    url(r'^api/v1/auth/status/$', StatusView.as_view(), name='status'),
+    ]

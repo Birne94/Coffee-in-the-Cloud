@@ -1,65 +1,57 @@
 define(["jquery"], function ($) {
     "use strict";
 
-    var baseUrl = "http://localhost:8000/api/";
+    var baseUrl = "http://localhost:8000/api/v1/";
 
-    var request = function (method, path, content, content_type) {
-        var options = {
-            url: baseUrl + path,
-            type: method,
-            xhrFields: {
-                withCredentials: true
+    var service = function($rootScope, $http) {
+        $http.defaults.xsrfHeaderName = "X-CSRFToken";
+        $http.defaults.xsrfCookieName = "csrftoken";
+
+        function url(path) {
+            if (! path.match(/\/$/)) {
+                path += "/";
             }
-        };
 
-        if (content) {
-            options.data = content;
+            return baseUrl + path;
         }
 
-        return $.ajax(options).then(function (data) {
-            return data;
-        });
-    };
-
-    var service = function($rootScope) {
         var coffeeCloudServices = {
             user: {
-                login: function (userId) {
+                login: function (email, password) {
                     var user_obj = {
-                        user_id: userId
+                        email: email,
+                        password: password
                     };
-                    return request("POST", "user/login", user_obj).then(function (data) {
-                        return data.status;
-                    });
+                    return $http.post(url("auth/login"), user_obj);
                 },
 
                 logout: function () {
-                    return request("GET", "user/logout").then(function (data) {
-                        return data.status;
-                    });
+                    return $http.post(url("auth/logout"));
                 },
 
                 check: function() {
-                    return request("GET", "user");
+                    return $http.get(url("auth/status"));
                 },
 
                 list: function() {
-                    return request("GET", "users");
+                    return $http.get(url("accounts"));
+                },
+
+                details: function (user_id) {
+                    return $http.get(url("accounts/" + user_id));
                 }
             },
 
             tally: {
                 status: function() {
-                    return request("GET", "tally");
+                    return $http.get(url("tally"));
                 },
 
                 add: function(amount) {
                     var tally_obj = {
                         amount: amount || 1
                     };
-                    return request("POST", "tally/add", tally_obj).then(function (data) {
-                        return data.status;
-                    });
+                    return $http.post(url("tally"), tally_obj);
                 }
             }
         }
@@ -67,7 +59,7 @@ define(["jquery"], function ($) {
         return coffeeCloudServices;
     };
 
-    service.$inject = ["$rootScope"];
+    service.$inject = ["$rootScope", "$http"];
 
     return service;
 });

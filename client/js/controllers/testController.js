@@ -11,10 +11,8 @@ define(["jquery"], function (jQuery) {
         };
 
         $scope.addCoffee = function (amount) {
-            service.tally.add(amount || 1).done(function (result) {
-                if (result === true) {
-                    $rootScope.updateTally();
-                }
+            service.tally.add(amount || 1).success(function (result) {
+                $rootScope.updateTally();
             });
         }
     }

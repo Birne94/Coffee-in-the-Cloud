@@ -6,47 +6,41 @@ define(["jquery"], function (jQuery) {
         $rootScope.tally = null;
 
         $scope.updateUser = function () {
-            service.user.check().done(function (result) {
+            service.user.check().success(function (result) {
                 if (result.status === true) {
                     $rootScope.user = result.user;
                     $rootScope.updateTally();
                 } else {
                     $rootScope.user = null;
                 }
-
-                $scope.$apply();
             });
         };
 
         $rootScope.updateTally = function () {
-            service.tally.status().done(function (result) {
-                if (result.status === true) {
-                    $rootScope.tally = result.coffees;
-                    $rootScope.user.coffees = result.coffee_count;
-                } else {
-                    $rootScope.tally = null;
-                    $rootScope.user.coffees = null;
-                }
+            service.tally.status().success(function (result) {
+                $rootScope.tally = [];
+                $rootScope.user.coffees = 0;
 
-                $scope.$apply();
+                $(result).each(function (index, entry) {
+                    $rootScope.tally.push(entry);
+                    $rootScope.user.coffees += entry.amount;
+                });
             })
         };
 
-        $scope.login = function(userId) {
+        $scope.login = function(userId) { // TODO
             userId = userId || 1; // Test
 
-            service.user.login(userId).done(function (status) {
-                if (status === true) {
-                    $scope.updateUser();
-                }
+            service.user.login(userId).success(function (user) {
+                $scope.updateUser();
+            }).error(function (data, status, headers, config) {
+                // TODO
             });
         };
 
         $scope.logout = function() {
-            service.user.logout().done(function (status) {
-                if (status === true) {
-                    $scope.updateUser();
-                }
+            service.user.logout().success(function (status) {
+                $scope.updateUser();
             });
         };
 
