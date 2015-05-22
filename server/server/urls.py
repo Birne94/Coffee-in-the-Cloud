@@ -1,3 +1,4 @@
+from django.conf import settings
 from django.conf.urls import include, url
 from django.contrib import admin
 from rest_framework_nested import routers
@@ -20,4 +21,15 @@ urlpatterns = [
     url(r'^api/v1/auth/login/$', LoginView.as_view(), name='login'),
     url(r'^api/v1/auth/logout/$', LogoutView.as_view(), name='logout'),
     url(r'^api/v1/auth/status/$', StatusView.as_view(), name='status'),
-    ]
+
+    url(r'^$', 'django.views.static.serve', {
+        'path': 'index.html',
+        'document_root': settings.CLIENT_ROOT
+    }),
+    url(r'^(static|coffee)/(?P<path>.*)$', 'django.views.static.serve', {
+        'document_root': settings.STATICFILES_DIRS[0]
+    }),
+    url(r'^(?P<path>.*)$', 'django.views.static.serve', {
+        'document_root': settings.CLIENT_ROOT
+    }),
+]

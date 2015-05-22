@@ -1,6 +1,6 @@
 (function () {
 	"use strict";
-	var directives = [];
+	var directives = ["tooltip"];
 
 	var includes = ["angular"];
 

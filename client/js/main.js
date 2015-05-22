@@ -53,5 +53,10 @@ requirejs( [
 		// unless we explicitely mark the container as app holder
 		// More info: https://groups.google.com/forum/#!msg/angular/yslVnZh9Yjk/MLi3VGXZLeMJ
 		$html.addClass("ng-app");
+
+		$(document).ready(function () {
+			$('[data-toggle="tooltip"]').tooltip()
+		});
+
 	});
 });

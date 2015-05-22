@@ -28,8 +28,6 @@
     <script src="js/bower_components/ladda-bootstrap/dist/ladda.min.js"></script>
 
     <script data-main="js/main" src="js/bower_components/requirejs/require.js"></script>
-    <script type="text/javascript"
-            src="http://yui.yahooapis.com/combo?2.6.0/build/yahoo/yahoo-min.js&amp;2.6.0/build/event/event-min.js&amp;2.6.0/build/connection/connection-min.js"></script>
 </head>
 <body>
 <header>
@@ -57,7 +55,10 @@
                 </ul>
                 <ul class="nav navbar-nav navbar-right" ng-controller="loginController">
                     <button type="button" class="btn btn-default navbar-btn" ng-hide="user" data-toggle="modal" data-target="#modal-login">Sign in</button>
-                    <button type="button" class="btn btn-default navbar-btn" ng-cloak ng-show="user" ng-click="logout()">Sign out</button>
+                    <button type="button" class="btn btn-default navbar-btn" ng-cloak ng-show="user" ng-click="logout()">
+                        <img src="{{ user.avatar }}" ng-show="user.avatar" ng-cloak height="20" />
+                        Sign out
+                    </button>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->

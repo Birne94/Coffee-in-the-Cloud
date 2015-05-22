@@ -7,7 +7,7 @@ from authentication.models import Account
 class AccountAdmin(UserAdmin):
     fieldsets = (
         (None, {'fields': ('email', 'password')}),
-        (_('Personal info'), {'fields': ('first_name', 'last_name', 'balance')}),
+        (_('Personal info'), {'fields': ('first_name', 'last_name', 'balance', 'avatar')}),
         (_('Permissions'), {'fields': ('is_active', 'is_staff', 'is_superuser',
                                        'groups', 'user_permissions')}),
         #(_('Important dates'), {'fields': ('created_at', 'updated_at')}), # TODO: fix

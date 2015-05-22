@@ -18,6 +18,16 @@ define(["jquery"], function (jQuery) {
             }).error(function (result) {
                 alert.error("Error adding entry. Please try again later!");
             });
+        };
+
+        $scope.removeCoffee = function (id) {
+            service.tally.remove(id).success(function (result) {
+                $rootScope.updateTally();
+
+                alert.success("Entry removed.");
+            }).error(function (result) {
+                alert.error("Error removing entry.");
+            })
         }
     }
 

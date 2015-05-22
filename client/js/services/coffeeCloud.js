@@ -52,6 +52,10 @@ define(["jquery"], function ($) {
                         amount: amount || 1
                     };
                     return $http.post(url("tally"), tally_obj);
+                },
+
+                remove: function (id) {
+                    return $http.delete(url("tally/" + id));
                 }
             }
         }
