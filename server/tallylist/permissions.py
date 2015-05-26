@@ -6,3 +6,8 @@ class IsTallyUser(permissions.BasePermission):
         if request.user:
             return tally.user == request.user
         return False
+
+
+class IsRecentTally(permissions.BasePermission):
+    def has_object_permission(self, request, view, tally):
+        return tally.is_deletable()

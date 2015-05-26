@@ -2,7 +2,7 @@ from rest_framework import permissions, viewsets, mixins
 from rest_framework.response import Response
 
 from tallylist.models import TallyListEntry
-from tallylist.permissions import IsTallyUser
+from tallylist.permissions import IsTallyUser, IsRecentTally
 from tallylist.serializers import TallyListEntrySerializer
 
 
@@ -34,6 +34,17 @@ class TallyListEntryViewSet(viewsets.ModelViewSet):
 class AccountTallyListEntryViewSet(viewsets.ViewSet):
     queryset = TallyListEntry.objects.select_related('user').order_by('-created_at')
     serializer_class = TallyListEntrySerializer
+
+    def get_permissions(self):
+        print permissions.SAFE_METHODS
+        print self.request.method
+        if self.request.method in permissions.SAFE_METHODS:
+            return (permissions.AllowAny(),)
+
+        if self.request.method == 'POST':
+            return (permissions.AllowAny(),)
+
+        return (permissions.IsAuthenticated(), IsRecentTally(),)
 
     def list(self, request, user_pk=None):
         if user_pk is None:

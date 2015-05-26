@@ -35,10 +35,13 @@ class AccountManager(BaseUserManager):
 
 
 class Account(AbstractBaseUser, PermissionsMixin):
-    # user credentials
+    # user details
     email = models.EmailField(_('email address'), unique=True)
     first_name = models.CharField(_('first name'), max_length=40, blank=True)
     last_name = models.CharField(_('last name'), max_length=40, blank=True)
+    avatar = models.ImageField("profile picture",
+                               upload_to="static/upload",
+                               blank=True)
 
     # admin/staff status
     is_staff = models.BooleanField(_('staff status'), default=False)

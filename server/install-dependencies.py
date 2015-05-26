@@ -6,7 +6,8 @@ modules = ("django",
            "djangorestframework",
            "drf-nested-routers",
            "markdown",
-           "django-filter")
+           "django-filter",
+           "Pillow")
 
 
 def install(module):
