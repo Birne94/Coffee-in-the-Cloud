@@ -17,12 +17,12 @@ accounts_router = routers.NestedSimpleRouter(
 accounts_router.register("tally", AccountTallyListEntryViewSet)
 
 urlpatterns = [
-    url(r'^admin/', include(admin.site.urls)),
-    url(r'^api/v1/', include(router.urls)),
-    url(r'^api/v1/', include(accounts_router.urls)),
-    url(r'^api/v1/auth/login/$', LoginView.as_view(), name='login'),
-    url(r'^api/v1/auth/logout/$', LogoutView.as_view(), name='logout'),
-    url(r'^api/v1/auth/status/$', StatusView.as_view(), name='status'),
+    url(r'^admin/?', include(admin.site.urls)),
+    url(r'^api/v1/?', include(router.urls)),
+    url(r'^api/v1/?', include(accounts_router.urls)),
+    url(r'^api/v1/auth/login/?$', LoginView.as_view(), name='login'),
+    url(r'^api/v1/auth/logout/?$', LogoutView.as_view(), name='logout'),
+    url(r'^api/v1/auth/status/?$', StatusView.as_view(), name='status'),
 
     url(r'^$', 'django.views.static.serve', {
         'path': 'index.html',
