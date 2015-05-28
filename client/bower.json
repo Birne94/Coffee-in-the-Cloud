@@ -26,6 +26,7 @@
     "alertify": "~0.3.10",
     "font-awesome": "~4.2.0",
     "forge": "~0.6.18",
-    "ladda-bootstrap": "~0.1.0"
+    "ladda-bootstrap": "~0.1.0",
+	"fullcalendar": "2.3.1"
   }
 }
