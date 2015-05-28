@@ -4,10 +4,12 @@ from django.contrib import admin
 from rest_framework_nested import routers
 from authentication.views import AccountViewSet, LoginView, LogoutView, StatusView
 from tallylist.views import TallyListEntryViewSet, AccountTallyListEntryViewSet
+from schedule.views import ScheduleEntryViewSet
 
 router = routers.SimpleRouter()
 router.register("accounts", AccountViewSet)
 router.register("tally", TallyListEntryViewSet)
+router.register("schedule", ScheduleEntryViewSet)
 
 accounts_router = routers.NestedSimpleRouter(
     router, "accounts", lookup="user"

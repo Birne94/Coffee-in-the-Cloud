@@ -57,6 +57,12 @@ define(["jquery"], function ($) {
                 remove: function (id) {
                     return $http.delete(url("tally/" + id));
                 }
+            },
+
+            schedule: {
+                get: function() {
+                    return $http.get(url("schedule"));
+                }
             }
         }
 

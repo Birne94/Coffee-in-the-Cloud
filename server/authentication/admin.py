@@ -18,5 +18,12 @@ class AccountAdmin(UserAdmin):
     search_fields = ('first_name', 'last_name', 'email')
     ordering = ('email', 'first_name', 'last_name', 'balance')
 
+    add_fieldsets = (
+        (None, {
+            'classes': ('wide',),
+            'fields': ('first_name', 'last_name', 'email', 'password1', 'password2'),
+        }),
+    )
+
 
 admin.site.register(Account, AccountAdmin)
