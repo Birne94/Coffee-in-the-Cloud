@@ -13,19 +13,19 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
+          <span aria-hidden="true">&times;</span>
         </button>
         <h4 class="modal-title">Hey {{ tablet_user.first_name }} {{ tablet_user.last_name }}</h4>
       </div>
       <div class="modal-body">
         <p>Would you like to drink a small or a large cup of coffee?</p>
         <div class="text-center row vertical-align">
-            <div class="col-md-6">
-                <a data-dismiss="modal" data-ng-click="addCoffee(tablet_user.id, 1)"><i class="fa fa-coffee fa-coffe1"></i></a>
-            </div>
-            <div class="col-md-6">
-                <a data-dismiss="modal" data-ng-click="addCoffee(tablet_user.id, 2)"><i class="fa fa-coffee fa-coffe2"></i></a>
-            </div>
+          <div class="col-md-6">
+            <a data-dismiss="modal" data-ng-click="addCoffee(tablet_user.id, 1)"><i class="fa fa-coffee fa-coffe1"></i></a>
+          </div>
+          <div class="col-md-6">
+            <a data-dismiss="modal" data-ng-click="addCoffee(tablet_user.id, 2)"><i class="fa fa-coffee fa-coffe2"></i></a>
+          </div>
         </div>
       </div>
       <div class="modal-footer">
