@@ -3,7 +3,7 @@
  **/
 (function() {
     "use strict";
-    var controllers = ["test", "login"];
+    var controllers = ["test", "login", "welcome", "schedule", "picturelogin", "tallylist"];
 
     var includes = ["angular"];
 
@@ -23,8 +23,20 @@
         cons.config(function ($routeProvider) {
             $routeProvider
                 .when('/', {
-                    templateUrl : 'views/test.html',
-                    controller  : 'testController'
+                    templateUrl : 'views/welcome.html',
+                    controller  : 'welcomeController'
+                })
+                .when('/schedule/', {
+                    templateUrl: 'views/schedule.html',
+                    controller: 'scheduleController'
+                })
+                .when('/tablet/', {
+                  templateUrl: 'views/picture-login.html',
+                  controller: 'pictureloginController'
+                })
+                .when('/tallylist/', {
+                  templateUrl: 'views/tallylist.html',
+                  controller: 'tallylistController'
                 })
                 .otherwise({
                     redirectTo: '/'

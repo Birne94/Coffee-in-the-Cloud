@@ -1,5 +1,9 @@
 @echo off
 
+call npm -g install bower
+call npm -g install grunt
+call npm -g install grunt-cli
+
 echo.
 echo **Installing node.js packages**
 echo.

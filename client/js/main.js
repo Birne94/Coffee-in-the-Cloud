@@ -10,6 +10,11 @@ requirejs.config({
 		angular: "bower_components/angular/angular",
 		angularRoute: "bower_components/angular-route/angular-route",
 		bootstrap: "bower_components/bootstrap/dist/js/bootstrap",
+		alertify: "bower_components/alertify/alertify",
+		forge: "bower_components/forge/js/forge.min",
+		filesize: "/node_modules/file-size/index",
+		fullcalendar: "bower_components/fullcalendar/dist/fullcalendar",
+		moment: "bower_components/moment/min/moment.min",
 	},
 	baseUrl: "js",
     shim: {
@@ -22,7 +27,10 @@ requirejs.config({
         },
         "bootstrap":{
             deps:["jquery"]
-        }
+        },
+		"fullcalendar":{
+			deos:["jquery", "moment"]
+		}
 
     },
     /*
@@ -40,6 +48,7 @@ requirejs( [
 	"angular",
 	"app",
 	"bootstrap",
+	"fullcalendar"
 ], function($, angular, app) {
 	"use strict";
 	$(document).ready(function () {
