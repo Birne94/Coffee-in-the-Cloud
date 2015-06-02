@@ -1,5 +1,6 @@
-<div ng-controller="welcomeController">
-  <h1>Welcome to Coffee in the Cloud!</h1>
+<div ng-cloak ng-controller="welcomeController">
+  <h1 ng-hide="user">Welcome to Coffee in the Cloud!</h1>
+  <h1 ng-show="user">Welcome {{ user.first_name }} {{ user.last_name}}!</h1>
   <body>
     <div class="row">
       <div class="col-md-10">
