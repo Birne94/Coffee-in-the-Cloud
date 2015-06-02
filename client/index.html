@@ -18,11 +18,6 @@
     <link rel="stylesheet" href="js/bower_components/bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" href="public/css/style.css">
 
-    <!-- include the core styles -->
-    <link rel="stylesheet" href="js/bower_components/alertify/themes/alertify.core.css"/>
-    <!-- include a theme, can be included into the core instead of 2 separate files -->
-    <link rel="stylesheet" href="js/bower_components/alertify/themes/alertify.default.css"/>
-
     <link rel="stylesheet" href="js/bower_components/ladda-bootstrap/dist/ladda-themeless.min.css">
     <script src="js/bower_components/ladda-bootstrap/dist/spin.min.js"></script>
     <script src="js/bower_components/ladda-bootstrap/dist/ladda.min.js"></script>
@@ -56,7 +51,7 @@
                 <ul class="nav navbar-nav navbar-right" ng-controller="loginController">
                     <button type="button" class="btn btn-default navbar-btn" ng-hide="user" data-toggle="modal" data-target="#modal-login">Sign in</button>
                     <button type="button" class="btn btn-default navbar-btn" ng-cloak ng-show="user" ng-click="logout()">
-                        <img src="{{ user.avatar }}" ng-show="user.avatar" ng-cloak height="20" />
+                        <img ng-src="{{ user.avatar }}" ng-show="user.avatar" ng-cloak height="20" />
                         Sign out
                     </button>
                 </ul>
