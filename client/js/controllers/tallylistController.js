@@ -2,13 +2,6 @@ define(["jquery"], function (jQuery) {
     "use strict";
 
     function tallylistController($scope, $rootScope, alert, service) {
-        $rootScope.testMessage = "It works!";
-        $rootScope.clickCount = 0;
-        $rootScope.loaded = true;
-
-        $scope.test = function() {
-            $rootScope.clickCount++;
-        };
 
         $scope.addCoffee = function (amount) {
             service.tally.add(amount || 1).success(function (result) {

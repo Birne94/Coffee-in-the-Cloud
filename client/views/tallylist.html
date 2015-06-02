@@ -3,13 +3,13 @@
   <h3>Here you can find your current coffee consumption:</h3>
     <p class="alert alert-info">You have {{ user.coffees }} coffees on the list!</p>
     <ul>
-        <li ng-repeat="coffee in tally">
-            {{ coffee.amount }} coffee<span ng-show="coffee.amount > 1">s</span> (<em>{{ coffee.created_at | parseDate }}</em>)
-            <span ng-show="coffee.is_deletable">
-                <a ng-click="removeCoffee(coffee.id)" data-toggle="tooltip" data-placement="right" title="delete entry" tooltip>
-                    <i class="fa fa-trash-o"></i>
-                </a>
-            </span>
-        </li>
+      <li ng-repeat="coffee in tally">
+        {{ coffee.amount }} coffee<span ng-show="coffee.amount > 1">s</span> (<em>{{ coffee.created_at | parseDate }}</em>)
+        <span ng-show="coffee.is_deletable">
+          <a ng-click="removeCoffee(coffee.id)" data-toggle="tooltip" data-placement="right" title="delete entry" tooltip>
+              <i class="fa fa-trash-o"></i>
+          </a>
+        </span>
+      </li>
     </ul>
 </div>
