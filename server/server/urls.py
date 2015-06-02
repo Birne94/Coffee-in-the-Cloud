@@ -1,6 +1,7 @@
 from django.conf import settings
 from django.conf.urls import include, url
 from django.contrib import admin
+from django.views.decorators.csrf import csrf_exempt
 from rest_framework_nested import routers
 from authentication.views import AccountViewSet, LoginView, LogoutView, StatusView
 from tallylist.views import TallyListEntryViewSet, AccountTallyListEntryViewSet

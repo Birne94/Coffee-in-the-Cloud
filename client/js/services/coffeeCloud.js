@@ -26,7 +26,7 @@ define(["jquery"], function ($) {
                 },
 
                 logout: function () {
-                    return $http.post(url("auth/logout"));
+                    return $http.post(url("auth/logout"), {});
                 },
 
                 check: function() {
@@ -56,6 +56,10 @@ define(["jquery"], function ($) {
 
                 remove: function (id) {
                     return $http.delete(url("tally/" + id));
+                },
+
+                addForUser: function(user_id, amount) {
+
                 }
             },
 
