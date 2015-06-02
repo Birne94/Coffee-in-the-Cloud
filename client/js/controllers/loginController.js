@@ -1,7 +1,7 @@
 define(["jquery"], function (jQuery) {
     "use strict";
 
-    function loginController($scope, $rootScope, alert, service) {
+    function loginController($scope, $rootScope, alert, service, $location) {
         $scope.updateUser = function () {
             service.user.check().success(function (result) {
                 if (result.status === true) {
@@ -44,6 +44,7 @@ define(["jquery"], function (jQuery) {
                 $scope.updateUser();
 
                 alert.success("Logout succeeded.");
+                $location.path("/");
             }).error(function (result) {
                 alert.error("Logout failed.");
             });
@@ -52,7 +53,7 @@ define(["jquery"], function (jQuery) {
         $scope.updateUser();
     }
 
-    loginController.$inject = ["$scope", "$rootScope", "seed.status", "seed.coffeeCloud"];
+    loginController.$inject = ["$scope", "$rootScope", "seed.status", "seed.coffeeCloud", "$location"];
 
     return loginController;
 });
