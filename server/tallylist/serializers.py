@@ -5,7 +5,7 @@ from tallylist.models import TallyListEntry
 
 class TallyListEntrySerializer(serializers.ModelSerializer):
     user = AccountSerializer(read_only=True, required=False)
-    user_id = serializers.IntegerField()
+    user_id = serializers.IntegerField(required=False)
 
     class Meta:
         model = TallyListEntry
