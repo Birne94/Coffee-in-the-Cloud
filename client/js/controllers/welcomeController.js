@@ -2,7 +2,6 @@ define(["jquery"], function (jQuery) {
     "use strict";
 
     function welcomeController($scope, $rootScope, alert, service) {
-      $rootScope.user = null;
 
     }
 
