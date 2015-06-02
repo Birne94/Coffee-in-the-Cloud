@@ -34,6 +34,10 @@
                   templateUrl: 'views/picture-login.html',
                   controller: 'pictureloginController'
                 })
+                .when('/tallylist/', {
+                  templateUrl: 'views/tallylist.html',
+                  controller: 'tallylistController'
+                })
                 .otherwise({
                     redirectTo: '/'
                 });
