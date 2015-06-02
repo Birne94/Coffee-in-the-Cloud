@@ -1,38 +1,38 @@
 <div>
-    <div class="row">
-        <div class="col-md-4" ng-repeat="user in users">
-            <a data-toggle="modal" data-target="#coffe-popup" ng-click="select(user)">
-                <img ng-src="{{ user.avatar}}" class="img-rounded" height="150"></img>
-            </a>
-        </div>
+  <div class="row">
+    <div class="col-md-4" ng-repeat="user in users">
+      <a data-toggle="modal" data-target="#coffe-popup" ng-click="select(user)">
+        <img ng-src="{{ user.avatar}}" class="img-rounded" height="150"></img>
+      </a>
     </div>
+  </div>
 </div>
 
 <div class="modal fade" id="coffe-popup">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-                <h4 class="modal-title">Hey {{ tablet_user.first_name }} {{ tablet_user.last_name }}</h4>
-            </div>
-            <div class="modal-body">
-                <p>Would you like to drink a small or a large cup of coffee?</p>
-                <div class="text-center row vertical-align">
-                    <div class="col-md-6">
-                        <a data-dismiss="modal" data-ng-click="addCoffee(tablet_user.id, 1)"><i class="fa fa-coffee fa-coffe1"></i></a>
-                    </div>
-                    <div class="col-md-6">
-                        <a data-dismiss="modal" data-ng-click="addCoffee(tablet_user.id, 2)"><i class="fa fa-coffee fa-coffe2"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-            </div>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title">Hey {{ tablet_user.first_name }} {{ tablet_user.last_name }}</h4>
+      </div>
+      <div class="modal-body">
+        <p>Would you like to drink a small or a large cup of coffee?</p>
+        <div class="text-center row vertical-align">
+          <div class="col-md-6">
+            <a data-dismiss="modal" data-ng-click="addCoffee(tablet_user.id, 1)"><i class="fa fa-coffee fa-coffe1"></i></a>
+          </div>
+          <div class="col-md-6">
+            <a data-dismiss="modal" data-ng-click="addCoffee(tablet_user.id, 2)"><i class="fa fa-coffee fa-coffe2"></i></a>
+          </div>
         </div>
-        <!-- /.modal-content -->
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+      </div>
     </div>
+      <!-- /.modal-content -->
+  </div>
     <!-- /.modal-dialog -->
 </div><!-- /.modal -->
