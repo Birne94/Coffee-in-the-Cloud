@@ -51,13 +51,13 @@
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="navbar">
-                <ul ng-cloak ng-show="user" ng-hide="tablet" class="nav navbar-nav" >
+                <ul ng-cloak ng-show="user"  class="nav navbar-nav" >
                     <li class="active"><a href="#">Tally List <span class="sr-only">(current)</span></a></li>
                     <li><a href="#/schedule/">Cleaning Schedule</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right" ng-controller="loginController">
-                    <button type="button" class="btn btn-default navbar-btn" ng-hide="user" ng-hide="tablet" data-toggle="modal" data-target="#modal-login">Sign in</button>
-                    <button type="button" class="btn btn-default navbar-btn" ng-cloak ng-show="user" ng-hide="tablet" ng-click="logout()">
+                    <button type="button" class="btn btn-default navbar-btn" ng-hide="user" data-toggle="modal" data-target="#modal-login">Sign in</button>
+                    <button type="button" class="btn btn-default navbar-btn" ng-cloak ng-show="user && !tablet" ng-click="logout()">
                         <img ng-src="{{ user.avatar }}" ng-show="user.avatar" ng-cloak height="20" />
                         Sign out
                     </button>

@@ -3,6 +3,7 @@ define(["jquery"], function (jQuery) {
 
     function pictureloginController($scope, $rootScope, alert, service) {
 
+      $rootScope.user = false;
       $rootScope.tablet = false;
 
       service.user.list().success(function(data){
