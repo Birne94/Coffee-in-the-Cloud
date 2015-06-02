@@ -1,0 +1,25 @@
+<div ng-controller="pictureloginController">
+  <div class="row">
+    <div class="col-md-3" class="list-group-item" ng-repeat="user in users"><a data-toggle="modal" data-target="#coffe-popup"><img ng-src ="{{ user.avatar}}" class="img-rounded" height="150"></img></a></div>
+  </div>
+</div>
+
+<div class="modal fade" id="coffe-popup" data-ng-controller="pictureloginController">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title">Add your coffee</h4>
+            </div>
+            <div class="modal-body">
+              <i class ="fa fa-coffee fa-coffe1" data-dismiss="modal" data-ng-click="addCoffee(1)"></i>
+              <i class ="fa fa-coffee fa-coffe2" data-dismiss="modal" data-ng-click="addCoffee(2)"></i>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
