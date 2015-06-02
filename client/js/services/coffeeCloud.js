@@ -59,7 +59,11 @@ define(["jquery"], function ($) {
                 },
 
                 addForUser: function(user_id, amount) {
-
+                    var tally_obj = {
+                        amount: amount || 1,
+                        user_id: user_id
+                    };
+                    return $http.post(url("accounts/" + user_id + "/tally"), tally_obj);
                 }
             },
 

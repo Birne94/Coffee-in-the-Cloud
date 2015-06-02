@@ -3,22 +3,25 @@ define(["jquery"], function (jQuery) {
 
     function pictureloginController($scope, $rootScope, alert, service) {
 
-      $rootScope.user = false;
-      $rootScope.tablet = false;
+        $rootScope.tablet = true;
+        $scope.tablet_user = null;
 
-      service.user.list().success(function(data){
-        $scope.users = data;
-      })
+        service.user.list().success(function (data) {
+            $scope.users = data;
+        });
 
-      $scope.addCoffee = function (amount) {
-          service.tally.add(amount || 1).success(function (result) {
-              $rootScope.updateTally();
+        $scope.select = function(user_id) {
+            $scope.tablet_user = user_id;
+        }
 
-              alert.success(amount + " added.");
-          }).error(function (result) {
-              alert.error("Error adding entry. Please try again later!");
-          });
-      };
+        $scope.addCoffee = function (user_id, amount) {
+            service.tally.addForUser(user_id, amount || 1).success(function (result) {
+                $rootScope.updateTally();
+                alert.success(amount + (amount == 1 ? " coffee" : " coffees") + " added.");
+            }).error(function (result) {
+                alert.error("Error adding entry. Please try again later!");
+            });
+        };
 
     }
 

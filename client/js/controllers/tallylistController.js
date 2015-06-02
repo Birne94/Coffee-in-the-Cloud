@@ -3,11 +3,13 @@ define(["jquery"], function (jQuery) {
 
     function tallylistController($scope, $rootScope, alert, service) {
 
+        $rootScope.tablet = false;
+
         $scope.addCoffee = function (amount) {
             service.tally.add(amount || 1).success(function (result) {
                 $rootScope.updateTally();
 
-                alert.success("Entry added.");
+                alert.success(amount + " added.");
             }).error(function (result) {
                 alert.error("Error adding entry. Please try again later!");
             });

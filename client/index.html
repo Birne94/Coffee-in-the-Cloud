@@ -32,11 +32,11 @@
 
     <link rel="stylesheet" href="js/bower_components/fullcalendar/dist/fullcalendar.min.css"/>
 </head>
+<body>
 <header>
-    <nav class="navbar navbar-default">
+    <nav class="navbar navbar-default" ng-controller="headerController">
         <div class="container-fluid">
             <div class="navbar-header">
-                <!-- Brand and toggle get grouped for better mobile display -->
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
                         aria-expanded="false" aria-controls="navbar">
                     <span class="sr-only">Toggle navigation</span>
@@ -49,11 +49,11 @@
                 </a>
             </div>
 
-            <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="navbar">
                 <ul ng-cloak ng-show="user"  class="nav navbar-nav" >
-                    <li class="active"><a href="#/tallylist/">Tally List <span class="sr-only">(current)</span></a></li>
-                    <li><a href="#/schedule/">Cleaning Schedule</a></li>
+                    <li ng-class="{ active: isActive('/')}"><a href="#/">Home</a></li>
+                    <li ng-class="{ active: isActive('/tallylist/')}"><a href="#/tallylist/">Tally List</a></li>
+                    <li ng-class="{ active: isActive('/schedule/')}"><a href="#/schedule/">Cleaning Schedule</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right" ng-controller="loginController">
                     <button type="button" class="btn btn-default navbar-btn" ng-hide="user" data-toggle="modal" data-target="#modal-login">Sign in</button>
@@ -68,27 +68,22 @@
         <!-- /.container-fluid -->
     </nav>
 </header>
-
-<body>
 <div class="container">
     <div id="status"></div>
     <div ng-view></div>
 </div>
 <ng-include src="'views/login-popup.html'"></ng-include>
-</body>
 <footer class="footer">
   <div class="container">
-    <div class="row">
-      <p class="text-muted">
-        <div class="col-md-8">
+      <div class="text-muted">
+          <div class="pull-right">
+              <a href="#/tablet/"><i style="float: left" class="fa fa-tablet fa-tablet1"></i></a>
+          </div>
+        <div>
           <a href="https://hpi.de/forschung/fachgebiete/business-process-technology.html" target="_blank">Bussiness Process Technology</a>
         </div>
-        <div class="col-md-4">
-          <a href="#/tablet/"><i style="float: left" class="fa fa-tablet fa-tablet1"></i></a>
-        </div>
-      </p>
-    </div>
+      </div>
   </div>
-
 </footer>
+</body>
 </html>

@@ -3,6 +3,7 @@ define(["jquery"], function (jQuery) {
 
     function scheduleController($scope, $rootScope, alert, service) {
 
+        $rootScope.tablet = false;
         $scope.schedule = null;
 
         $scope.load = function() {

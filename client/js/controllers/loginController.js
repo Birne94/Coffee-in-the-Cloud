@@ -2,9 +2,6 @@ define(["jquery"], function (jQuery) {
     "use strict";
 
     function loginController($scope, $rootScope, alert, service) {
-        $rootScope.user = null;
-        $rootScope.tally = null;
-
         $scope.updateUser = function () {
             service.user.check().success(function (result) {
                 if (result.status === true) {
