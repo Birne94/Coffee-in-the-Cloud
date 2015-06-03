@@ -57,7 +57,7 @@
           </ul>
           <ul class="nav navbar-nav navbar-right" ng-controller="loginController">
             <button type="button" class="btn btn-default navbar-btn" ng-hide="user" data-toggle="modal" data-target="#modal-login">Sign in</button>
-            <button type="button" class="btn btn-default navbar-btn" ng-cloak ng-show="user && !tablet" ng-click="logout()">
+            <button type="button" class="btn btn-default navbar-btn" ng-cloak ng-show="user" ng-click="logout(true)">
               <img ng-src="{{ user.avatar }}" ng-show="user.avatar" ng-cloak height="20" />
               Sign out
             </button>
@@ -73,11 +73,11 @@
   </div>
   <ng-include src="'views/login-popup.html'"></ng-include>
 
-  <footer class="footer">
+  <footer class="footer" ng-controller="loginController">
     <div class="container">
       <div class="text-muted">
         <div class="pull-right">
-          <a href="#/tablet/"><i style="float: left" class="fa fa-tablet fa-tablet1"></i></a>
+          <a href="#/tablet/" ng-click="logout(false)"><i style="float: left" class="fa fa-tablet fa-tablet1"></i></a>
         </div>
         <div>
           <a href="https://hpi.de/forschung/fachgebiete/business-process-technology.html" target="_blank">Bussiness Process Technology</a>

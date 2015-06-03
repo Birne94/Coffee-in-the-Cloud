@@ -39,14 +39,16 @@ define(["jquery"], function (jQuery) {
             });
         };
 
-        $scope.logout = function() {
+        $scope.logout = function(redirect) {
             service.user.logout().success(function (status) {
                 $scope.updateUser();
-
+                if (redirect){
                 alert.success("Logout succeeded.");
                 $location.path("/");
+                }
             }).error(function (result) {
-                alert.error("Logout failed.");
+                if(redirect)
+                  alert.error("Logout failed.");
             });
         };
 
