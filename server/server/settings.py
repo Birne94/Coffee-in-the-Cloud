@@ -135,4 +135,8 @@ AUTH_USER_MODEL = 'authentication.Account'
 
 MEDIA_URL = '/'
 
+# for deployment
+#MEDIA_ROOT_URL = '/'
+#MEDIA_ROOT = '/var/www/django/Coffee-in-the-Cloud/server/'
+
 CSRF_COOKIE_NAME = 'csrftoken'
