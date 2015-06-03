@@ -19,7 +19,7 @@ class ScheduleEntryViewSet(viewsets.ModelViewSet):
         return (permissions.IsAuthenticated(),)
 
     def list(self, request):
-        queryset = self.queryset.filter(user__pk=request.user.pk)
+        queryset = self.queryset#.filter(user__pk=request.user.pk)
         serializer = self.serializer_class(queryset, many=True)
 
         return Response(serializer.data)
