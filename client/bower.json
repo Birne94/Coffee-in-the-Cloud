@@ -5,8 +5,8 @@
   "directory": "bower_components",
   "authors": [
     "Daniel Birnstiel",
-	"Cornelius Pohl",
-	"Theresa Zobel"
+    "Cornelius Pohl",
+    "Theresa Zobel"
   ],
   "description": "Coffee in the Cloud App",
   "private": true,
@@ -27,6 +27,7 @@
     "font-awesome": "~4.2.0",
     "forge": "~0.6.18",
     "ladda-bootstrap": "~0.1.0",
-	"fullcalendar": "2.3.1"
+    "fullcalendar": "2.3.1",
+    "Chart.js": "~1.0.2"
   }
 }

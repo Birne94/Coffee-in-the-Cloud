@@ -15,6 +15,7 @@ requirejs.config({
 		filesize: "/node_modules/file-size/index",
 		fullcalendar: "bower_components/fullcalendar/dist/fullcalendar",
 		moment: "bower_components/moment/min/moment.min",
+		chart: "bower_components/Chart.js/Chart.min"
 	},
 	baseUrl: "js",
     shim: {
@@ -48,7 +49,8 @@ requirejs( [
 	"angular",
 	"app",
 	"bootstrap",
-	"fullcalendar"
+	"fullcalendar",
+	"chart"
 ], function($, angular, app) {
 	"use strict";
 	$(document).ready(function () {

@@ -18,11 +18,6 @@
     <link rel="stylesheet" href="js/bower_components/bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" href="public/css/style.css">
 
-    <!-- include the core styles -->
-    <link rel="stylesheet" href="js/bower_components/alertify/themes/alertify.core.css"/>
-    <!-- include a theme, can be included into the core instead of 2 separate files -->
-    <link rel="stylesheet" href="js/bower_components/alertify/themes/alertify.default.css"/>
-
     <link rel="stylesheet" href="js/bower_components/ladda-bootstrap/dist/ladda-themeless.min.css">
 
     <script src="js/bower_components/ladda-bootstrap/dist/spin.min.js"></script>
@@ -53,7 +48,8 @@
           <ul ng-cloak ng-show="user"  class="nav navbar-nav" >
             <li ng-class="{ active: isActive('/')}"><a href="#/">Home</a></li>
               <li ng-class="{ active: isActive('/tallylist/')}"><a href="#/tallylist/">Tally List</a></li>
-            <li ng-class="{ active: isActive('/schedule/')}"><a href="#/schedule/">Cleaning Schedule</a></li>
+              <li ng-class="{ active: isActive('/schedule/')}"><a href="#/schedule/">Cleaning Schedule</a></li>
+              <li ng-class="{ active: isActive('/statistics/')}"><a href="#/statistics/">Statistics</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right" ng-controller="loginController">
             <button type="button" class="btn btn-default navbar-btn" ng-hide="user" data-toggle="modal" data-target="#modal-login">Sign in</button>

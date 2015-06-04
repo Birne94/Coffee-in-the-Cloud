@@ -71,6 +71,16 @@ define(["jquery"], function ($) {
                 get: function() {
                     return $http.get(url("schedule"));
                 }
+            },
+
+            statistics: {
+                all: function() {
+                    return $http.get(url("statistics"));
+                },
+
+                own: function() {
+                    return $http.get(url("statistics/own"));
+                }
             }
         }
 

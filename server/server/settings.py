@@ -40,7 +40,8 @@ INSTALLED_APPS = (
     'rest_framework',
     'authentication',
     'tallylist',
-    'schedule'
+    'schedule',
+    'statistics'
 )
 
 MIDDLEWARE_CLASSES = (
