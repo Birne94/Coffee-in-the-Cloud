@@ -143,3 +143,8 @@ MEDIA_URL = '/'
 CSRF_COOKIE_NAME = 'csrftoken'
 
 COFFEE_PRICE = 0.20
+
+try:
+    from server.settings2 import *
+except:
+    pass

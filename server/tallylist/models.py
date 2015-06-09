@@ -17,6 +17,12 @@ class TallyListEntry(models.Model):
             self.user.save()
         super(TallyListEntry, self).save(*args, **kwargs)
 
+    def delete(self, *args, **kwargs):
+        self.user.balance += COFFEE_PRICE * self.amount
+        self.user.save()
+
+        super(TallyListEntry, self).delete(*args, **kwargs)
+
     def __unicode__(self):
         return "%d for %s" % (self.amount, unicode(self.user))
 
