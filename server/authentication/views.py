@@ -9,7 +9,7 @@ from authentication.serializers import AccountSerializer
 
 
 class AccountViewSet(viewsets.ModelViewSet):
-    queryset = Account.objects.all()
+    queryset = Account.objects
     serializer_class = AccountSerializer
 
     def get_permissions(self):
@@ -20,6 +20,22 @@ class AccountViewSet(viewsets.ModelViewSet):
             return (permissions.AllowAny(),)
 
         return (permissions.IsAuthenticated(), IsAccountOwner(),)
+
+    def list(self, request):
+        def sorting_helper(a, b):
+            if a == b:
+                return 0
+            if a.is_guest():
+                return -1
+            elif b.is_guest():
+                return 1
+            else:
+                return -cmp(a.get_tally_list_entries(), b.get_tally_list_entries())
+
+        queryset = sorted(self.queryset.all(), cmp=sorting_helper)
+        serializer = self.serializer_class(queryset, many=True)
+
+        return Response(serializer.data)
 
     def create(self, request):
         serializer = self.serializer_class(data=request.data)
