@@ -9,6 +9,8 @@ define(["jquery"], function (jQuery) {
             service.tally.add(amount || 1).success(function (result) {
                 $rootScope.updateTally();
 
+                $rootScope.$broadcast('updateUser', []);
+
                 alert.success(amount + " added.");
             }).error(function (result) {
                 alert.error("Error adding entry. Please try again later!");
@@ -18,6 +20,7 @@ define(["jquery"], function (jQuery) {
         $scope.removeCoffee = function (id) {
             service.tally.remove(id).success(function (result) {
                 $rootScope.updateTally();
+                $rootScope.$broadcast('updateUser', []);
 
                 alert.success("Entry removed.");
             }).error(function (result) {

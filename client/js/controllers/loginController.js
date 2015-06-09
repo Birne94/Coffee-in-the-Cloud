@@ -15,6 +15,8 @@ define(["jquery"], function (jQuery) {
             });
         };
 
+        $rootScope.$on('updateUser', $scope.updateUser);
+
         $rootScope.updateTally = function () {
             service.tally.status().success(function (result) {
                 $rootScope.tally = [];
