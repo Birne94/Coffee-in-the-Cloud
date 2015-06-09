@@ -26,7 +26,7 @@ define(["jquery"], function (jQuery) {
         return months[date[1]] + " " + date[0];
     }
 
-    function createDataset(data) {
+    function createConsumptionDataset(data) {
         var dataset = {
             labels: [],
             datasets: [{
@@ -49,6 +49,34 @@ define(["jquery"], function (jQuery) {
         return dataset;
     }
 
+    function createTypeDataset(data) {
+        var colors = [
+            { color: '#F7464A', highlight: '#FF5A5E' },
+            { color: '#46BFBD', highlight: '#5AD3D1' },
+            { color: '#FDB45C', highlight: '#FFC870' },
+            { color: '#949FB1', highlight: '#A8B3C5' },
+        ];
+        var dataset = [];
+
+        $(data).each(function (index, entry) {
+            var title = {
+                1: "single",
+                2: "double"
+            }[entry.amount];
+
+            if (title) {
+                dataset.push({
+                    value: entry.amount__count,
+                    label: title,
+                    color: colors[index].color,
+                    highlight: colors[index].highlight
+                });
+            }
+        });
+
+        return dataset;
+    }
+
     function statisticsController($scope, $rootScope, service) {
         $rootScope.tablet = false;
 
@@ -56,16 +84,22 @@ define(["jquery"], function (jQuery) {
             $scope.initialized = true;
 
             service.statistics.all().success(function (data) {
-                $scope.chartCoffeeConsumption = new Chart(getContext("chartCoffeeConsumption")).Line(createDataset(data), {
+                $scope.chartCoffeeConsumption = new Chart(getContext("chartCoffeeConsumption")).Line(createConsumptionDataset(data), {
                     bezierCurve: false,
                     datasetFill: false,
                     responsive: true
                 });
             });
 
+            service.statistics.type().success(function (data) {
+                $scope.chartCoffeeType = new Chart(getContext("chartCoffeeType")).Doughnut(createTypeDataset(data), {
+                    responsive: true
+                });
+            });
+
             if ($rootScope.user !== null) {
                 service.statistics.own().success(function (data) {
-                    $scope.chartCoffeeConsumptionOwn = new Chart(getContext("chartCoffeeConsumptionOwn")).Line(createDataset(data), {
+                    $scope.chartCoffeeConsumptionOwn = new Chart(getContext("chartCoffeeConsumptionOwn")).Line(createConsumptionDataset(data), {
                         bezierCurve: false,
                         datasetFill: false,
                         responsive: true

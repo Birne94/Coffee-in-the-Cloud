@@ -37,3 +37,14 @@ class StatisticsOwnView(views.APIView):
 
         return Response(serializer.data)
 
+
+class StatisticsCoffeeTypeView(views.APIView):
+    serializer_class = TallyListStatisticSerializer
+
+    def get(self, request, format=None):
+        qs = TallyListEntry.objects.select_related("amount")
+        data = qs.values('amount').annotate(Count('amount')).order_by('amount')
+        serializer = self.serializer_class(data, many=True)
+
+        return Response(serializer.data)
+

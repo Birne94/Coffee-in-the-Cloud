@@ -141,3 +141,5 @@ MEDIA_URL = '/'
 #MEDIA_ROOT = '/var/www/django/Coffee-in-the-Cloud/server/'
 
 CSRF_COOKIE_NAME = 'csrftoken'
+
+COFFEE_PRICE = 0.20
