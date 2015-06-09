@@ -89,3 +89,6 @@ class Account(AbstractBaseUser, PermissionsMixin):
         name = name.replace(" ", ".")
         name = re.sub("[^a-zA-Z.]", "_", name)
         return name
+
+    def is_guest(self):
+        return self.pk == 7
