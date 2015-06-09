@@ -9,6 +9,7 @@ from tallylist.serializers import TallyListEntrySerializer
 
 from authentication.models import Account
 
+
 class TallyListEntryViewSet(viewsets.ModelViewSet):
     queryset = TallyListEntry.objects.select_related("user").order_by('-created_at')
     serializer_class = TallyListEntrySerializer

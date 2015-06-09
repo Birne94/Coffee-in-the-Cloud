@@ -144,6 +144,9 @@ CSRF_COOKIE_NAME = 'csrftoken'
 
 COFFEE_PRICE = 0.20
 
+MAIL_SERVER = "mailout.hpi.uni-potsdam.de"
+MAIL_SENDER = "coffee-in-the-cloud@hpi.de"
+
 try:
     from server.settings2 import *
 except:

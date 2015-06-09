@@ -2,6 +2,8 @@ from server.settings import COFFEE_PRICE
 from django.db import models
 from authentication.models import Account
 from django.utils import timezone
+from server.mail import send_email
+from server.settings import MAIL_SENDER
 
 
 class TallyListEntry(models.Model):
@@ -15,6 +17,19 @@ class TallyListEntry(models.Model):
         if not self.pk:
             self.user.balance -= COFFEE_PRICE * self.amount
             self.user.save()
+
+            send_email(MAIL_SENDER,
+                       [self.user.email],
+                       "A coffee has been tracked",
+                       ("Hello %s %s,\r\n\r\n" +
+                       "%d %s been traacked on your account. If this wasn't you, you can remove the coffee within the next 30 minutes.\r\n\r\n" +
+                       "Have fun drinking!") % (
+                           self.user.first_name,
+                           self.user.last_name,
+                           self.amount,
+                           "coffee has" if self.amount == 1 else "coffees have",
+                        ))
+
         super(TallyListEntry, self).save(*args, **kwargs)
 
     def delete(self, *args, **kwargs):
