@@ -2,7 +2,7 @@
   <h1>Your Tally List</h1>
 
   <h3>Here you can find your current coffee consumption:</h3>
-  <p class="alert alert-info">You have {{ user.coffees }} coffees on the list & your current balance is {{user.balance}}€</p>
+  <p class="alert alert-info">You have {{ user.coffees }} coffees on the list & your current balance is {{user.balance | prettyFloat}}&euro;</p>
 
   <ul ng-show="user.coffees">
     <li ng-repeat="coffee in tally |limitTo:10">

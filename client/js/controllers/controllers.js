@@ -49,9 +49,19 @@
 
         cons.filter("parseDate", function() {
             return function (value) {
-                return new Date(value).toLocaleString();
+                var date = new Date(value);
+                var h = date.getHours();
+                var m = date.getMinutes();
+                return date.toLocaleDateString() + " " + (h < 10 ? "0" : "") + h + ":" + (m < 10 ? "0" : "") + m;
             }
         });
+
+        cons.filter("prettyFloat", function() {
+            return function (value) {
+                return (value || 0).toFixed(2);
+            };
+        });
+
         return cons;
     });
 })();
