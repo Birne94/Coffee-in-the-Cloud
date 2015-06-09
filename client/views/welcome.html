@@ -1,17 +1,18 @@
 <div ng-cloak ng-controller="welcomeController">
   <h1 ng-hide="user">Welcome to Coffee in the Cloud!</h1>
 
-  <h1 ng-show="user">Welcome {{ user.first_name }} {{ user.last_name}}!</h1>
+  <div ng-show="user.balance <= 2.0" class="alert alert-danger" role="alert">Your coffee balance is low! Please add money to your account.</div>
 
+  <h1 ng-show="user">Welcome {{ user.first_name }} {{ user.last_name}}!</h1><br>
   <div class="container">
     <a href="https://bpt.hpi.uni-potsdam.de/Public/WebHome">
       <img class="img-rounded img-header img-responsive" width="500" src="../../public/images/coffee.jpg" alt="wimi" />
-    </a>
+    </a><br>
 
     <div class="caption">
       <h3>
         This is the awesome project of the BPM in the cloud seminar of the chair of Prof. Weske. <br><br>
-        Stay calm and have a coffee with us! <i class="fa fa-coffee fa-lg"></i>
+        Stay calm and have a coffee with us! <a ng-show="user" href="/#/tallylist/"><i class="fa fa-coffee fa-lg"></i></a>
       </h3>
       <br><br>
       <p ng-hide="user">
