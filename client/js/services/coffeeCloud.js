@@ -1,7 +1,7 @@
 define(["jquery"], function ($) {
     "use strict";
 
-    var baseUrl = "http://localhost:8000/api/v1/";
+    var baseUrl = "/api/v1/";
 
     var service = function($rootScope, $http) {
         $http.defaults.xsrfHeaderName = "X-CSRFToken";
