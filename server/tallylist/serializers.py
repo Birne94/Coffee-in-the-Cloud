@@ -25,12 +25,14 @@ class TallyListEntrySerializer(serializers.ModelSerializer):
 
 class TallyListStatisticSerializer(serializers.ModelSerializer):
     month = serializers.CharField(required=False)
+    amount = serializers.IntegerField(required=False)
     amount__sum = serializers.IntegerField(required=False)
+    amount__count = serializers.IntegerField(required=False)
     pk__count = serializers.IntegerField(required=False)
 
     class Meta:
         model = TallyListEntry
-        fields = ("month", "amount__sum", "pk__count")
+        fields = ("month", "amount", "amount__sum", "amount__count", "pk__count")
 
         def get_validation_exclusions(self, *args, **kwargs):
             exclusions = super(TallyListEntrySerializer, self).get_validation_exclusions()

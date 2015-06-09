@@ -80,6 +80,10 @@ define(["jquery"], function ($) {
 
                 own: function() {
                     return $http.get(url("statistics/own"));
+                },
+
+                type: function() {
+                    return $http.get(url("statistics/type"));
                 }
             }
         }

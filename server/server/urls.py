@@ -6,7 +6,7 @@ from rest_framework_nested import routers
 from authentication.views import AccountViewSet, LoginView, LogoutView, StatusView
 from tallylist.views import TallyListEntryViewSet, AccountTallyListEntryViewSet
 from schedule.views import ScheduleEntryViewSet
-from statistics.views import StatisticsView, StatisticsOwnView
+from statistics.views import StatisticsView, StatisticsOwnView, StatisticsCoffeeTypeView
 
 router = routers.SimpleRouter()
 router.register("accounts", AccountViewSet)
@@ -27,6 +27,7 @@ urlpatterns = [
     url(r'^api/v1/auth/status/?$', StatusView.as_view(), name='status'),
     url(r'^api/v1/statistics/?$', StatisticsView.as_view(), name='statistics'),
     url(r'^api/v1/statistics/own/?$', StatisticsOwnView.as_view(), name='statistics_own'),
+    url(r'^api/v1/statistics/type/?$', StatisticsCoffeeTypeView.as_view()),
 
     url(r'^$', 'django.views.static.serve', {
         'path': 'index.html',
