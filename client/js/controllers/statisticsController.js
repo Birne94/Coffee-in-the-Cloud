@@ -49,11 +49,41 @@ define(["jquery"], function (jQuery) {
         return dataset;
     }
 
+    function createComparisonDataset(data) {
+        var dataset = {
+            labels: data.labels,
+            datasets: [
+                {
+                    label: "total",
+                    fillColor: "rgba(253, 180, 92,0.2)",
+                    strokeColor: "rgba(253, 180, 92,1)",
+                    pointColor: "rgba(253, 180, 92,1)",
+                    pointStrokeColor: "#fff",
+                    pointHighlightFill: "rgba(255, 200, 112, 1)",
+                    pointHighlightStroke: "rgba(255, 200, 112,1)",
+                    data: data.all.data
+                },
+                {
+                    label: "own",
+                    fillColor: "rgba(247,70,74,0.2)",
+                    strokeColor: "rgba(247,70,74,1)",
+                    pointColor: "rgba(247,70,74,1)",
+                    pointStrokeColor: "#fff",
+                    pointHighlightFill: "rgba(255,90,94,1)",
+                    pointHighlightStroke: "rgba(255,90,94,1)",
+                    data: data.user.data
+                }
+            ]
+        };
+
+        return dataset;
+    }
+
     function createTypeDataset(data) {
         var colors = [
             { color: '#F7464A', highlight: '#FF5A5E' },
-            { color: '#46BFBD', highlight: '#5AD3D1' },
             { color: '#FDB45C', highlight: '#FFC870' },
+            { color: '#46BFBD', highlight: '#5AD3D1' },
             { color: '#949FB1', highlight: '#A8B3C5' },
         ];
         var dataset = [];
@@ -98,6 +128,13 @@ define(["jquery"], function (jQuery) {
             });
 
             if ($rootScope.user !== null) {
+                service.statistics.comparison().then(function (data) {
+                    $scope.chartCoffeeComparison = new Chart(getContext("chartCoffeeComparison")).Radar(createComparisonDataset(data), {
+                        responsive: true,
+                        multiTooltipTemplate: "<%if (datasetLabel){%><%=datasetLabel%>: <%}%><%= value %>",
+                    });
+                });
+
                 service.statistics.own().success(function (data) {
                     $scope.chartCoffeeConsumptionOwn = new Chart(getContext("chartCoffeeConsumptionOwn")).Line(createConsumptionDataset(data), {
                         bezierCurve: false,

@@ -15,6 +15,27 @@ define(["jquery"], function ($) {
             return baseUrl + path;
         }
 
+        var months = {
+            "01": "January",
+            "02": "February",
+            "03": "March",
+            "04": "April",
+            "05": "May",
+            "06": "June",
+            "07": "July",
+            "08": "August",
+            "09": "September",
+            "10": "October",
+            "11": "November",
+            "12": "December"
+        };
+
+        function formatDate(date) {
+            var date = date.split("-");
+
+            return months[date[1]] + " " + date[0];
+        }
+
         var coffeeCloudServices = {
             user: {
                 login: function (email, password) {
@@ -84,9 +105,49 @@ define(["jquery"], function ($) {
 
                 type: function() {
                     return $http.get(url("statistics/type"));
+                },
+
+                comparison: function() {
+                    var deferred = $.Deferred();
+
+                    coffeeCloudServices.statistics.all().success(function (allData) {
+                        coffeeCloudServices.statistics.own().success(function (userData) {
+                            var result = {
+                                labels: [],
+                                all: {
+                                    data: []
+                                },
+                                user: {
+                                    data: []
+                                }
+                            };
+
+                            var idxAll = {};
+                            var idxUser = {};
+
+                            $(allData).each(function (index, entry) {
+                                var date = formatDate(entry.month);
+                                idxAll[date] = entry.amount__sum;
+                            });
+                            $(userData).each(function (index, entry) {
+                                var date = formatDate(entry.month);
+                                idxUser[date] = entry.amount__sum;
+                            });
+
+                            $.each(idxAll, function (index, entry) {
+                                result.labels.push(index);
+                                result.all.data.push(entry);
+                                result.user.data.push(idxUser[index] || 0);
+                            });
+
+                            deferred.resolve(result);
+                        });
+                    });
+
+                    return deferred;
                 }
             }
-        }
+        };
 
         return coffeeCloudServices;
     };
