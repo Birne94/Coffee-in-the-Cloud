@@ -3,9 +3,9 @@
 
   <h3>Here you can find your current coffee consumption:</h3>
   <p class="alert alert-info">You have <strong>{{ user.coffees }} coffee<span ng-show="user.coffees > 1">s</span></strong> on the list. &bull; Your current balance is <strong>{{user.balance | prettyFloat}}&euro;</strong>.</p>
-  <p class="alert alert-danger" ng-show="user.balance <= 0">
+  <p class="alert alert-danger" ng-show="user.balance <= 2">
     <button data-dismiss="alert" class="close" type="button" aria-hidden="true"><i class="fa fa-times"></i></button>
-    <strong>Warning:</strong> Your Balance is low!
+    <strong>Warning:</strong> Your Balance is low! Please add some more money to your account!
   </p>
 
   <div class="panel panel-default">
