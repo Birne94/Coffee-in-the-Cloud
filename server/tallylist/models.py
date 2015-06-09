@@ -1,3 +1,4 @@
+from server.settings import COFFEE_PRICE
 from django.db import models
 from authentication.models import Account
 from django.utils import timezone
@@ -9,6 +10,12 @@ class TallyListEntry(models.Model):
     created_at = models.DateTimeField(auto_now=True)
     processed = models.BooleanField("check if the entry has been booked yet.",
                                     default=False)
+
+    def save(self, *args, **kwargs):
+        if not self.pk:
+            self.user.balance -= COFFEE_PRICE * self.amount
+            self.user.save()
+        super(TallyListEntry, self).save(*args, **kwargs)
 
     def __unicode__(self):
         return "%d for %s" % (self.amount, unicode(self.user))
