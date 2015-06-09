@@ -8,10 +8,10 @@
     <strong>Warning:</strong> Your Balance is low! Please add some more money to your account!
   </p>
 
-  <div class="panel panel-default">
-    <table class="table" ng-show="user.coffees">
+  <div class="panel panel-default" ng-show="user.coffees">
+    <table class="table" >
       <tr ng-repeat="coffee in tally | limitTo:10">
-        <td >
+        <td>
           {{ coffee.amount }} coffee<span ng-show="coffee.amount > 1">s</span>
         </td>
         <td>
@@ -28,6 +28,7 @@
     </table>
     <div class="panel-footer">Total: {{user.coffees}} coffee<span ng-show="user.coffees > 1">s</span></div>
   </div>
+  
   <h3> Add some more coffee? </h3>
   <div type="button" class=class="btn-group" aria-expanded="false">
     <button type="button" class="btn btn-info" data-ng-click="addCoffee(1)">Add a coffee <i class="fa fa-coffee fa-lg"></i></button>
