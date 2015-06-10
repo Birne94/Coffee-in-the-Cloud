@@ -3,7 +3,7 @@
  **/
 (function() {
     "use strict";
-    var controllers = ["test", "login", "welcome", "schedule", "picturelogin", "tallylist", "header", "statistics"];
+    var controllers = ["test", "login", "welcome", "schedule", "picturelogin", "tallylist", "header", "statistics", "tutorials"];
 
     var includes = ["angular"];
 
@@ -41,6 +41,10 @@
                 .when('/statistics/', {
                     templateUrl: 'views/statistics.html',
                     controller: 'statisticsController'
+                })
+                .when('/tutorials/', {
+                    templateUrl: 'views/tutorials.html',
+                    controller: 'tutorialsController'
                 })
                 .otherwise({
                     redirectTo: '/'
