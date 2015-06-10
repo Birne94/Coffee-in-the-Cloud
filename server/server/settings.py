@@ -142,7 +142,7 @@ MEDIA_URL = '/'
 
 CSRF_COOKIE_NAME = 'csrftoken'
 
-COFFEE_PRICE = 0.20
+COFFEE_PRICE = 0.25
 
 MAIL_SERVER = "mailout.hpi.uni-potsdam.de"
 MAIL_SENDER = "coffee-in-the-cloud@hpi.de"

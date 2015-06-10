@@ -140,6 +140,12 @@ define(["jquery"], function ($) {
                                 result.user.data.push(idxUser[index] || 0);
                             });
 
+                            while (result.labels.length < 3) {
+                                result.labels.length.push("");
+                                result.all.data.push(0);
+                                result.user.data.push(0);
+                            }
+
                             deferred.resolve(result);
                         });
                     });
