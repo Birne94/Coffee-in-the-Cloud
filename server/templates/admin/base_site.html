@@ -1,0 +1,20 @@
+{% extends "admin/base.html" %}
+{% load i18n %}{% load admin_static bootstrapped_goodies_tags %}
+
+{% block extrastyle %}
+    <link href="/js/bower_components/font-awesome/css/font-awesome.css" rel="stylesheet"/>
+{% endblock %}
+
+{% block title %}{% render_with_template_if_exist "admin/admin_title.html" "Django administration" %} |
+    {{ site_title|default:_('Django site admin') }}{% endblock %}
+
+{% block my-nav %}
+    <li><a href="/">Home</a></li>
+    <li class="active"><a href="/admin/">Admin Index</a></li>
+{% endblock %}
+
+{% block branding %}
+    <a class="navbar-brand" href="#/">
+        <i class="fa fa-coffee fa-lg"></i> Coffee in the Cloud
+    </a>
+{% endblock %}

@@ -7,7 +7,8 @@ modules = ("django",
            "drf-nested-routers",
            "markdown",
            "django-filter",
-           "Pillow")
+           "Pillow",
+           "django-admin-bootstrapped")
 
 
 def install(module):
