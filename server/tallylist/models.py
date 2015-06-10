@@ -1,5 +1,6 @@
 from server.settings import COFFEE_PRICE
 from django.db import models
+from django.template.loader import render_to_string
 from authentication.models import Account
 from django.utils import timezone
 from server.mail import send_email
@@ -22,20 +23,15 @@ class TallyListEntry(models.Model):
             if self.user.balance < 2:
                 warnings.append("Warning: Your account balance is low (%.2f EUR)! Please add some more money to your account." % self.user.balance)
 
-            warning_str = "\r\n\r\n" + "\r\n\r\n".join(warnings)
-
             send_email(MAIL_SENDER,
                        [self.user.email],
                        "A coffee has been tracked",
-                       ("Hello %s %s,\r\n\r\n" +
-                       "%d %s been traacked on your account. If this wasn't you, you can remove the coffee within the next 30 minutes.%s\r\n\r\n" +
-                       "Have fun drinking!") % (
-                           self.user.first_name,
-                           self.user.last_name,
-                           self.amount,
-                           "coffee has" if self.amount == 1 else "coffees have",
-                           warning_str
-                        ))
+                       render_to_string("mail-coffee.txt", {
+                           "firstname": self.user.first_name,
+                           "lastname": self.user.last_name,
+                           "amount": self.amount,
+                           "warnings": warnings
+                       }))
 
         super(TallyListEntry, self).save(*args, **kwargs)
 

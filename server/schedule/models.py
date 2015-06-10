@@ -4,11 +4,12 @@ from authentication.models import Account
 from server.mail import send_email
 from server.settings import MAIL_SENDER
 from django.core.exceptions import ValidationError
+from django.template.loader import render_to_string
 
 ScheduleEntryTypes = (
     ("w", "weekly cleaning"),
     ("b", "biweekly cleaning"),
-    ("o", "other cleaning")
+    ("o", "cleaning")
 )
 
 
@@ -21,20 +22,19 @@ class ScheduleEntry(models.Model):
         if not self.pk:
             send_email(MAIL_SENDER,
                        [self.user.email],
-                       "You have been selected for cleaning.",
-                       ("Hello %s %s,\r\n\r\n" +
-                       "You have been selected to do the %s on %s") % (
-                           self.user.first_name,
-                           self.user.last_name,
-                           "weekly cleaning" if self.type == "w" else "biweekly cleaning",
-                           self.date
-                        ))
+                       "You have been selected for cleaning",
+                       render_to_string("mail-schedule.txt", {
+                           "firstname": self.user.first_name,
+                           "lastname": self.user.last_name,
+                           "date": self.date,
+                           "type": dict(ScheduleEntryTypes).get(self.type, "cleaning")
+                       }))
 
         super(ScheduleEntry, self).save(*args, **kwargs)
 
     def clean(self):
         if len(ScheduleEntry.objects.filter(date=self.date).all()) > 0:
             raise ValidationError("There can only be one cleaning a day!")
-        if self.date.weekday() != 4:
-            raise ValidationError("Cleaning can only be done on Fridays!")
+        if self.type != "o" and self.date.weekday() != 4:
+            raise ValidationError("Weekly/Biweekly cleaning can only be done on Fridays!")
 

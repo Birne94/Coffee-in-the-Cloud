@@ -1,0 +1,7 @@
+Hello {{ firstname }} {{ lastname }},
+
+{{ amount }} {% if amount == 1 %}coffee has{% else %}coffees have{% endif %} been traacked on your account. If this wasn't you, you can remove the coffee within the next 30 minutes.
+{% for warning in warnings %}
+{{ warning }}
+{% endfor %}
+Have fun drinking!
