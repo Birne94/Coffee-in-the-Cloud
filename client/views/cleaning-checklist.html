@@ -1,23 +1,31 @@
 <div ng-cloak ng-controller="cleaningController" ng-init="option='weekly'">
     <h1 ng-hide="user">Welcome to Coffee in the Cloud!</h1>
 
-    <h1 ng-show="user">Checklist for {{option}} cleaning!</h1><br>
-    <div class="container">
+    <h1 ng-show="user">Checklist for {{option}} cleaning!</h1>
 
-        <div class="caption">
-            <button type="submit" class="btn btn-primary" ng-click="option='weekly'" aria-selected="true">weekly cleaning</button>
-            <button type="submit" class="btn btn-primary" ng-click="option='biweekly'">biweekly cleaning</button>
-            <br>
-            <table class="table">
+    <p>
+        <button type="submit" class="btn" ng-class="{'btn-info': (option == 'weekly'), 'btn-primary': (option == 'biweekly')}" ng-click="option='weekly'" aria-selected="true">weekly
+            cleaning
+        </button>
+        <button type="submit" class="btn" ng-class="{'btn-info': (option == 'biweekly'), 'btn-primary': (option == 'weekly')}" ng-click="option='biweekly'">biweekly cleaning</button>
+    </p>
+    <div class="panel panel-default" ng-show="user.coffees">
+        <table class="table">
             <tr ng-repeat="step in cleaningSteps | filter:weekly_bi(option)">
-                <td>{{step.id}}</td>
-                <td>{{step.name}}</td>
+                <td>
+                    <div class="checkbox checkbox-success">
+                        <input type="checkbox" id="checkbox{{$id}}">
+                        <label for="checkbox{{$id}}">
+                            {{step.name}}
+                        </label>
+                    </div>
+                </td>
             </tr>
-            </table>
-            <br>
-            <p ng-hide="user">
-                <a data-toggle="modal" data-target="#modal-login" class="btn btn-primary" role="button">Sign in</a>
-            </p>
-        </div>
+        </table>
     </div>
+    <br>
+
+    <p ng-hide="user">
+        <a data-toggle="modal" data-target="#modal-login" class="btn btn-primary" role="button">Sign in</a>
+    </p>
 </div>

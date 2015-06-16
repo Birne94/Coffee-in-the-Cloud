@@ -28,6 +28,7 @@
     "forge": "~0.6.18",
     "ladda-bootstrap": "~0.1.0",
     "fullcalendar": "2.3.1",
-    "Chart.js": "~1.0.2"
+    "Chart.js": "~1.0.2",
+    "awesome-bootstrap-checkbox": "~0.3.4"
   }
 }

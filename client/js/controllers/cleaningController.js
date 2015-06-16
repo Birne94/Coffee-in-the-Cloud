@@ -12,7 +12,7 @@ define(["jquery"], function (jQuery) {
                 {"id": "0.6", "name": "remove water"},
                 {"id": "0.7", "name": "make espresso and pour away"},
                 {"id": "0.8", "name": "do weekly cleaning"},
-                {"id": "1.1", "name": "oupen steam wand"},
+                {"id": "1.1", "name": "open steam wand"},
                 {"id": "1.2", "name": "clean steam wand"},
                 {"id": "1.3", "name": "clean porta filter"},
                 {"id": "1.4", "name": "clean/wipe filter mount"},
