@@ -1,150 +1,17 @@
-<div class="row" ng-show="step == 0">
-    <div class="col-md-6">
-        <a ng-click="next(1)"><img src="/public/images/tutorial-coffee/step01.jpg" class="img-rounded" height="300" /></a>
-    </div>
-    <div class="col-md-6">
-        <a ng-click="next(2)"><img src="/public/images/tutorial-coffee/step02.jpg" class="img-rounded" height="300" /></a>
-    </div>
-</div>
-<div class="row" ng-show="step == 1">
-    <div class="col-md-12">
-        <a ng-click="next()">
-            <img src="/public/images/tutorial-coffee/step03.jpg" class="img-rounded" height="300" ng-show="coffees == 1" />
-            <img src="/public/images/tutorial-coffee/step04.jpg" class="img-rounded" height="300" ng-show="coffees == 2" />
-        </a>
-    </div>
-</div>
-<div class="row" ng-show="step == 2">
-    <div class="col-md-6">
-        <a ng-click="next()"><img src="/public/images/tutorial-coffee/step05.jpg" class="img-rounded" height="300" /></a>
-    </div>
-    <div class="col-md-6">
-        <a ng-click="next()">
-            <img src="/public/images/tutorial-coffee/step06.jpg" class="img-rounded" height="300" ng-show="coffees == 1" />
-            <img src="/public/images/tutorial-coffee/step07.jpg" class="img-rounded" height="300" ng-show="coffees == 2" />
-        </a>
-    </div>
-</div>
-<div class="row" ng-show="step == 3">
-    <div class="col-md-12">
-        <a ng-click="next()">
-            <img src="/public/images/tutorial-coffee/step08.jpg" class="img-rounded" height="300" />
-        </a>
-    </div>
-</div>
-<div class="row" ng-show="step == 4">
-    <div class="col-md-6">
-        <a ng-click="next()">
-            <img src="/public/images/tutorial-coffee/step09.jpg" class="img-rounded" height="300" />
-        </a>
-    </div>
-    <div class="col-md-6">
-        <a ng-click="next()">
-            <img src="/public/images/tutorial-coffee/step10.jpg" class="img-rounded" height="300" />
-        </a>
-    </div>
-</div>
-<div class="row" ng-show="step == 5">
-    <div class="col-md-6">
-        <a ng-click="next()">
-            <img src="/public/images/tutorial-coffee/step12.jpg" class="img-rounded" height="300" ng-show="coffees == 1" />
-            <img src="/public/images/tutorial-coffee/step13.jpg" class="img-rounded" height="300" ng-show="coffees == 2" />
-        </a>
-    </div>
-    <div class="col-md-6">
-        <a ng-click="next()"><img src="/public/images/tutorial-coffee/step14.jpg" class="img-rounded" height="300" /></a>
-    </div>
-</div>
-<div class="row" ng-show="step == 6">
-    <div class="col-md-4">
-        <a ng-click="milk(1)">Milk</a>
-    </div>
-    <div class="col-md-4">
-        <a ng-click="milk(2)">Water</a>
-    </div>
-    <div class="col-md-4">
-        <a ng-click="set(9)">Nothing</a>
-    </div>
-</div>
-<div class="row" ng-show="step == 7 && milk == 1">
-    <div class="col-md-3">
-        <a ng-click="next()">
-            <img src="/public/images/tutorial-coffee/step15.jpg" class="img-rounded" height="300" />
-        </a>
-    </div>
-    <div class="col-md-3">
-        <a ng-click="next()">
-            <img src="/public/images/tutorial-coffee/step16.jpg" class="img-rounded" height="300" />
-        </a>
-    </div>
-    <div class="col-md-3">
-        <a ng-click="next()">
-            <img src="/public/images/tutorial-coffee/step17.jpg" class="img-rounded" height="300" />
-        </a>
-    </div>
-    <div class="col-md-3">
-        <a ng-click="next()">
-            <img src="/public/images/tutorial-coffee/step19.jpg" class="img-rounded" height="300" />
-        </a>
-    </div>
-</div>
-<div class="row" ng-show="step == 8 && milk == 1">
-    <div class="col-md-6">
-        <a ng-click="set(9)">
-            <img src="/public/images/tutorial-coffee/step23.jpg" class="img-rounded" height="300" />
-        </a>
-    </div>
-    <div class="col-md-6">
-        <a ng-click="set(9)">
-            <img src="/public/images/tutorial-coffee/step24.jpg" class="img-rounded" height="300" />
-        </a>
-    </div>
-</div>
-<div class="row" ng-show="step == 7 && milk == 2">
-    <div class="col-md-12">
-        <a ng-click="set(9)">
-            <img src="/public/images/tutorial-coffee/step25.jpg" class="img-rounded" height="300" />
-        </a>
-    </div>
-</div>
-<div class="row" ng-show="step == 9">
-    <div class="col-md-4">
-        <a ng-click="next()">
-            <img src="/public/images/tutorial-coffee/step26.jpg" class="img-rounded" height="300" />
-        </a>
-    </div>
-    <div class="col-md-4">
-        <a ng-click="next()">
-            <img src="/public/images/tutorial-coffee/step27.jpg" class="img-rounded" height="300" />
-        </a>
-    </div>
-    <div class="col-md-4">
-        <a ng-click="next()">
-            <img src="/public/images/tutorial-coffee/step28.jpg" class="img-rounded" height="300" />
-        </a>
-    </div>
-</div>
-<div class="row" ng-show="step == 10">
-    <div class="col-md-5">
-        <a ng-click="next()">
-            <img src="/public/images/tutorial-coffee/step29.jpg" class="img-rounded" height="300" />
-        </a>
-    </div>
-    <div class="col-md-2">
-        <a ng-click="next()">
-            <img src="/public/images/tutorial-coffee/step31.jpg" class="img-rounded" height="300" />
-        </a>
-    </div>
-    <div class="col-md-5">
-        <a ng-click="next()">
-            <img src="/public/images/tutorial-coffee/step30.jpg" class="img-rounded" height="300" />
-        </a>
-    </div>
-</div>
-<div class="row" ng-show="step == 11">
-    <div class="col-md-4">
-        <a ng-click="">
-            <img src="/public/images/tutorial-coffee/step22.jpg" class="img-rounded" height="300" />
-        </a>
-    </div>
+<h3>Coffee Tutorial</h3>
+
+<div class="well">
+    <center>
+        <div class="tutorial-image" ng-hide="choice">
+            <a ng-click="next()"><img ng-src="{{current_image.src}}" class="img-rounded" height="300"/></a>
+            <div ng-show="step < 23" class="tutorial-button" ng-click="next()"><a>&gt;</a></div>
+            <h4 ng-show="step == 23">Congratulations!</h4>
+        </div>
+        <div ng-show="choice">
+            <span class="tutorial-image" ng-repeat="c in choice">
+                <a ng-click="next(c.cb)"><img ng-src="{{c.src}}" class="img-rounded" height="300"/></a>
+            </span>
+            <h4>Select one!</h4>
+        </div>
+    </center>
 </div>
