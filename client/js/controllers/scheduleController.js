@@ -14,8 +14,10 @@ define(["jquery"], function (jQuery) {
 
                 $(data).each(function (idx, obj) {
                     events.push({
-                        title: obj.user.first_name + " " + obj.user.last_name,
-                        start: obj.date
+                        title: obj.user.first_name + " " + obj.user.last_name + (obj.type == "w" ? " (weekly)" : (obj.type == "b" ? " (biweekly)" : " (other)")),
+                        start: obj.date,
+                        color: obj.type == "w" ? "#F7464A" : (obj.type == "b" ? "#FDB45C" : "#46BFBD"),
+                        allDay: true
                     });
                 });
 

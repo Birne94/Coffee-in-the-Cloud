@@ -1,3 +1,32 @@
+MIME-Version: 1.0
+Subject: {{ subject }}
+From: {{ sender_mail }}
+To: {{ mail }}
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+Content-Type: multipart/alternative; boundary="==============={{ id }}=="
+MIME-Version: 1.0
+
+--==============={{ id }}==
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+
 Hello {{ firstname }} {{ lastname }},
 
 You have been selected to do the {{ type }} on {{ date }}.
+
+--==============={{ id }}==
+Content-Type: text/html; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+
+<h3>Hello {{ firstname }} {{ lastname }},</h3>
+
+<p>You have been selected to do the <strong>{{ type }}</strong> on <strong>{{ date }}</strong>.</p>
+
+--==============={{ id }}==
+Content-Type: text/calendar; charset="utf-8"; method=REQUEST
+Content-Transfer-Encoding: base64
+
+{{ ical }}
+
+--==============={{ id }}==

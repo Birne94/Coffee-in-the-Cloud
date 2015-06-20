@@ -1,0 +1,16 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:{{ sender_name }}
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:{{ sender_mail }}
+ORGANIZER;CN="{{ sender_name }}":MAILTO:{{ sender_mail }}
+LOCATION:BPM Lighthouse
+SUMMARY:{{ subject }}
+DESCRIPTION:{{ content }}
+CLASS:PUBLIC
+DTSTART:{{ start }}
+DTEND:{{ stop }}
+DTSTAMP:{{ now }}
+END:VEVENT
+END:VCALENDAR

@@ -8,7 +8,8 @@ modules = ("django",
            "markdown",
            "django-filter",
            "Pillow",
-           "django-admin-bootstrapped")
+           "django-admin-bootstrapped",
+		   "icalendar")
 
 
 def install(module):
