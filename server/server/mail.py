@@ -30,7 +30,7 @@ def send_email(from_, to, subject, content, attachment=None, content_type=None):
             msg.as_string()
         )
         connection.quit()
-    except"":
+    except:
         import sys
         print sys.exc_info()[0]
 
