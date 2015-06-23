@@ -22,6 +22,9 @@ define(["jquery"], function (jQuery) {
         });
       };
 
+        $scope.blame = function() {
+            service.blame();
+        }
     }
 
     pictureloginController.$inject = ["$scope", "$rootScope", "seed.status", "seed.coffeeCloud"];
