@@ -68,6 +68,10 @@ define(["jquery"], function ($) {
                     return $http.get(url("tally"));
                 },
 
+                all: function() {
+                    return $http.get(url("tally-all"));
+                },
+
                 add: function(amount) {
                     var tally_obj = {
                         amount: amount || 1

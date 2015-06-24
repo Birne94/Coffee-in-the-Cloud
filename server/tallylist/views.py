@@ -35,6 +35,25 @@ class TallyListEntryViewSet(viewsets.ModelViewSet):
         return super(TallyListEntryViewSet, self).perform_create(serializer)
 
 
+class TallyListAllEntryViewSet(viewsets.ModelViewSet):
+    queryset = TallyListEntry.objects.order_by('-created_at')
+    serializer_class = TallyListEntrySerializer
+
+    def get_permissions(self):
+        if self.request.method in permissions.SAFE_METHODS:
+            return (permissions.AllowAny(),)
+
+        if self.request.method == 'POST':
+            return (permissions.AllowAny(),)
+
+        return (permissions.IsAuthenticated(),)
+
+    def list(self, request):
+        serializer = self.serializer_class(self.queryset, many=True)
+
+        return Response(serializer.data)
+
+
 class AccountTallyListEntryViewSet(viewsets.ModelViewSet):
     queryset = TallyListEntry.objects.select_related('user').order_by('-created_at')
     serializer_class = TallyListEntrySerializer

@@ -4,13 +4,14 @@ from django.contrib import admin
 from django.views.decorators.csrf import csrf_exempt
 from rest_framework_nested import routers
 from authentication.views import AccountViewSet, LoginView, LogoutView, StatusView
-from tallylist.views import TallyListEntryViewSet, AccountTallyListEntryViewSet
+from tallylist.views import TallyListEntryViewSet, AccountTallyListEntryViewSet, TallyListAllEntryViewSet
 from schedule.views import ScheduleEntryViewSet
 from statistics.views import StatisticsView, StatisticsOwnView, StatisticsCoffeeTypeView
 
 router = routers.SimpleRouter()
 router.register("accounts", AccountViewSet)
 router.register("tally", TallyListEntryViewSet)
+router.register("tally-all", TallyListAllEntryViewSet)
 router.register("schedule", ScheduleEntryViewSet)
 
 accounts_router = routers.NestedSimpleRouter(
