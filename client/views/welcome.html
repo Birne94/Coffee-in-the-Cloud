@@ -8,6 +8,9 @@
   </p>
 
   <h1 ng-show="user">Welcome {{ user.first_name }} {{ user.last_name}}!</h1><br>
+  <div ng-show="maxUser.indexOf(user.id) > -1">
+    KRONE
+  </div>
   <div class="container">
     <a href="https://bpt.hpi.uni-potsdam.de/Public/WebHome">
       <img class="img-rounded img-header img-responsive" width="500" src="../../public/images/coffee.jpg" alt="wimi" />
