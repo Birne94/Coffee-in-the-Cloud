@@ -1,7 +1,6 @@
-<div ng-cloak ng-controller="cleaningController" ng-init="option='weekly'" ng-show="user">
-    <h1 ng-hide="user">Welcome to Coffee in the Cloud!</h1>
+<div ng-cloak ng-controller="cleaningController" ng-init="option='weekly'">
 
-    <h1 ng-show="user">Checklist for {{option}} cleaning!</h1>
+    <h1>Checklist for {{option}} cleaning!</h1>
 
     <p>
         <button type="submit" class="btn" ng-class="{'btn-info': (option == 'weekly'), 'btn-primary': (option == 'biweekly')}" ng-click="option='weekly'" aria-selected="true">weekly
@@ -10,7 +9,7 @@
         <button type="submit" class="btn" ng-class="{'btn-info': (option == 'biweekly'), 'btn-primary': (option == 'weekly')}" ng-click="option='biweekly'">biweekly cleaning</button>
     </p>
 
-    <div class="panel panel-default" ng-show="user.coffees">
+    <div class="panel panel-default">
         <table class="table">
             <tr ng-repeat="step in cleaningSteps | filter:weekly_bi(option)">
                 <td >
@@ -27,8 +26,4 @@
 
     <button type="button" class="btn btn-danger" aria-label="Left Align" ng-click="checkAll()" >Reset</button>
     <br>
-
-    <p ng-hide="user">
-        <a data-toggle="modal" data-target="#modal-login" class="btn btn-primary" role="button">Sign in</a>
-    </p>
 </div>
