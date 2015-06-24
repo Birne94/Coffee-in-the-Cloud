@@ -110,6 +110,8 @@ define(["jquery"], function (jQuery) {
     function statisticsController($scope, $rootScope, service) {
         $rootScope.tablet = false;
 
+        
+
         if (! $scope.initialized) {
             $scope.initialized = true;
 

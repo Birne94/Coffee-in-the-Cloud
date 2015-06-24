@@ -2,6 +2,31 @@ define(["jquery"], function (jQuery) {
     "use strict";
 
     function loginController($scope, $rootScope, alert, service, $location) {
+      service.tally.all().success(function (result) {
+
+        var users = {};
+
+        $(result).each(function(index, entry) {
+
+          users[entry.user.id] = (users[entry.user.id] || 0) + entry.amount;
+
+        });
+
+        var maxValue = 0;
+        $rootScope.maxUser = [];
+
+        $.each(users, function(key, value) {
+          if (value > maxValue) {
+            maxValue = value;
+            $rootScope.maxUser = [parseInt(key)];
+          }
+          else if (value == maxValue) {
+            $rootScope.maxUser.push(parseInt(key));
+          }
+        });
+        console.log($rootScope.maxUser);
+      });
+
         $scope.updateUser = function () {
             service.user.check().success(function (result) {
                 if (result.status === true) {
