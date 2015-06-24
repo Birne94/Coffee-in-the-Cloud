@@ -1,5 +1,8 @@
 <div>
   <div class="row">
+    <p class="alert alert-info" ng-show="cleaning">
+      {{cleaning_message}}
+    </p>
     <div class="col-md-4" ng-repeat="user in users">
       <a data-toggle="modal" data-target="#coffe-popup" ng-click="select(user)">
         <img ng-src="{{ user.avatar}}" class="img-rounded" height="150"></img>
@@ -12,12 +15,12 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
         <h4 class="modal-title">Hey {{ tablet_user.first_name }} {{ tablet_user.last_name }}</h4>
       </div>
       <div class="modal-body">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
         <p>Would you like to drink a small or a large cup of coffee?</p>
         <div class="text-center row vertical-align">
           <div class="col-md-6">

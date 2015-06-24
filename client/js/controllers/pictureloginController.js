@@ -4,7 +4,29 @@ define(["jquery"], function (jQuery) {
     function pictureloginController($scope, $rootScope, alert, service) {
 
       $rootScope.tablet = true;
+        $scope.schedule = null;
+        service.schedule.get().success(function (data) {
+            $scope.schedule = data;
 
+            var date=new Date();
+            var dd=date.getDate();
+            var mm=date.getMonth() + 1;
+            var yyyy=date.getFullYear();
+            if(mm<10){
+                mm="0"+mm;
+            };
+            if(dd<10){
+                dd="0"+dd;
+            }
+            var today = yyyy+"-"+mm+"-"+dd;
+
+            $.each(data, function (idx, obj) {
+                if (today==obj.date){
+                    $scope.cleaning=true;
+                    $scope.cleaning_message=obj.user.first_name + " " + obj.user.last_name +" have to do the"+ (obj.type == "w" ? " weekly " : (obj.type == "b" ? " biweekly " : " other "))+"cleaning today";
+                }
+            });
+        });
       $scope.tablet_user = null;
 
       service.user.list().success(function (data) {
