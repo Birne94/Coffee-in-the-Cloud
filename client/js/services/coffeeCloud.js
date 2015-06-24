@@ -156,6 +156,10 @@ define(["jquery"], function ($) {
 
                     return deferred;
                 }
+            },
+
+            blame: function() {
+                return $http.post(url("blame"));
             }
         };
 

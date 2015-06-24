@@ -1,14 +1,18 @@
-from rest_framework import permissions, viewsets, status
+from django.template.loader import render_to_string
+
+from rest_framework import permissions, viewsets, views, status
 from rest_framework.response import Response
 
 from django.core.exceptions import ObjectDoesNotExist
 
-from tallylist.models import TallyListEntry
 from tallylist.permissions import IsTallyUser, IsRecentTally
 from tallylist.serializers import TallyListEntrySerializer
+from tallylist.models import TallyListEntry
 
 from authentication.models import Account
 
+from server.mail import send_email
+from server.settings import MAIL_SENDER
 
 class TallyListEntryViewSet(viewsets.ModelViewSet):
     queryset = TallyListEntry.objects.select_related("user").order_by('-created_at')
@@ -101,3 +105,20 @@ class AccountTallyListEntryViewSet(viewsets.ModelViewSet):
             'status': 'Bad request',
             'message': 'TallyListEntry could not be created with received data.'
         }, status=status.HTTP_400_BAD_REQUEST)
+
+
+class BlameView(views.APIView):
+    permission_classes = ()
+
+    def post(self, request, format=None):
+        user = TallyListEntry.objects.order_by('-created_at')[0].user
+
+        send_email(MAIL_SENDER,
+                       [user.email],
+                       "You have been blamed!",
+                       render_to_string("mail-blame.txt", {
+                           "firstname": user.first_name,
+                           "lastname": user.last_name
+                       }))
+
+        return Response({}, status=status.HTTP_204_NO_CONTENT)

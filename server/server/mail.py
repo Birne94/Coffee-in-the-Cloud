@@ -23,6 +23,8 @@ def send_email(from_, to, subject, content, attachment=None, content_type=None):
             att["Filename"] = "subject.ics"
             msg.attach(att)
 
+        print msg.as_string()
+
         connection = smtplib.SMTP(MAIL_SERVER)
         connection.sendmail(
             from_,

@@ -1,4 +1,4 @@
-<div ng-cloak ng-controller="cleaningController" ng-init="option='weekly'">
+<div ng-cloak ng-controller="cleaningController" ng-init="option='weekly'" ng-show="user">
     <h1 ng-hide="user">Welcome to Coffee in the Cloud!</h1>
 
     <h1 ng-show="user">Checklist for {{option}} cleaning!</h1>
@@ -9,13 +9,14 @@
         </button>
         <button type="submit" class="btn" ng-class="{'btn-info': (option == 'biweekly'), 'btn-primary': (option == 'weekly')}" ng-click="option='biweekly'">biweekly cleaning</button>
     </p>
+
     <div class="panel panel-default" ng-show="user.coffees">
         <table class="table">
             <tr ng-repeat="step in cleaningSteps | filter:weekly_bi(option)">
-                <td>
+                <td >
                     <div class="checkbox checkbox-success">
-                        <input type="checkbox" id="checkbox{{$id}}">
-                        <label for="checkbox{{$id}}">
+                        <input type="checkbox" ng-model="step.Selected" ng-true-value="'myClass'" ng-false-value="''" id="checkbox{{$id}}">
+                        <label for="checkbox{{$id}}" class="{{step.Selected}}">
                             {{step.name}}
                         </label>
                     </div>
@@ -23,6 +24,8 @@
             </tr>
         </table>
     </div>
+
+    <button type="button" class="btn btn-danger" aria-label="Left Align" ng-click="checkAll()" >Reset</button>
     <br>
 
     <p ng-hide="user">
