@@ -13,10 +13,10 @@
     <div class="panel panel-default" ng-show="user.coffees">
         <table class="table">
             <tr ng-repeat="step in cleaningSteps | filter:weekly_bi(option)">
-                <td class="{{step.Selected}}">
+                <td >
                     <div class="checkbox checkbox-success">
                         <input type="checkbox" ng-model="step.Selected" ng-true-value="'myClass'" ng-false-value="''" id="checkbox{{$id}}">
-                        <label for="checkbox{{$id}}">
+                        <label for="checkbox{{$id}}" class="{{step.Selected}}">
                             {{step.name}}
                         </label>
                     </div>
