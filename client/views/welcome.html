@@ -1,10 +1,11 @@
 <div ng-cloak ng-controller="welcomeController">
   <h1 ng-hide="user">Welcome to Coffee in the Cloud!</h1>
-  <p class="alert alert-info" ng-show="cleaning">
-    <button data-dismiss="alert" class="close" type="button" aria-hidden="true"><i class="fa fa-times"></i></button>
-    {{cleaning_message}}
-  </p>
+
   <p class="alert alert-info" ng-show="user">You have <strong>{{ user.coffees }} coffee<span ng-show="user.coffees > 1">s</span></strong> on the list. &bull; Your current balance is <strong>{{user.balance | prettyFloat}}&euro;</strong>.</p>
+  <p class="alert alert-warning" ng-show="cleaning">
+    <button data-dismiss="alert" class="close" type="button" aria-hidden="true"><i class="fa fa-times"></i></button>
+    <b>Info: </b>You have been selected for <i><b>{{cleaning_type}}</i></b> for today.
+  </p>
   <p class="alert alert-danger" ng-show="user && user.balance <= 2">
     <button data-dismiss="alert" class="close" type="button" aria-hidden="true"><i class="fa fa-times"></i></button>
     <strong>Warning:</strong> Your Balance is low! Please add some more money to your account!

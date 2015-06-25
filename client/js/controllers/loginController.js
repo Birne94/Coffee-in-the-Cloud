@@ -24,7 +24,6 @@ define(["jquery"], function (jQuery) {
             $rootScope.maxUser.push(parseInt(key));
           }
         });
-        console.log($rootScope.maxUser);
       });
 
         $scope.updateUser = function () {

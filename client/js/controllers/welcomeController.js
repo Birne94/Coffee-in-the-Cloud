@@ -23,7 +23,8 @@ define(["jquery"], function (jQuery) {
             $.each(data, function (idx, obj) {
                 if (today==obj.date && $rootScope.user.id==obj.user.id){
                     $scope.cleaning=true;
-                    $scope.cleaning_message=obj.user.first_name + " " + obj.user.last_name +" you have to clean today the "+(obj.type == "w" ? " weekly " : (obj.type == "b" ? " biweekly " : " other "))+"cleaning";
+                    //$scope.cleaner=obj.user.first_name + " " + obj.user.last_name;
+                    $scope.cleaning_type = (obj.type == "w" ? " weekly " : (obj.type == "b" ? " biweekly " : " other ")) + " cleaning";
                 }
             });
         });
