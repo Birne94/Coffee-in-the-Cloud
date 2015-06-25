@@ -4,6 +4,7 @@ define(["jquery"], function (jQuery) {
     function welcomeController($scope, $rootScope, alert, service) {
         $rootScope.tablet = false;
         $scope.schedule = null;
+        $scope.cleaning = false;
         service.schedule.get().success(function (data) {
             $scope.schedule = data;
 
