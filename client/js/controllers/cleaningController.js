@@ -42,6 +42,11 @@ define(["jquery"], function (jQuery) {
           return "";
       }
     };
+
+    $rootScope.finishedCleaning = function() {
+      $rootScope.cleaning= false;
+      alert.success("Thank you for doing the cleaning!");
+    }
   }
 
 

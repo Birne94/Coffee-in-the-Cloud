@@ -4,7 +4,7 @@ define(["jquery"], function (jQuery) {
     function welcomeController($scope, $rootScope, alert, service) {
         $rootScope.tablet = false;
         $scope.schedule = null;
-        $scope.cleaning = false;
+        $rootScope.cleaning = false;
         service.schedule.get().success(function (data) {
             $scope.schedule = data;
 
@@ -22,13 +22,20 @@ define(["jquery"], function (jQuery) {
 
             $.each(data, function (idx, obj) {
                 if (today==obj.date && $rootScope.user.id==obj.user.id){
-                    $scope.cleaning=true;
+                    $rootScope.cleaning=true;
                     //$scope.cleaner=obj.user.first_name + " " + obj.user.last_name;
                     $scope.cleaning_type = (obj.type == "w" ? " weekly " : (obj.type == "b" ? " biweekly " : " other ")) + " cleaning";
                 }
             });
         });
+
+        $rootScope.finishedCleaning = function() {
+          $rootScope.cleaning= false;
+          alert.success("Thank you for doing the cleaning!");
+        }
     }
+
+
 
     welcomeController.$inject = ["$scope", "$rootScope", "seed.status", "seed.coffeeCloud"];
 
