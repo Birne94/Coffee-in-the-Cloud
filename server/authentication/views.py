@@ -95,3 +95,28 @@ class StatusView(views.APIView):
             return Response({"user": serialized.data,
                              "status": True}, status=status.HTTP_200_OK)
         return Response({"status": False}, status=status.HTTP_200_OK)
+
+
+class SettingsView(views.APIView):
+    permission_classes = (permissions.IsAuthenticated,)
+    user_settings = ["receive_emails", "show_in_rankings"]
+
+    def get(self, request, format=None):
+        result = {}
+        for setting in self.user_settings:
+            value = getattr(request.user, setting, None)
+
+            if value is not None:
+                result[setting] = value
+
+        return Response(result, status=status.HTTP_200_OK)
+
+    def post(self, request, format=None):
+        for setting in self.user_settings:
+            value = request.data.get(setting, None)
+
+            if value is not None:
+                setattr(request.user, setting, value)
+        request.user.save()
+
+        return Response({}, status=status.HTTP_204_NO_CONTENT)

@@ -19,19 +19,20 @@ class TallyListEntry(models.Model):
             self.user.balance -= COFFEE_PRICE * self.amount
             self.user.save()
 
-            warnings = []
-            if self.user.balance < 2:
-                warnings.append("Warning: Your account balance is low (%.2f EUR)! Please add some more money to your account." % self.user.balance)
+            if self.user.receive_emails:
+                warnings = []
+                if self.user.balance < 2:
+                    warnings.append("Warning: Your account balance is low (%.2f EUR)! Please add some more money to your account." % self.user.balance)
 
-            send_email(MAIL_SENDER,
-                       [self.user.email],
-                       "A coffee has been tracked",
-                       render_to_string("mail-coffee.txt", {
-                           "firstname": self.user.first_name,
-                           "lastname": self.user.last_name,
-                           "amount": self.amount,
-                           "warnings": warnings
-                       }))
+                send_email(MAIL_SENDER,
+                           [self.user.email],
+                           "A coffee has been tracked",
+                           render_to_string("mail-coffee.txt", {
+                               "firstname": self.user.first_name,
+                               "lastname": self.user.last_name,
+                               "amount": self.amount,
+                               "warnings": warnings
+                           }))
 
         super(TallyListEntry, self).save(*args, **kwargs)
 

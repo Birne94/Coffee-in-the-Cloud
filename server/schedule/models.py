@@ -31,7 +31,7 @@ class ScheduleEntry(models.Model):
     done = models.BooleanField(default=False)
 
     def save(self, *args, **kwargs):
-        if not self.pk:
+        if not self.pk and self.user.receive_emails:
             ical = Calendar()
             subject = "You have been selected for cleaning"
             ical["method"] = "REQUEST"

@@ -162,6 +162,15 @@ define(["jquery"], function ($) {
                 }
             },
 
+            settings: {
+                get: function() {
+                    return $http.get(url("auth/settings"));
+                },
+                post: function(settings) {
+                    return $http.post(url("auth/settings"), settings);
+                },
+            },
+
             blame: function() {
                 return $http.post(url("blame"));
             }

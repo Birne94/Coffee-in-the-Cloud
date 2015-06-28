@@ -54,6 +54,10 @@ class Account(AbstractBaseUser, PermissionsMixin):
     # current user balance
     balance = models.FloatField("account balance", default=0)
 
+    # settings
+    receive_emails = models.BooleanField("receive notification emails", default=True)
+    show_in_rankings = models.BooleanField("show in rankings and statistics", default=True)
+
     objects = AccountManager()
 
     USERNAME_FIELD = "email"

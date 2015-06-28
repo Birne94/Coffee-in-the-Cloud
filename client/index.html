@@ -29,62 +29,79 @@
     <link rel="stylesheet" href="js/bower_components/fullcalendar/dist/fullcalendar.min.css"/>
 </head>
 <body>
-  <header>
+<header>
     <nav class="navbar navbar-default" ng-controller="headerController">
         <div class="container-fluid">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                        aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
 
-          <a class="navbar-brand" href="#/">
-            <i class="fa fa-coffee fa-lg"></i> Coffee in the Cloud
-          </a>
-        </div> <!-- /.navbar-header -->
+                <a class="navbar-brand" href="#/">
+                    <i class="fa fa-coffee fa-lg"></i> Coffee in the Cloud
+                </a>
+            </div>
+            <!-- /.navbar-header -->
 
-        <div class="collapse navbar-collapse" id="navbar">
-          <ul ng-cloak  class="nav navbar-nav" >
-            <li ng-show="user" ng-class="{ active: isActive('/')}"><a href="#/">Home</a></li>
-              <li ng-show="user" ng-class="{ active: isActive('/tallylist/')}"><a href="#/tallylist/">Tally List</a></li>
-              <li ng-show="user" ng-class="{ active: isActive('/schedule/')}"><a href="#/schedule/">Cleaning Schedule</a></li>
-              <li ng-show="user" ng-class="{ active: isActive('/statistics/')}"><a href="#/statistics/">Statistics</a></li>
-              <li ng-show="user" ng-class="{ active: isActive('/tutorials/')}"><a href="#/tutorials/">Tutorials</a></li>
-              <li ng-class="{ active: isActive('/cleaning-checklist/')}"><a href="#/cleaning-checklist/">Cleaning-Checklist</a></li>
-          </ul>
-          <ul class="nav navbar-nav navbar-right" ng-controller="loginController">
-            <button type="button" class="btn btn-default navbar-btn" ng-hide="user" data-toggle="modal" data-target="#modal-login">Sign in</button>
-            <button type="button" class="btn btn-default navbar-btn" ng-cloak ng-show="user" ng-click="logout(true)">
-              <img ng-src="{{ user.avatar }}" ng-show="user.avatar" ng-cloak height="20" />
-              Sign out
-            </button>
-          </ul>
-        </div> <!-- /.navbar-collapse -->
-      </div> <!-- /.container-fluid -->
+            <div class="collapse navbar-collapse" id="navbar">
+                <ul ng-cloak class="nav navbar-nav">
+                    <li ng-show="user" ng-class="{ active: isActive('/')}"><a href="#/">Home</a></li>
+                    <li ng-show="user" ng-class="{ active: isActive('/tallylist/')}"><a href="#/tallylist/">Tally
+                        List</a></li>
+                    <li ng-show="user" ng-class="{ active: isActive('/schedule/')}"><a href="#/schedule/">Cleaning
+                        Schedule</a></li>
+                    <li ng-show="user" ng-class="{ active: isActive('/statistics/')}"><a
+                            href="#/statistics/">Statistics</a></li>
+                    <li ng-show="user" ng-class="{ active: isActive('/tutorials/')}"><a
+                            href="#/tutorials/">Tutorials</a></li>
+                    <li ng-class="{ active: isActive('/cleaning-checklist/')}"><a href="#/cleaning-checklist/">Cleaning-Checklist</a>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right" ng-controller="loginController">
+                    <button type="button" class="btn btn-default navbar-btn" ng-hide="user" data-toggle="modal"
+                            data-target="#modal-login">Sign in
+                    </button>
+                    <button type="button" class="btn btn-default navbar-btn" ng-cloak ng-show="user"
+                            ng-click="logout(true)">
+                        <img ng-src="{{ user.avatar }}" ng-show="user.avatar" ng-cloak height="20"/>
+                        Sign out
+                    </button>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
     </nav>
-  </header>
+</header>
 
-  <div class="container">
+<div class="container">
     <div id="status"></div>
     <div ng-view></div>
-  </div>
-  <ng-include src="'views/login-popup.html'"></ng-include>
+</div>
+<ng-include src="'views/login-popup.html'"></ng-include>
 
-  <footer class="footer" ng-controller="loginController">
+<footer class="footer" ng-controller="loginController">
     <div class="container">
-      <div class="text-muted">
-        <div class="pull-right">
-          <a href="/admin/" target="_blank"><i class="fa fa-magic fa-tablet1"></i></a>
-          &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-          <a href="/#/tablet/" ng-click="logout(false)"><i class="fa fa-tablet fa-tablet1"></i></a>
+        <div class="text-muted">
+            <div class="pull-right">
+                <span ng-show="user" ng-cloak>
+                    <a href="/#/settings/" title="Settings" tooltip><i class="fa fa-cog fa-tablet1"></i></a>
+                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                </span>
+                <a href="/admin/" target="_blank" title="Admin Interface" tooltip><i class="fa fa-magic fa-tablet1"></i></a>
+                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                <a href="/#/tablet/" ng-click="logout(false)" title="Enter tablet mode" tooltip><i class="fa fa-tablet fa-tablet1"></i></a>
+            </div>
+            <div>
+                <a href="https://hpi.de/forschung/fachgebiete/business-process-technology.html" target="_blank">Bussiness
+                    Process Technology</a>
+            </div>
         </div>
-        <div>
-          <a href="https://hpi.de/forschung/fachgebiete/business-process-technology.html" target="_blank">Bussiness Process Technology</a>
-        </div>
-      </div>
     </div>
-  </footer>
+</footer>
 </body>
 </html>
