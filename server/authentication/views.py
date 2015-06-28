@@ -112,6 +112,20 @@ class SettingsView(views.APIView):
         return Response(result, status=status.HTTP_200_OK)
 
     def post(self, request, format=None):
+        old_password = request.data.get("pw_old", None)
+        new_password = request.data.get("pw_new", None)
+
+        if old_password and new_password:
+            if request.user.check_password(old_password):
+                request.user.set_password(new_password)
+                request.user.save()
+                print request.user.email
+                account = authenticate(email=request.user.email, password=new_password)
+                print account
+                login(request, account)
+            else:
+                return Response({}, status=status.HTTP_400_BAD_REQUEST)
+
         for setting in self.user_settings:
             value = request.data.get(setting, None)
 
