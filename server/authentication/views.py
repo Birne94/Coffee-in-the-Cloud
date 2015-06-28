@@ -1,4 +1,11 @@
+import base64
+import cStringIO
+import sys
+import time
+
 from django.contrib.auth import authenticate, login, logout
+from django.core.files import File
+from django.core.files.uploadedfile import InMemoryUploadedFile
 
 from rest_framework import permissions, status, views, viewsets
 from rest_framework.response import Response
@@ -125,6 +132,22 @@ class SettingsView(views.APIView):
                 login(request, account)
             else:
                 return Response({}, status=status.HTTP_400_BAD_REQUEST)
+
+        avatar = request.data.get("avatar", None)
+        if avatar:
+            base64_parts = avatar.split(",", 1)
+            file_stream = cStringIO.StringIO(base64.b64decode(base64_parts[1]))
+            ext = "png" if "png" in base64_parts[0] else "jpg"
+            file_name = "%s_%s.%s" % (request.user.pk, int(time.time()*1000), ext)
+            image = InMemoryUploadedFile(
+                file_stream,
+               field_name='avatar',
+               name=file_name,
+               content_type="image/%s" % ext,
+               size=sys.getsizeof(file),
+               charset=None)
+            request.user.avatar.save(file_name, image)
+            request.user.save()
 
         for setting in self.user_settings:
             value = request.data.get(setting, None)

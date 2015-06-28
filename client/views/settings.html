@@ -1,6 +1,6 @@
 <h1>Your settings</h1>
 
-<form class="form-horizontal" ng-controller="settingsController">
+<form id="fileupload" class="form-horizontal" ng-controller="settingsController">
     <div class="form-group">
         <label for="email" class="col-sm-2 control-label">Email</label>
 
@@ -13,6 +13,25 @@
 
         <div class="col-sm-10">
             <input type="text" class="form-control" id="name" value="{{user.first_name}} {{user.last_name}}" readonly>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="avatar" class="col-sm-2 control-label">Avatar</label>
+
+        <div class="col-sm-8">
+            <div class="pull-left">
+                <span class="helper"></span> <img ng-src="{{ user.avatar }}" ng-show="user.avatar" height="35" class="avatar" />
+            </div>
+
+            <div class="row fileupload-buttonbar">
+                <div class="col-lg-7">
+                    <span class="btn btn-success fileinput-button">
+                        <i class="glyphicon glyphicon-plus"></i>
+                        <span>Choose file...</span>
+                        <input type="file" name="avatar" fileread="settings.avatar">
+                    </span>
+                </div>
+            </div>
         </div>
     </div>
     <div class="form-group">

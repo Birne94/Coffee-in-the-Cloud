@@ -1,6 +1,6 @@
 (function () {
 	"use strict";
-	var directives = ["tooltip"];
+	var directives = ["tooltip", "fileread"];
 
 	var includes = ["angular"];
 

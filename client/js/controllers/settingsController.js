@@ -28,6 +28,7 @@ define(["jquery"], function (jQuery) {
 
             service.settings.post($scope.settings).success(function (result) {
                 $scope.reset();
+                $rootScope.$broadcast('updateUser', []);
                 alert.success("Settings updated.");
             }).error(function (result) {
                 alert.error("Error pushing data.");
