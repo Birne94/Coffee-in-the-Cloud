@@ -28,6 +28,7 @@ class ScheduleEntry(models.Model):
     user = models.ForeignKey(Account)
     date = models.DateField()
     type = models.CharField(max_length=1, choices=ScheduleEntryTypes)
+    done = models.BooleanField(default=False)
 
     def save(self, *args, **kwargs):
         if not self.pk:

@@ -21,7 +21,7 @@ define(["jquery"], function (jQuery) {
             var today = yyyy+"-"+mm+"-"+dd;
 
             $.each(data, function (idx, obj) {
-                if (today==obj.date && $rootScope.user.id==obj.user.id){
+                if (today==obj.date && $rootScope.user.id==obj.user.id && !obj.done){
                     $rootScope.cleaning=true;
                     //$scope.cleaner=obj.user.first_name + " " + obj.user.last_name;
                     $scope.cleaning_type = (obj.type == "w" ? " weekly " : (obj.type == "b" ? " biweekly " : " other ")) + " cleaning";

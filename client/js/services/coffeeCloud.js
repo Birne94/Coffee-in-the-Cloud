@@ -95,6 +95,10 @@ define(["jquery"], function ($) {
             schedule: {
                 get: function() {
                     return $http.get(url("schedule"));
+                },
+
+                done: function() {
+                    return $http.post(url("schedule/done"));
                 }
             },
 

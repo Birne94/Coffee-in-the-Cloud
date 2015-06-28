@@ -8,7 +8,7 @@ class ScheduleEntrySerializer(serializers.ModelSerializer):
 
     class Meta:
         model = ScheduleEntry
-        fields = ("user", "type", "date")
+        fields = ("user", "type", "date", "done")
 
         def get_validation_exclusions(self, *args, **kwargs):
             exclusions = super(ScheduleEntrySerializer, self).get_validation_exclusions()

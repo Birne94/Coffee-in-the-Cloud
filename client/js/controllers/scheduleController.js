@@ -16,7 +16,8 @@ define(["jquery"], function (jQuery) {
                     events.push({
                         title: obj.user.first_name + " " + obj.user.last_name + (obj.type == "w" ? " (weekly)" : (obj.type == "b" ? " (biweekly)" : " (other)")),
                         start: obj.date,
-                        color: obj.type == "w" ? "#F7464A" : (obj.type == "b" ? "#FDB45C" : "#46BFBD"),
+                        color: obj.done ? "#949FB1" : (obj.type == "w" ? "#F7464A" : (obj.type == "b" ? "#FDB45C" : "#46BFBD")),
+                        className: (obj.done ? "strikeout" : ""),
                         allDay: true
                     });
                 });

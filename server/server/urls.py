@@ -5,7 +5,7 @@ from django.views.decorators.csrf import csrf_exempt
 from rest_framework_nested import routers
 from authentication.views import AccountViewSet, LoginView, LogoutView, StatusView
 from tallylist.views import TallyListEntryViewSet, AccountTallyListEntryViewSet, TallyListAllEntryViewSet
-from schedule.views import ScheduleEntryViewSet
+from schedule.views import ScheduleEntryViewSet, ScheduleDoneView
 from statistics.views import StatisticsView, StatisticsOwnView, StatisticsCoffeeTypeView
 
 router = routers.SimpleRouter()
@@ -21,6 +21,7 @@ accounts_router.register("tally", AccountTallyListEntryViewSet)
 
 urlpatterns = [
     url(r'^admin/?', include(admin.site.urls)),
+    url(r'^api/v1/schedule/done/?$', ScheduleDoneView.as_view()),
     url(r'^api/v1/?', include(router.urls)),
     url(r'^api/v1/?', include(accounts_router.urls)),
     url(r'^api/v1/auth/login/?$', LoginView.as_view(), name='login'),

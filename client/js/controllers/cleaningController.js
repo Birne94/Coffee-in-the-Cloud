@@ -1,7 +1,7 @@
 define(["jquery"], function (jQuery) {
     "use strict";
 
-    function cleaningController($scope) {
+    function cleaningController($scope, $rootScope, alert, service) {
       $scope.stepSelected = "myOtherClass";
 
       $scope.checkAll = function () {
@@ -44,13 +44,17 @@ define(["jquery"], function (jQuery) {
     };
 
     $rootScope.finishedCleaning = function() {
-      $rootScope.cleaning= false;
-      alert.success("Thank you for doing the cleaning!");
-    }
+        service.schedule.done().success(function (data) {
+            alert.success("Thank you for doing the cleaning!");
+            $rootScope.cleaning= false;
+        }).error(function (result) {
+            alert.error("Cleaning couldn't be marked as done!");
+        })
+    };
   }
 
 
-    cleaningController.$inject = ["$scope", "$rootScope", "$location"];
+    cleaningController.$inject = ["$scope", "$rootScope", "seed.status", "seed.coffeeCloud"];
 
     return cleaningController;
 });
