@@ -10,7 +10,7 @@ from server.settings import MAIL_SENDER
 class TallyListEntry(models.Model):
     user = models.ForeignKey(Account)
     amount = models.IntegerField(default=1)
-    created_at = models.DateTimeField(auto_now=True)
+    created_at = models.DateTimeField(auto_now_add=True)
     processed = models.BooleanField("check if the entry has been booked yet.",
                                     default=False)
 
