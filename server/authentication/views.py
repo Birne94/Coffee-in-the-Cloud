@@ -116,6 +116,8 @@ class SettingsView(views.APIView):
             if value is not None:
                 result[setting] = value
 
+        result["avatar"] = request.user.avatar.url
+
         return Response(result, status=status.HTTP_200_OK)
 
     def post(self, request, format=None):
@@ -126,9 +128,7 @@ class SettingsView(views.APIView):
             if request.user.check_password(old_password):
                 request.user.set_password(new_password)
                 request.user.save()
-                print request.user.email
                 account = authenticate(email=request.user.email, password=new_password)
-                print account
                 login(request, account)
             else:
                 return Response({}, status=status.HTTP_400_BAD_REQUEST)

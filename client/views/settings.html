@@ -20,7 +20,9 @@
 
         <div class="col-sm-8">
             <div class="pull-left">
-                <span class="helper"></span> <img ng-src="{{ user.avatar }}" ng-show="user.avatar" height="35" class="avatar" />
+                <span class="helper"></span>
+                <img ng-src="{{ user.avatar }}" ng-show="user.avatar && !settings.avatar" height="35" class="avatar" />
+                <img ng-src="{{ settings.avatar }}" ng-show="settings.avatar" height="35" class="avatar" />
             </div>
 
             <div class="row fileupload-buttonbar">
