@@ -11,6 +11,7 @@ class AccountAdmin(UserAdmin):
         (_('Personal info'), {'fields': ('first_name', 'last_name', 'balance', 'avatar')}),
         (_('Permissions'), {'fields': ('is_active', 'is_staff', 'is_superuser',
                                        'groups', 'user_permissions')}),
+        (("Settings"), {"fields": ("receive_emails", "show_in_rankings")}),
         #(_('Important dates'), {'fields': ('created_at', 'updated_at')}), # TODO: fix
     )
 

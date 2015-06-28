@@ -58,6 +58,10 @@ class Account(AbstractBaseUser, PermissionsMixin):
     receive_emails = models.BooleanField("receive notification emails", default=True)
     show_in_rankings = models.BooleanField("show in rankings and statistics", default=True)
 
+    # assignment
+    assignment_base = models.FloatField(default=5)
+    assignment_value = models.FloatField(default=5)
+
     objects = AccountManager()
 
     USERNAME_FIELD = "email"
