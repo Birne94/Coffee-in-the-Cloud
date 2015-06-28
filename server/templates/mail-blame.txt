@@ -2,3 +2,5 @@ Hello {{ firstname }} {{ lastname }},
 
 Somebody has found the kitchen in a dirty state and you were the last person to track a coffee.
 If you forgot to clean the kitchen please make sure to do so in the future.
+
+Info: The app is currently developed and tested, so please ignore any emails until being told otherwise.

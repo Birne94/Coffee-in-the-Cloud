@@ -5,3 +5,5 @@ Hello {{ firstname }} {{ lastname }},
 {{ warning }}
 {% endfor %}
 Have fun drinking!
+
+Info: The app is currently developed and tested, so please ignore any emails until being told otherwise.

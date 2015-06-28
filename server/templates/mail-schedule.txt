@@ -15,6 +15,9 @@ Hello {{ firstname }} {{ lastname }},
 
 You have been selected to do the {{ type }} on {{ date }}.
 
+
+Info: The app is currently developed and tested, so please ignore any emails until being told otherwise.
+
 --==============={{ id }}==
 Content-Type: text/html; charset="iso-8859-1"
 Content-Transfer-Encoding: quoted-printable
@@ -22,6 +25,8 @@ Content-Transfer-Encoding: quoted-printable
 <h3>Hello {{ firstname }} {{ lastname }},</h3>
 
 <p>You have been selected to do the <strong>{{ type }}</strong> on <strong>{{ date }}</strong>.</p>
+
+<p>Info: The app is currently developed and tested, so please ignore any emails until being told otherwise.</p>
 
 --==============={{ id }}==
 Content-Type: text/calendar; charset="utf-8"; method=REQUEST
