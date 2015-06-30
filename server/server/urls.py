@@ -4,7 +4,7 @@ from django.contrib import admin
 from django.views.decorators.csrf import csrf_exempt
 from rest_framework_nested import routers
 from authentication.views import AccountViewSet, LoginView, LogoutView, StatusView, SettingsView
-from tallylist.views import TallyListEntryViewSet, AccountTallyListEntryViewSet, TallyListAllEntryViewSet
+from tallylist.views import TallyListEntryViewSet, AccountTallyListEntryViewSet, TallyListAllEntryViewSet, GlobalBalanceView
 from schedule.views import ScheduleEntryViewSet, ScheduleDoneView
 from statistics.views import StatisticsView, StatisticsOwnView, StatisticsCoffeeTypeView
 
@@ -31,6 +31,7 @@ urlpatterns = [
     url(r'^api/v1/statistics/?$', StatisticsView.as_view(), name='statistics'),
     url(r'^api/v1/statistics/own/?$', StatisticsOwnView.as_view(), name='statistics_own'),
     url(r'^api/v1/statistics/type/?$', StatisticsCoffeeTypeView.as_view()),
+    url(r'^api/v1/manage/balance/?$', GlobalBalanceView.as_view()),
 
     url(r'^$', 'django.views.static.serve', {
         'path': 'index.html',

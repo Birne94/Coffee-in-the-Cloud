@@ -30,9 +30,11 @@ define(["jquery"], function (jQuery) {
             service.user.check().success(function (result) {
                 if (result.status === true) {
                     $rootScope.user = result.user;
+                    $rootScope.permissions = result.permissions;
                     $rootScope.updateTally();
                 } else {
                     $rootScope.user = null;
+                    $rootScope.permissions = null;
                 }
             }).error(function (result) {
                 alert.error("Error fetching user data.");

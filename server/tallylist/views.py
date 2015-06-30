@@ -9,7 +9,8 @@ from tallylist.permissions import IsTallyUser, IsRecentTally
 from tallylist.serializers import TallyListEntrySerializer
 from tallylist.models import TallyListEntry
 
-from authentication.models import Account
+from authentication.models import Account, Settings
+from authentication.permissions import IsBalanceAdministrator
 
 from server.mail import send_email
 from server.settings import MAIL_SENDER
@@ -122,3 +123,48 @@ class BlameView(views.APIView):
                        }))
 
         return Response({}, status=status.HTTP_204_NO_CONTENT)
+
+
+class GlobalBalanceView(views.APIView):
+    permission_classes = (permissions.IsAuthenticated, IsBalanceAdministrator)
+
+    def post(self, request, format=None):
+        try:
+            balance = float(Settings.objects.get(name="total_balance").value)
+        except ObjectDoesNotExist, ValueError:
+            balance = 0
+            try:
+                Settings.objects.create(name="total_balance",
+                                        value="0.0").save()
+            except:
+                pass
+
+        amount = request.data.get("amount", None)
+        user = request.data.get("user", None)
+
+        if amount:
+            amount = float(amount.replace(",", "."))
+
+            if user:
+                user = Account.objects.get(pk=int(user))
+                user.balance += amount
+                user.save()
+
+            balance += amount
+            setting = Settings.objects.get(name="total_balance")
+            setting.value = str(balance)
+            setting.save()
+
+        return Response({"balance": balance}, status=status.HTTP_200_OK)
+
+    def get(self, request, format=None):
+        try:
+            balance = float(Settings.objects.get(name="total_balance").value)
+        except ObjectDoesNotExist, ValueError:
+            balance = 0
+            try:
+                Settings.objects.create(name="total_balance",
+                                        value="0.0").save()
+            except:
+                pass
+        return Response({"balance": balance}, status=status.HTTP_200_OK)

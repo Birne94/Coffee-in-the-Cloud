@@ -171,6 +171,19 @@ define(["jquery"], function ($) {
                 },
             },
 
+            balance: {
+                get: function() {
+                    return $http.get(url("manage/balance"));
+                },
+                post: function(amount, user) {
+                    var obj = {
+                        "amount": amount,
+                        "user": user
+                    };
+                    return $http.post(url("manage/balance"), obj);
+                },
+            },
+
             blame: function() {
                 return $http.post(url("blame"));
             }

@@ -34,7 +34,17 @@ class AccountManager(BaseUserManager):
         return account
 
 
+class Settings(models.Model):
+    name = models.CharField(max_length=40)
+    value = models.CharField(max_length=255)
+
+
 class Account(AbstractBaseUser, PermissionsMixin):
+    class Meta:
+        permissions = [
+            ('manage_balance', 'Can manage balance'),
+        ]
+
     # user details
     email = models.EmailField(_('email address'), unique=True)
     first_name = models.CharField(_('first name'), max_length=40, blank=True)

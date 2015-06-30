@@ -100,6 +100,7 @@ class StatusView(views.APIView):
         if isinstance(user, Account):
             serialized = AccountSerializer(user)
             return Response({"user": serialized.data,
+                             "permissions": user.get_all_permissions(),
                              "status": True}, status=status.HTTP_200_OK)
         return Response({"status": False}, status=status.HTTP_200_OK)
 

@@ -8,6 +8,14 @@ define(["jquery"], function (jQuery) {
                 $scope.settings = result;
             }).error(function (result) {
                 alert.error("Error fetching data.");
+            });
+
+            service.user.list().success(function (list) {
+                $scope.users = list;
+            });
+
+            service.balance.get().success(function (result) {
+                $scope.balance = result.balance;
             })
         };
 
@@ -33,6 +41,18 @@ define(["jquery"], function (jQuery) {
             }).error(function (result) {
                 alert.error("Error pushing data.");
             })
+        };
+
+        $scope.update_balance = function() {
+            if ($scope.balance_amount) {
+                service.balance.post($scope.balance_amount, $scope.balance_user).success(function (result) {
+                    alert.success("Balance updated!");
+                    $scope.reset();
+                    $rootScope.$broadcast('updateUser', []);
+                }).error(function (result) {
+                    alert.error("There was an error processing the data.");
+                });
+            }
         }
 
         $scope.reset();
