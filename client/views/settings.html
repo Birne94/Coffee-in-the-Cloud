@@ -19,7 +19,7 @@
         <label for="balance" class="col-sm-2 control-label">Account Balance</label>
 
         <div class="col-sm-10">
-            <input type="text" class="form-control" id="balance" value="{{user.balance}}&euro;" readonly>
+            <input type="text" class="form-control" id="balance" value="{{user.balance | prettyFloat}}&euro;" readonly>
         </div>
     </div>
     <div class="form-group">
@@ -114,7 +114,7 @@
             <label for="balance" class="col-sm-2 control-label">Global Balance</label>
 
             <div class="col-sm-10">
-                <input type="text" class="form-control" id="balance" value="{{balance}}&euro;" readonly>
+                <input type="text" class="form-control" id="balance" value="{{balance | prettyFloat}}&euro;" readonly>
             </div>
         </div>
         <div class="form-group">
