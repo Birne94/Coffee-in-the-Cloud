@@ -135,7 +135,7 @@ class SettingsView(views.APIView):
                 return Response({}, status=status.HTTP_400_BAD_REQUEST)
 
         avatar = request.data.get("avatar", None)
-        if avatar:
+        if avatar and type(avatar) in [str, unicode] and avatar.startswith("data:"):
             base64_parts = avatar.split(",", 1)
             file_stream = cStringIO.StringIO(base64.b64decode(base64_parts[1]))
             ext = "png" if "png" in base64_parts[0] else "jpg"
