@@ -4,7 +4,7 @@ from django.contrib import admin
 from django.views.decorators.csrf import csrf_exempt
 from rest_framework_nested import routers
 from authentication.views import AccountViewSet, LoginView, LogoutView, StatusView, SettingsView
-from tallylist.views import TallyListEntryViewSet, AccountTallyListEntryViewSet, TallyListAllEntryViewSet, GlobalBalanceView
+from tallylist.views import TallyListEntryViewSet, AccountTallyListEntryViewSet, TallyListAllEntryViewSet, GlobalBalanceView, BlameView
 from schedule.views import ScheduleEntryViewSet, ScheduleDoneView
 from statistics.views import StatisticsView, StatisticsOwnView, StatisticsCoffeeTypeView
 
@@ -24,6 +24,7 @@ urlpatterns = [
     url(r'^api/v1/schedule/done/?$', ScheduleDoneView.as_view()),
     url(r'^api/v1/?', include(router.urls)),
     url(r'^api/v1/?', include(accounts_router.urls)),
+    url(r'^api/v1/blame/?$', BlameView.as_view(), name='blame'),
     url(r'^api/v1/auth/login/?$', LoginView.as_view(), name='login'),
     url(r'^api/v1/auth/logout/?$', LogoutView.as_view(), name='logout'),
     url(r'^api/v1/auth/status/?$', StatusView.as_view(), name='status'),
