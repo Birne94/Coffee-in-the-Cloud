@@ -60,7 +60,7 @@ define(["jquery"], function (jQuery) {
                     if (today == obj.date && $rootScope.user.id == obj.user.id && !obj.done) {
                         $rootScope.cleaning = true;
                         //$scope.cleaner=obj.user.first_name + " " + obj.user.last_name;
-                        $scope.cleaning_type = (obj.type == "w" ? " weekly " : (obj.type == "b" ? " biweekly " : " other ")) + " cleaning";
+                        $rootScope.cleaning_type = (obj.type == "w" ? " weekly " : (obj.type == "b" ? " biweekly " : " other ")) + " cleaning";
                     }
                 });
             });

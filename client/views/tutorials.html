@@ -11,7 +11,7 @@
             <span class="tutorial-image" ng-repeat="c in choice">
                 <a ng-click="next(c.cb)"><img ng-src="{{c.src}}" class="img-rounded" height="300"/></a>
             </span>
-            <h4>Select one!</h4>
+            <h4 ng-hide="choice.length <= 1">Select one!</h4>
         </div>
     </center>
 </div>
