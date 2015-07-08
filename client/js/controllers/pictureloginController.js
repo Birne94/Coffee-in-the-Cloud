@@ -23,7 +23,7 @@ define(["jquery"], function (jQuery) {
             $.each(data, function (idx, obj) {
                 if (today==obj.date){
                     $scope.cleaning=true;
-                    $scope.cleaning_message=obj.user.first_name + " " + obj.user.last_name +" have to do the"+ (obj.type == "w" ? " weekly " : (obj.type == "b" ? " biweekly " : " other "))+"cleaning today";
+                    $scope.cleaning_message=obj.user.first_name + " " + obj.user.last_name +" has to do the"+ (obj.type == "w" ? " weekly " : (obj.type == "b" ? " biweekly " : " other "))+"cleaning today";
                 }
             });
         });
@@ -47,6 +47,7 @@ define(["jquery"], function (jQuery) {
       };
 
         $scope.blame = function() {
+            alert.success("Thanks for your feedback!");
             service.blame();
         }
     }

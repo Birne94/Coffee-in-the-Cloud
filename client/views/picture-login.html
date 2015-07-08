@@ -3,7 +3,7 @@
     <p class="alert alert-info" ng-show="cleaning">
       {{cleaning_message}}
     </p>
-    <div class="col-md-4" ng-repeat="user in users">
+    <div class="col-md-4 col-xs-6 col-lg-3" ng-repeat="user in users">
       <a data-toggle="modal" data-target="#coffe-popup" ng-click="select(user)">
         <img ng-src="{{ user.avatar}}" class="img-rounded" height="150"></img>
       </a>
@@ -32,7 +32,7 @@
         </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-danger pull-left" title="Blame the last user that used the machine." tooltip ng-click="blame()">Was the kitchen dirty?</button>
+        <button type="button" data-dismiss="modal" class="btn btn-danger pull-left" title="Blame the last user that used the machine." tooltip ng-click="blame()">Was the kitchen dirty?</button>
         <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
       </div>
     </div>
