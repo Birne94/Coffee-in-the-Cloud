@@ -54,6 +54,10 @@
                     templateUrl: 'views/settings.html',
                     controller: 'settingsController'
                 })
+                .when('/settings/', {
+                    templateUrl: 'views/about-us.html',
+                    controller: 'testController'
+                })
                 .otherwise({
                     redirectTo: '/'
                 });
