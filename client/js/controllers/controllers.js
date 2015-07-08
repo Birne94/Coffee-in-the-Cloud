@@ -54,7 +54,7 @@
                     templateUrl: 'views/settings.html',
                     controller: 'settingsController'
                 })
-                .when('/settings/', {
+                .when('/about-us/', {
                     templateUrl: 'views/about-us.html',
                     controller: 'testController'
                 })
