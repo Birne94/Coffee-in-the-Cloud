@@ -47,6 +47,7 @@ define(["jquery"], function (jQuery) {
       };
 
         $scope.blame = function() {
+            alert.success("Thanks for your feedback!");
             service.blame();
         }
     }
