@@ -40,6 +40,8 @@ In case you are selected for cleaning, a third banner in yellow can be seen bene
 
 Moreover, you will get complimented if you are the number 1 coffee drinker. This is again shown by a blue banner stating "You have drunk most of the coffee so far. Good job!". It can be closed aswell. The data used for estimating the winner, are loaded beforehand in the loginController. (see below). 
 
+Of course, when logged in, one has access to all the other navbar tabs like Statistics or Tally List too. 
+
 ### Login 
 
 ### Tally List
