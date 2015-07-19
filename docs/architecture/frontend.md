@@ -75,7 +75,11 @@ On the other hand, the user has the possibility to revise the adding within two 
 
 **tallylist.html**
 
+Like on the *Main Page* the user is shown a banner with his current balance and the amount of coffees on the list. Additonally if the balance is low, a warning appears. 
 
+The user has now the possibilty to add a single or a double coffee to his tallylist by pressing the corresponding button. This will trigger the *addCoffee(amount)* function in the **tallylistContoller**. Of course, after adding the coffee, the banners are updated with the new amount of coffees and balance. 
+
+As mentioned beforehand the user is able to revise the adding of the coffee by clicking on the dustbin symbol. This is only possible within the next two hours of adding. 
 
 ### Cleaning Schedule
 
