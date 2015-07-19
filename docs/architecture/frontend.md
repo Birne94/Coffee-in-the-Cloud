@@ -36,7 +36,9 @@ When first visiting the page without being logged in, you get greeted and you ha
 
 When logged in, different kind of banners can me seen. The one in blue, which is shown always, states how many coffees you have on the list and your current balance. If this balance is below 2.00 Euro, another red banner appears and kindly asks you to add more money to your account. By clicking on the x, this banner disappears.  
 
-In case you are selected for cleaning, a third banner in yellow can be seen beneath the others. 
+In case you are selected for cleaning, a third banner in yellow can be seen beneath. There you can either close the banner by clicking on the x or tell the system, that you sucessfully finished the cleaning by clicking the check. This can alternatively be done when pressing the "finished cleaning"-Button.
+
+Moreover, you will get complimented if you are the number 1 coffee drinker. This is again shown by a blue banner stating "You have drunk most of the coffee so far. Good job!". It can be closed aswell. The data used for estimating the winner, are loaded beforehand in the loginController. (see below). 
 
 ### Login 
 
