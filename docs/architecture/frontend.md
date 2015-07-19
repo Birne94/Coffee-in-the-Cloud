@@ -28,9 +28,15 @@ The main task of the controller is to give an alert-message saying "Thank you fo
 
 First of all the welcome view has to states depending on whether you are logged in or not. 
 
-1. Logged out
+***Logged out***
 
+When first visiting the page without being logged in, you get greeted and you have the possibility to log in via a "sing in" button. Futhermore one is able to click on the Tutorials and Cleaning-Checklist navbar tab or click on the icons for tablet mode and admin interface in the footer. 
 
+***Logged In***
+
+When logged in, different kind of banners can me seen. The one in blue, which is shown always, states how many coffees you have on the list and your current balance. If this balance is below 2.00 Euro, another red banner appears and kindly asks you to add more money to your account. By clicking on the x, this banner disappears.  
+
+In case you are selected for cleaning, a third banner in yellow can be seen beneath the others. 
 
 ### Login 
 
