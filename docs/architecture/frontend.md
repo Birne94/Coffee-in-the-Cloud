@@ -61,9 +61,21 @@ When the user wants to logout and presses the "sign out" button, the controller 
 
 **login-popup.html**
 
-The Login-Popup appears when the "sing in" button is clicked on. The user can now enter his login credentials composed of an email address and a password. By clicking "Login" the *login()* function is called in the loginController. Otherwise the user can abort the login process by simply pressing the "cancel" button. Once logged in, a short alert welcomes the user and the user has now full access to the web-application. 
+The Login-Popup appears when the "sing in" button is clicked on. The user can now enter his login credentials composed of an email address and a password. By clicking "Login" the *login()* function is called in the loginController. Otherwise the user can abort the login process by simply pressing the "cancel" button. Once logged in, a short alert message welcomes the user and the user has now full access to the web-application. 
 
 ### Tally List
+
+In order to see the current coffee consumption the user visits the **Tally List** tab. Responsible here is the ```tallylistController.js``` and the corresponding ```tallylist.html``` view. 
+
+**tallylistController.js**
+
+The **tallylistController** has two rather obvious methods. On the one hand, when a coffee is added to the tallylist the *addCoffee(amount)* function is called. The amount depends on whether the user decides to drink a single or a double coffee. In the following the two global methods *updateTally()* and *updateUser()* from the LoginController are called. 
+
+On the other hand, the user has the possibility to revise the adding within two hours. Therefore the *removeCoffee(id)* is called with the matching coffee ID which causes the entry to be removed from the users tallylist.
+
+**tallylist.html**
+
+
 
 ### Cleaning Schedule
 
@@ -75,6 +87,4 @@ The Login-Popup appears when the "sing in" button is clicked on. The user can no
 
 ### Picture Login - Tablet Mode
 
-### Setting
-
-
+### Settings
