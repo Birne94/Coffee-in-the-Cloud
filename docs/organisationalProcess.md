@@ -117,7 +117,16 @@ As a user I want that a calendar invitation is included in the email that inform
 I want to have a feature in tablet mode to blame someone who did not clean the porta filter. An "reminder" email is sent to the last coffee drinker (add something like "it might be possible that someone else did not clean but did not register the coffee").
 
 
+## XP-Techniques
 
-## Non-Functional Requirements
+In order to work efficiently and fullfill our users requirements as good as possible, we used some of the practices of extreme programming. In our opinion this was really successfull. 
 
-## XP 
+### small releases
+
+### simple design
+
+### pair programming
+
+### collective code ownership
+
+### continious integreation
