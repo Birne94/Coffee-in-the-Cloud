@@ -123,10 +123,14 @@ In order to work efficiently and fullfill our users requirements as good as poss
 
 ### small releases
 
-### simple design
+We intregrated code early and often. As a result we had less bugs and always a running version of our software. Additonally we got the feedback quicker and it also incresed our self confidence. 
 
 ### pair programming
 
+In the course of the weeks we realized, that we did much better work when developing together. Therefore we often implementen user stories in pairs where one was the driver (types code) and the partner tried to be completly engaged and understand  everything. 
+
 ### collective code ownership
 
-### continious integreation
+As we often worked together on user stories, everybody was allowed to change the code of the others. This was reasonable because it avoids expert knowlegde. 
+
+
