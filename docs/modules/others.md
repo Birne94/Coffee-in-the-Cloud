@@ -28,7 +28,7 @@ often while still having everybody assigned eventually.
 
 The following flowchart illustrates the algorithm:
 
-![priority elevation algorithm](images/scheduling.png "priority elevation algorithm")
+![priority elevation algorithm](../images/scheduling.png "priority elevation algorithm")
 
 ## Coffee pricing
 
