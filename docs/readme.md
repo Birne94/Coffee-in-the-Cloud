@@ -14,6 +14,9 @@ The application improves the coffee tracking and management for the local machin
 
 ## Table of Contents
 
+* Introduction
+* Abstract
+* Organisational Process
 * Technology Stack
     * [AngularJs](technology/angular.md)
     * [Django](technology/django.md)
@@ -23,7 +26,7 @@ The application improves the coffee tracking and management for the local machin
 * Module Description
     * [Frontend](modules/frontend/_toc.md)
     * [Backend](modules/backend/_toc.md)
-    * [Other components](modules/other/_toc.md)
+* [Additional Components](modules/other/_toc.md)
 * [Server Setup](setup.md)
 * [User Manual](user.md)
 * [Glossary](glossary.md)
