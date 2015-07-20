@@ -98,9 +98,11 @@ In order to compare his own coffee consumption with the consumption of others, w
 3. the amount of single and double coffee consumed
 4. the users coffee consumption compared to the overall ones
 
+The JavaScript framework  *chart.js* supplied us with some interesting chart types for example the "Radar-Chart" or "Doughnut-Chart". 
+
 **statisticsController.js** & **statistics.html**
 
-TBC
+The procedure is rather simple. The statisticsController sends a request to the backend in order to get the necessary data. Then the data will be process according to the requierements of the diagramm type. Ensuing the diagramm is filled with the matching data. 
 
 
 ### Tutorials
@@ -138,5 +140,23 @@ Another feature espacially implemented for the tablet mode is the blame button. 
 
 
 ### Settings
+
+
+The Settings page has two states, deping on whether the user is an admin or not. 
+
+**settings.html**
+
+***basic user***
+The user is able to change is avatar for the picture login aswell as his password. Additionally the user can decice, if he wants the data about his coffee consumption to be evaluated in the statistics and ranking. As receiving emails can be really annoying, we decided on an option to disable all notifications. 
+
+***admin user***
+
+The admin has more power over the global balance and is able to add money to users balance. 
+
+**settingsController.js**
+
+The controller contains two important methods. *update()* is called, when the user wants to change his password. As usually, the user has to enter his new password twice and the function then verifies the password. 
+
+Moreover as mentioned before, the balance of a user can be changed by the admin. If so, *update_balance()* is executed and shows an alert if succeeded. 
 
 
