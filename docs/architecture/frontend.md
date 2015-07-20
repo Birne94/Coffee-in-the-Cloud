@@ -157,6 +157,6 @@ The admin has more power over the global balance and is able to add money to use
 
 The controller contains two important methods. *update()* is called, when the user wants to change his password. As usually, the user has to enter his new password twice and the function then verifies the password. 
 
-Moreover as mentioned before, the balance of a user can be changed by the admin. If so, *update_balance()* is executed and shows an alert if succeeded. 
+Moreover as mentioned before, the balance of a user can be changed by the admin. If so, *update_balance()* is executed and shows an alert-message if succeeded. 
 
 
