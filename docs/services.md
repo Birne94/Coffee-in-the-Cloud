@@ -29,4 +29,4 @@ The requests are divided into three categories:
 The ```status``` service is responsible for displaying notifications to the user. These are based on bootstrap alerts
 and are dynamically generated. The service supports information, success, warning and error messages.
 
-![list of available statuses](../images/service-status.png "list of available statuses")
+![list of available statuses](images/service-status.png "list of available statuses")
