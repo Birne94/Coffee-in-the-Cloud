@@ -83,9 +83,24 @@ As mentioned beforehand the user is able to revise the adding of the coffee by c
 
 ### Cleaning Schedule
 
+As the cleaning of the coffee machine has to be scheduled, we build a calendar composed of the ```scheduleController.js``` and the ```schedule.html```. 
+
+**scheduleController.js** & **schedule.html**
+
+Basically the controller sends a request to the backend in order to receive the necessary data for the calendar. How the algorithm works, will be explained later on. The data important for us is the person  and the type of cleaning assigned. To distinguish the diffrent kinds of cleaning we assigned them different colors. Additionally if the cleaning is finished, it will be shown as crossed out und in gray. Of course one can select between daily, weekly and monthly view in the calendar. 
+
 ### Statistics
 
+
 ### Tutorials
+
+The turorials page is one of the pages, which can be seen, even if the user is not logged in. It's just a simple photo tutorial, where the user gets a step by step instruction on how to use the coffee machine correctly. 
+
+**tutorialsController.js** & **tutorials.html**
+
+The whole process is rather simple. At the begining the user sees two pictures and can deceide whether to drink a single or a double coffee. After some more instructions, the user has to choose between adding milk, water or nothing to his coffee. Depending on the decision the matching photos are shown. 
+
+In the *tutorialsController.js* the important method is *next(cb)*. It is called by clicking on the picture directly or the arrows next to the pictures. This function then determines as the name says, the following pictures. 
 
 ### Cleaning Checklist
 
