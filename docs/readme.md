@@ -16,7 +16,7 @@ The application improves the coffee tracking and management for the local machin
 
 * Introduction
 * Abstract
-* Organisational Process
+* [Organisational Process] (organisationalProcess.md)
 * Technology Stack
     * [AngularJs](technology/angular.md)
     * [Django](technology/django.md)
