@@ -79,21 +79,42 @@ For tracking coffees a guest account exists. It allows guests of the chair to al
 
 **User Rankings**
 
+Rankings show some kind of leaderboard according to the amount of coffee consumed by each user in a certain time frame. Users can opt out of having their data displayed.
+
 **Display total amount of money available**
+
+As an administrator I want to see how much money is available for buying coffee. This should be shown in the admin backend. When new coffee is bought the admin needs to reduce the total amount.
 
 **Add cleaning checklist to tablet mode**
 
+The user wants to see the cleaning checklist although he is not logged in.
+
 **Distinguish between weekly and bi-weekly cleaning in calender**
+
+As a user I want to see which kind of cleaning I should perform. Use different colors.
 
 **Show a message on the main page if selected for cleaning**
 
+As a user I want to see whether I have to clean. This should be visible on the tablet as well as on the user page.
+
 **Settings page for users**
+
+As a user I want to be able to configure my account on a settings page.
+* email configuration
+* profile pic
+* password
 
 **Extend cleaning checklist**
 
+Add restart Button and Finish Button to the coffee checklist. Cross out finished tasks
+
 **Include calender entry invitation in cleaning email**
 
+As a user I want that a calendar invitation is included in the email that informs me about my cleaning schedule.
+
 **Blame feature**
+
+I want to have a feature in tablet mode to blame someone who did not clean the porta filter. An "reminder" email is sent to the last coffee drinker (add something like "it might be possible that someone else did not clean but did not register the coffee").
 
 
 
