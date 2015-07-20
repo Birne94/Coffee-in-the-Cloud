@@ -24,9 +24,7 @@ The application improves the coffee tracking and management for the local machin
     * [Frontend](architecture/frontend.md)
     * [Backend](architecture/backend.md)
 * Module Description
-    * [Frontend](modules/frontend/_toc.md)
-    * [Backend](modules/backend/_toc.md)
-* [Additional Components](modules/other/_toc.md)
+* [Additional Components](modules/others.md)
 * [Server Setup](setup.md)
 * [User Manual](user.md)
 * [Glossary](glossary.md)
