@@ -41,3 +41,49 @@ COFFEE_PRICE = 0.25
 ```
 
 The price of a double coffee is automatically calculated.
+
+## Admin interface
+
+Our application provides an administration interface to manage all models by hand. It can only be accessed by *staff*
+users. These have to be assigned by a server administrator. A staff member can only manage those models he was given
+the permissions for.
+
+![default administration view](../images/django-admin.png "default administration view")
+
+This interface should be used with caution as we provided a front end solution for most necessary functionality.
+
+### Log Entries
+
+Displays a list of administrative events. This can be useful to track unwanted access and modifications.
+
+### Accounts
+
+Displays a list of all available accounts. An administrator can edit these accounts or create a new one. The account
+management can also be used to reset a user's password and to assign permissions or groups.
+
+For every model django provides three different permissions that have to be assigned:
+
+**add** The user can add a new object.
+
+**change** The user can modify an existing object.
+
+**delete** The user can remove an existing object from the database.
+
+As long as a user has access to one of these permissions he will see the model in his administration interface.
+
+Apart from individually assigning permissions to users it is possible to assign them to groups. These groups then apply
+the permissions to the selected users.
+
+### Groups
+
+Displays a list of all available groups. It is possible for an administrator to add new groups or group members.
+
+### Schedule Entries
+
+Displays a list of all schedule entries for the cleaning schedule. These can be manually edited in case a wrong or
+unwanted assignment occurred.
+
+### Tally List Entries
+
+Displays a list of all tally list entries and their respective users. These can be added in case a coffee was wrongfully
+added and the default deleting time expired.
