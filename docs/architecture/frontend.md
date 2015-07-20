@@ -147,6 +147,7 @@ The Settings page has two states, deping on whether the user is an admin or not.
 **settings.html**
 
 ***basic user***
+
 The user is able to change is avatar for the picture login aswell as his password. Additionally the user can decice, if he wants the data about his coffee consumption to be evaluated in the statistics and ranking. As receiving emails can be really annoying, we decided on an option to disable all notifications. 
 
 ***admin user***
