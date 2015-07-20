@@ -79,3 +79,14 @@ In case you wonder about how your own coffee consumption changed over time or ho
 do so using this page.
 
 ![statistics screen](images/app-statistics.png "statistics screen")
+
+## Settings
+
+In the bottom line you will find a gear symbol under which you have the option to change your account settings.
+
+![settings screen](images/app-settings.png "settings screen")
+
+In case you have the permission to manage the global balance you can do that here as well.
+
+![global balance settings](images/app-balance.png "global balance settings")
+
