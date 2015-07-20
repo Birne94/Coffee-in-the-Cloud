@@ -39,6 +39,62 @@ The user can see the cleaning schedule for the upcomming weak.
 
 ### Sprint 2
 
+**Email Reminder - Cleaning**
+
+When a user is assigned for cleaning he will get an email reminder. This reminder can be turned off in his personal settings.
+
+**Email Reminder - Account Balance**
+
+When the user's balance goes below a certain amount he is notified via email. This reminder can be turned off in his personal settings.
+
+**Email Confirmation - Coffee Tracking**
+
+When tracking coffee(s) the user gets a notification via email if he choses to. Using this email he can also undo the tracking within a certain time frame.
+
+**Statistics**
+
+From all data gathered over the statistics will be generated. The user can opt out of having his data displayed to others.
+
+**Checklist: Cleaning**
+
+A checklist provided on the tablet and mobile application helps the user to keep track of each step involved in the cleaning process.
+
+**Tutorials: Photo**
+
+To support the processes of cleaning and coffee making a photo tutorial is provided.
+
+### Sprint 3
+
+**Cleaning Schedule: Intelligent Assignment**
+
+The responsible user for cleaning is chosen by the system. It will take into account if somebody has marked himself as absent for a certain amount of time.
+
+**Guest Account**
+
+For tracking coffees a guest account exists. It allows guests of the chair to also track their coffees without having an own account.
+* The account should be accessible by the admin (login with admin credentials)
+* It should behave like a normal user account, e.g. it includes statistics
+* This account can be enabled or disabled by system administrators
+* A summary email should be send to the admin every X days (configurable)
+
+**User Rankings**
+
+**Display total amount of money available**
+
+**Add cleaning checklist to tablet mode**
+
+**Distinguish between weekly and bi-weekly cleaning in calender**
+
+**Show a message on the main page if selected for cleaning**
+
+**Settings page for users**
+
+**Extend cleaning checklist**
+
+**Include calender entry invitation in cleaning email**
+
+**Blame feature**
+
 
 
 ## Non-Functional Requirements
