@@ -117,8 +117,26 @@ In the *tutorialsController.js* the important method is *next(cb)*. It is called
 
 Likewise the photo tutorial shows the user how to make perfect coffee, the cleaning checklist should support the cleaning of the machine. 
 
+**cleaningController.js** & **cleaning-checklist.html**
+
+In this controller all the steps are included. Now depending on weekly or biweekly cleaning the right steps are shown to the user. The user choose the type of cleaning by clicking the right button. All the steps are listed and can be crossed out when finished. It is also possible so reset the list and start from the begining. 
+
+After the cleaning is done, the user can mark is cleaning duty as done by simply pressing the *Finished Cleaning* button, which is located at the bottom of the page or at the main page. 
 
 
 ### Picture Login - Tablet Mode
 
+One of the core features requiered was the tablet mode. Here the user doesn't need to log in with his login credentials bur rather click on his picture to add a coffee to his account. 
+
+**pictureloginController.js** & **picture-login.html**
+
+As the user does not login with his credentials, he has limited access to the website. That means, he is only able to see the tutorials and the cleaning checklist. However if someone is selected for cleaning, a banner will tell you so. 
+
+The procedure of adding a coffee in tablet mode is nearly the same as adding a coffee when logged in. So again after selecting the coffee size *updateTally()* is called. 
+
+Another feature espacially implemented for the tablet mode is the blame button. If someone clicks on this button, the person last adding a coffe will get a blame email and a promt to tidy up the kitchen. 
+
+
 ### Settings
+
+
