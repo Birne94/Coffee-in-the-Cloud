@@ -91,6 +91,17 @@ Basically the controller sends a request to the backend in order to receive the 
 
 ### Statistics
 
+In order to compare his own coffee consumption with the consumption of others, we thought about some usefull diagramms to show different comparisons. In the end we came up with four kinds:
+
+1. the overall coffee consumption
+2. the users coffee consumption
+3. the amount of single and double coffee consumed
+4. the users coffee consumption compared to the overall ones
+
+**statisticsController.js** & **statistics.html**
+
+TBC
+
 
 ### Tutorials
 
@@ -103,6 +114,10 @@ The whole process is rather simple. At the begining the user sees two pictures a
 In the *tutorialsController.js* the important method is *next(cb)*. It is called by clicking on the picture directly or the arrows next to the pictures. This function then determines as the name says, the following pictures. 
 
 ### Cleaning Checklist
+
+Likewise the photo tutorial shows the user how to make perfect coffee, the cleaning checklist should support the cleaning of the machine. 
+
+
 
 ### Picture Login - Tablet Mode
 
