@@ -12,6 +12,20 @@ The ```authentication``` module is responsible for user management and extends t
 django provides a simple authentication and security system we decided to extend it in order to allow more
 customization.
 
+### API Endpoints
+
+```GET /api/v1/accounts/``` Query a list of all registered accounts.
+
+```GET /api/v1/accounts/{ID}/``` Query an account specified by {ID}.
+
+```POST /api/v1/auth/login/``` Try to login a user with email and password.
+
+```POST/api/v1/auth/logout/``` Logout the current user.
+
+```GET /api/v1/auth/status/``` Query the login status of the current user.
+
+```GET+POST /api/v1/auth/settings/``` Query or update the current user's settings.
+
 ### Models
 
 **Account** This model extends the basic user model and extends to add neccessary fields like email address, name,
@@ -48,6 +62,14 @@ picture.
 The ```schedule``` module is responsible for the cleaning schedule. It provides models for schedule entries and does
 the automatic cleaning assignment.
 
+### API Endpoints
+
+```GET /api/v1/schedule/``` Query the current cleaning schedule.
+
+```GET /api/v1/schedule/{ID}/``` Query a specific schedule entry.
+
+```POST /api/v1/schedule/done/``` Mark the current assignment as done.
+
 ### Models
 
 **ScheduleEntry** This model represents one entry in the cleaning schedule and contains user, type and date
@@ -69,6 +91,14 @@ information. It overrides the saving behavior to automatically send an email.
 The ```statistics``` module is responsible for aggregating information about the coffee consumption. It defines no own
 models or permissions.
 
+### API Endpoints
+
+```/api/v1/statistics/``` Query statistics for all tally list entries.
+
+```/api/v1/statistics/own/``` Query statistics for the current user's tally list entries.
+
+```/api/v1/statistics/type/``` Query statistics by coffee type (single/double).
+
 ### Views
 
 **StatisticsView** This view groups all coffees by months and returns them to the application.
@@ -82,6 +112,20 @@ application.
 
 The ```tallylist``` module is responsible for tracking coffees. It provides the basic tracking functionality as well
 as additional features.
+
+### API Endpoints
+
+```GET /api/v1/tally/``` Query the current user's tally list.
+
+```GET /api/v1/tally-all/``` Query all tally list entries.
+
+```GET /api/v1/tally/{ID}/``` Query a specific tally list entry.
+
+```GET /api/v1/accounts/{ID}/tally/``` Query a specific user's tally list.
+
+```GET+POST /api/v1/manage/balance/``` Query and modify the global balance.
+
+```GET+POST /api/v1/blame/``` Blame the last user to have tracked a coffee.
 
 ### Models
 
@@ -107,15 +151,15 @@ notify the user when the coffee was tracked. Apart from that the user's balance 
 **GlobalBalanceView** This view allows viewing and updating the global and user specific balance. Accessing this view
  requires the ```IsBalanceAdministrator``` permission.
 
- ## server
+## server
 
- The ```server``` module acts as a configuration module for django.
+The ```server``` module acts as a configuration module for django.
 
- **mail** This module contains functionality for sending notification emails.
+**mail** This module contains functionality for sending notification emails.
 
- **settings** This module contains basic django configuration, see the official documentation for details.
+**settings** This module contains basic django configuration, see the official documentation for details.
 
- **urls** This module contains the endpoint configuration. New views have to be registered here in order to make them
- accessable. Also the deployment of static files and the front end is configured here.
+**urls** This module contains the endpoint configuration. New views have to be registered here in order to make them
+accessable. Also the deployment of static files and the front end is configured here.
 
- **wsgi** This module contains startup information for deploying the server using wsgi.
+**wsgi** This module contains startup information for deploying the server using wsgi.
