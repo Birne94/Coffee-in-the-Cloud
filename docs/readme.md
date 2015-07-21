@@ -16,11 +16,11 @@ The application improves the coffee tracking and management for the local machin
 
 * [Introduction](introduction.md)
 * [Organisational Process](organisationalProcess.md)
-* Technology Stack
+* [Technology Stack] (technology)
     * [AngularJs](technology/angular.md)
     * [Django](technology/django.md)
 * [Architectural Overview](architecture/overview.md)
-* Module Description
+* [Module Description] (architecture)
     * [Frontend](architecture/frontend.md)
     * [Backend](architecture/backend.md)
 * [Additional Components](modules/others.md)
