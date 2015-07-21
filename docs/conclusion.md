@@ -1,9 +1,11 @@
 # Conclusion
 
+The main goal was to implement a webapplication in order to support the BPT chair at the HPI.
 
-The main goal was to implement a webapplication in order to support the BPT chair.
-Important features were to have tallylist and and payment balance aswell as the posibility not only to log in by the useres credentials but also with picture login.
-That's because the chair wanted to remove their old-fashioned tally list in the kitchen with a tablet where the coffee drinkers could login by simply clicking on their face and add the coffee.
+Some core aspects were to have a tallylist and and payment balance aswell as the posibility to provide a convenient way to track the users coffees in the kitchen. This replaces the *old fashioned* tally list that was used before.
+
 Although we could not achieve all the aspects, like payment options or autmatic ordering, we are proud of the project.
-During the process of implementation we were supported optimally by our Seminar tutors Marcin, Adriatik and Rami. 
-All in all one could say it was a  fascinating project with a great team. 
+During the process of implementation we were supported optimally by our tutors Marcin, Adriatik and Rami. 
+
+All in all one could say it was a fascinating project with a great team. We are looking forward to seing the application in
+action!
