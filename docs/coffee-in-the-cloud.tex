@@ -47,83 +47,83 @@ explained in detail according to their sprints.
 
 \subsubsection{Sprint 1}\label{sprint-1}
 
-\textbf{Add Account}
+\subsubsection*{Add Account}
 
 The admin can add an account to the system including the first name,
 last name, email and a picture. The password will be created
 automatically and sent to the user via an email. Additionally he can
 activate his account through this email.
 
-\textbf{Edit Account}
+\subsubsection*{Edit Account}
 
 When the user is logged in, he is able to do some changes. This includes
 the email address, the password and the profile picture.
 
-\textbf{Remove Account}
+\subsubsection*{Remove Account}
 
 The admin is able to remove an account if requested.
 
-\textbf{Login}
+\subsubsection*{Login}
 
 The user can authenticate through email address and password.
 
-\textbf{Picture Login}
+\subsubsection*{Picture Login}
 
 A set of pictures will be displayed to the user on a screen. Via
 clicking or touching on a picture, the user can authenticate. Next to
 the picture will be the name of the user.
 
-\textbf{Coffee Tracking}
+\subsubsection*{Coffee Tracking}
 
 When logged in, the user can add one or more coffees. He can undo this
 action within a limited time frame.
 
-\textbf{Cleaning Schedule}
+\subsubsection*{Cleaning Schedule}
 
 The user can see the cleaning schedule for the upcomming weaks.
 
 \subsubsection{Sprint 2}\label{sprint-2}
 
-\textbf{Email Reminder - Cleaning}
+\subsubsection*{Email Reminder - Cleaning}
 
 When a user is assigned for cleaning he will get an email reminder. This
 reminder can be turned off in his personal settings.
 
-\textbf{Email Reminder - Account Balance}
+\subsubsection*{Email Reminder - Account Balance}
 
 When the user's balance goes below a certain amount he is notified via
 email. This reminder can be turned off in his personal settings.
 
-\textbf{Email Confirmation - Coffee Tracking}
+\subsubsection*{Email Confirmation - Coffee Tracking}
 
 When tracking coffee(s) the user gets a notification via email if he
 choses to. Using this email he can also undo the tracking within a
 certain time frame.
 
-\textbf{Statistics}
+\subsubsection*{Statistics}
 
 The statistics will be generated from all data gathered. The user can
 opt out of having his data displayed to others.
 
-\textbf{Checklist: Cleaning}
+\subsubsection*{Checklist: Cleaning}
 
 A checklist provided on the tablet and mobile application helps the user
 to keep track of each step involved in the cleaning process.
 
-\textbf{Tutorials: Photo}
+\subsubsection*{Tutorials: Photo}
 
 To support the processes of cleaning and coffee making a photo tutorial
 is provided.
 
 \subsubsection{Sprint 3}\label{sprint-3}
 
-\textbf{Cleaning Schedule: Intelligent Assignment}
+\subsubsection*{Cleaning Schedule: Intelligent Assignment}
 
 The user responsible for cleaning is chosen by the system. It will take
 into account if somebody has marked himself as absent for a certain
 period of time.
 
-\textbf{Guest Account}
+\subsubsection*{Guest Account}
 
 For tracking coffees a guest account exists. It allows guests of the
 chair to also track their coffees without having their own account. *
@@ -133,49 +133,49 @@ includes statistics. * This account can be enabled or disabled by system
 administrators. * A summary email should be send to the admin every X
 days (configurable).
 
-\textbf{User Rankings}
+\subsubsection*{User Rankings}
 
 Rankings show some kind of leaderboard according to the amount of coffee
 consumed by each user in a certain time frame. Users can opt out of
 having their data displayed.
 
-\textbf{Display total amount of money available}
+\subsubsection*{Display total amount of money available}
 
 As an administrator I want to see how much money is available for buying
 coffee. This should be shown in the admin backend. When new coffee is
 bought the admin needs to reduce the total amount.
 
-\textbf{Add cleaning checklist to tablet mode}
+\subsubsection*{Add cleaning checklist to tablet mode}
 
 The user wants to see the cleaning checklist even when he is not logged
 in.
 
-\textbf{Distinguish between weekly and bi-weekly cleaning in calender}
+\subsubsection*{Distinguish between weekly and bi-weekly cleaning in calender}
 
 As a user I want to see which kind of cleaning I should perform. The
 types should be easy to distinguish, for example by color.
 
-\textbf{Show a message on the main page if selected for cleaning}
+\subsubsection*{Show a message on the main page if selected for cleaning}
 
 As a user I want to see whether or not I have to clean today. This
 should be visible on the tablet as well as on the user page.
 
-\textbf{Settings page for users}
+\subsubsection*{Settings page for users}
 
 As a user I want to be able to configure my account on a settings page.
 * email configuration * profile picture * password
 
-\textbf{Extend cleaning checklist}
+\subsubsection*{Extend cleaning checklist}
 
 Add restart button and finish button to the coffee checklist. Cross out
 finished tasks.
 
-\textbf{Include calender entry invitation in cleaning email}
+\subsubsection*{Include calender entry invitation in cleaning email}
 
 As a user I want a calendar invitation to be included in the email that
 informs me about my upcoming cleanings.
 
-\textbf{Blame feature}
+\subsubsection*{Blame feature}
 
 I want to have a feature in tablet mode to blame someone who did not
 clean the porta filter. A ``reminder'' email is sent to the last coffee
@@ -594,7 +594,7 @@ The \textbf{Main Page} is the first page seen when visiting the
 coffee-in-the-cloud page. It consists of the
 \texttt{welcomeController.js} and the view \texttt{welcome.html}.
 
-\textbf{welcomeController.js}
+\subsubsection*{welcomeController.js}
 
 The main task of the controller is to give an alert-message saying
 ``Thank you for doing the cleaning!''. This happens after someone did
@@ -602,12 +602,12 @@ the cleaning and pressed the \emph{Finished Cleaning} button. In the
 case that an erorr occured during the function call, another allert will
 tell you so.
 
-\textbf{welcome.html}
+\subsubsection*{welcome.html}
 
 The welcome view has two states depending on whether or not you are
 logged in.
 
-\textbf{\emph{Logged out}}
+\subsubsection*{\emph{Logged out}}
 
 When first visiting the page without being logged in, you will be
 greeted and have the possibility to log in via a ``sign in'' button.
@@ -615,7 +615,7 @@ Futhermore you are able to click on the tutorials and cleaning checklist
 navbar tab or click on the icons for tablet mode and admin interface in
 the footer.
 
-\textbf{\emph{Logged In}}
+\subsubsection*{\emph{Logged In}}
 
 When logged in, different kind of banners can be seen. The one in blue,
 which is always shown, states how many coffees you have on the list and
@@ -644,7 +644,7 @@ For logging in via the login button, on the one hand the
 \texttt{loginController.js} and on the other hand the
 \texttt{login-popup.html} view is needed.
 
-\textbf{loginController.js}
+\subsubsection*{loginController.js}
 
 The loginController has a lot of functionality as it loads all the
 necessary data beforehand. In order to keep the code clean and avoid any
@@ -673,7 +673,7 @@ When the user wants to logout and presses the ``sign out'' button, the
 controller accomplishes the logout process by calling the
 \texttt{logout()} function.
 
-\textbf{login-popup.html}
+\subsubsection*{login-popup.html}
 
 The login-popup appears when the ``sign in'' button is clicked on. The
 user can now enter his login credentials consisting of an email address
@@ -690,7 +690,7 @@ In order to see the current coffee consumption the user visits the
 controller and the corresponding \texttt{tallylist.html} view is
 responsible.
 
-\textbf{tallylistController.js}
+\subsubsection*{tallylistController.js}
 
 The \textbf{tallylistController} has two core methods. On the one hand,
 when a coffee is added to the tallylist the \texttt{addCoffee(amount)}
@@ -704,7 +704,7 @@ within half an hour. Therefore the \texttt{removeCoffee(id)} is called
 with the matching coffee ID. This causes the entry to be removed from
 the users tallylist.
 
-\textbf{tallylist.html}
+\subsubsection*{tallylist.html}
 
 Like on the main page the user is shown a banner with his current
 balance and the amount of coffees on the list. Additonally, if the
@@ -726,7 +726,7 @@ As the cleaning of the coffee machine has to be scheduled, we built a
 calendar composed of the \texttt{scheduleController.js} and the
 \texttt{schedule.html}.
 
-\textbf{scheduleController.js} and \textbf{schedule.html}
+\subsubsection*{scheduleController.js} and \textbf{schedule.html}
 
 The controller sends a request to the backend in order to receive the
 necessary data for the calendar. How the algorithm works, will be
@@ -760,7 +760,7 @@ comparisons. In the end we came up with four kinds:
 The Javascript framework \href{chartjs.org/docs/}{chartJs} supplied us
 with some interesting chart types we could add into our application.
 
-\textbf{statisticsController.js} \& \textbf{statistics.html}
+\subsubsection*{statisticsController.js} \& \textbf{statistics.html}
 
 The procedure is rather simple. The \texttt{statisticsController} sends
 a request to the backend in order to get the necessary data. Then the
@@ -773,7 +773,7 @@ The turorials page is one of the pages, which can be seen even if the
 user is not logged in. It allows the user to have a step by step
 introduction to coffee making which is supported by pictures.
 
-\textbf{tutorialsController.js} \& \textbf{tutorials.html}
+\subsubsection*{tutorialsController.js} \& \textbf{tutorials.html}
 
 The controller automatically generates the picture tutorial from a
 dataset. In case the user has to make a decision different lines of
@@ -789,7 +789,7 @@ picture or set of pictures and displays them to the user.
 Just like the photo tutorial shows the user how to make perfect coffee,
 the cleaning checklist supports the cleaning of the machine.
 
-\textbf{cleaningController.js} \& \textbf{cleaning-checklist.html}
+\subsubsection*{cleaningController.js} \& \textbf{cleaning-checklist.html}
 
 In this controller all the steps required to clean the machine are
 included. Now depending on weekly or biweekly cleaning the right steps
@@ -811,7 +811,7 @@ One of the core features requiered was the tablet mode. Here the user
 does not need to log in with his login credentials but rather click on
 his picture to add a coffee to his account.
 
-\textbf{pictureloginController.js} \& \textbf{picture-login.html}
+\subsubsection*{pictureloginController.js} \& \textbf{picture-login.html}
 
 As the user does not login with his credentials, he has limited access
 to the website. That means, he is only able to see the tutorials and the
@@ -832,7 +832,7 @@ future.
 The Settings page has two states, deping on whether or not the user has
 the permission to manage the global balance.
 
-\textbf{settings.html}
+\subsubsection*{settings.html}
 
 \textbf{\emph{basic user}}
 
@@ -842,12 +842,12 @@ about his coffee consumption to be evaluated in the statistics and
 ranking. As receiving emails can be really annoying, we decided in favor
 of an option to disable all notifications.
 
-\textbf{\emph{admin user}}
+\subsubsection*{\emph{admin user}}
 
 The admin has more power over the global balance and is able to add
 money to users balance.
 
-\textbf{settingsController.js}
+\subsubsection*{settingsController.js}
 
 The controller contains two important methods. \texttt{update()} is
 called, when the user submits his data. If he wants to change is
