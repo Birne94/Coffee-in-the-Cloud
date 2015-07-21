@@ -2,7 +2,7 @@
 
 ## General
 
-Like many other software projects, we used the scrum technique for coffe-in-the-cloud. That means we organised the project with Jira, which is an issue tracking software developed by Altassian. Our main communication tool for the team itself was Slack and Facebook messenger. We used Slack as it provides the possibility to integrate Git notifications and many more. We had weekly stand-up meetings and biweekly sprints.
+Like many other software projects, we used the scrum technique for Coffee-in-the-Cloud. That means we organised the project with Jira, which is an issue tracking software developed by Altassian. Our main communication tool for the team itself was Slack and Facebook messenger. We used Slack as it provides the possibility to integrate Git notifications and many more. We had weekly stand-up meetings and biweekly sprints.
 
 ## Functional Requirements - Userstories
 All the user stories where assessed and discussed beforehand. The effort and the core features were determined. Below the userstories are explained in detail according to their sprints. 
