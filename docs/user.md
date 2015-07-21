@@ -86,7 +86,10 @@ In the bottom line you will find a gear symbol under which you have the option t
 
 ![settings screen](images/app-settings.png "settings screen")
 
-In case you have the permission to manage the global balance you can do that here as well.
+In case you have the permission to manage the global balance you can do that here as well. When selected a user the amount
+will be added to his balance. Otherwise the global balance will be updated.
+
+In order to substract money from the global balance you have to enter a negative number.
 
 ![global balance settings](images/app-balance.png "global balance settings")
 
