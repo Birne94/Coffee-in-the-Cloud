@@ -46,15 +46,15 @@ Copy the file ```setup/settings2.py``` to ```server/server/``` and adjust ```MED
 
 Copy the file ```setup/django.wsgi``` to ```server/apache/``` and adjust absolute path names.
 
-## Configuring apache
+## Configure apache
 
 Add the contents of the file ```setup/apache.conf``` to your apache configuration or include it.
 
 Adjust the port, virtual host and absolute path names for the application and your local python installation.
 
-## Adjusting permissions
+## Adjust permissions
 
-Make the ```server``` directory, ```server/db.sqlite3```, ```server/static/upload/``` writable to everyone (```chmod 777```).
+Make the ```server``` directory, ```server/db.sqlite3``` and ```server/static/upload/``` writable to everyone (```chmod 777```).
 
 ## Restart apache
 
