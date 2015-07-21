@@ -1,0 +1,95 @@
+\contentsline {section}{\numberline {1}Introduction}{3}{section.1}
+\contentsline {section}{\numberline {2}Organisational Process}{4}{section.2}
+\contentsline {subsection}{\numberline {2.1}General}{4}{subsection.2.1}
+\contentsline {subsection}{\numberline {2.2}Functional Requirements - Userstories}{4}{subsection.2.2}
+\contentsline {subsubsection}{\numberline {2.2.1}Sprint 1}{4}{subsubsection.2.2.1}
+\contentsline {subsubsection}{\numberline {2.2.2}Sprint 2}{5}{subsubsection.2.2.2}
+\contentsline {subsubsection}{\numberline {2.2.3}Sprint 3}{6}{subsubsection.2.2.3}
+\contentsline {subsection}{\numberline {2.3}XP-Techniques}{7}{subsection.2.3}
+\contentsline {subsubsection}{\numberline {2.3.1}small releases}{7}{subsubsection.2.3.1}
+\contentsline {subsubsection}{\numberline {2.3.2}pair programming}{7}{subsubsection.2.3.2}
+\contentsline {subsubsection}{\numberline {2.3.3}collective code ownership}{8}{subsubsection.2.3.3}
+\contentsline {section}{\numberline {3}AngularJs}{9}{section.3}
+\contentsline {subsection}{\numberline {3.1}Models}{9}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}Controllers}{10}{subsection.3.2}
+\contentsline {subsection}{\numberline {3.3}Views}{10}{subsection.3.3}
+\contentsline {subsection}{\numberline {3.4}Directives}{10}{subsection.3.4}
+\contentsline {subsection}{\numberline {3.5}Project structure}{10}{subsection.3.5}
+\contentsline {section}{\numberline {4}Finding a backend framework}{11}{section.4}
+\contentsline {subsection}{\numberline {4.1}Flask}{11}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}node.js}{11}{subsection.4.2}
+\contentsline {subsection}{\numberline {4.3}Django}{11}{subsection.4.3}
+\contentsline {section}{\numberline {5}Django - a short introduction}{12}{section.5}
+\contentsline {subsection}{\numberline {5.1}Models}{12}{subsection.5.1}
+\contentsline {subsection}{\numberline {5.2}Permissions}{12}{subsection.5.2}
+\contentsline {subsection}{\numberline {5.3}Views}{12}{subsection.5.3}
+\contentsline {subsection}{\numberline {5.4}Serializers}{13}{subsection.5.4}
+\contentsline {subsection}{\numberline {5.5}Migrations}{13}{subsection.5.5}
+\contentsline {subsection}{\numberline {5.6}Management/Commands}{14}{subsection.5.6}
+\contentsline {subsection}{\numberline {5.7}Templates}{14}{subsection.5.7}
+\contentsline {subsection}{\numberline {5.8}Static file deployment}{14}{subsection.5.8}
+\contentsline {subsection}{\numberline {5.9}Settings}{14}{subsection.5.9}
+\contentsline {subsection}{\numberline {5.10}Custom settings}{15}{subsection.5.10}
+\contentsline {subsection}{\numberline {5.11}Administration interface}{15}{subsection.5.11}
+\contentsline {section}{\numberline {6}Architectural Overview}{16}{section.6}
+\contentsline {section}{\numberline {7}Frontend Architecture}{17}{section.7}
+\contentsline {subsection}{\numberline {7.1}Services}{17}{subsection.7.1}
+\contentsline {subsubsection}{\numberline {7.1.1}coffeeCloud service}{17}{subsubsection.7.1.1}
+\contentsline {subsubsection}{\numberline {7.1.2}status service}{17}{subsubsection.7.1.2}
+\contentsline {subsection}{\numberline {7.2}Controllers and Views}{18}{subsection.7.2}
+\contentsline {subsubsection}{\numberline {7.2.1}Main Page - Home}{18}{subsubsection.7.2.1}
+\contentsline {subsubsection}{\numberline {7.2.2}Login}{19}{subsubsection.7.2.2}
+\contentsline {subsubsection}{\numberline {7.2.3}Tally List}{20}{subsubsection.7.2.3}
+\contentsline {subsubsection}{\numberline {7.2.4}Cleaning Schedule}{20}{subsubsection.7.2.4}
+\contentsline {subsubsection}{\numberline {7.2.5}Statistics}{21}{subsubsection.7.2.5}
+\contentsline {subsubsection}{\numberline {7.2.6}Tutorials}{21}{subsubsection.7.2.6}
+\contentsline {subsubsection}{\numberline {7.2.7}Cleaning Checklist}{22}{subsubsection.7.2.7}
+\contentsline {subsubsection}{\numberline {7.2.8}Picture Login - Tablet Mode}{22}{subsubsection.7.2.8}
+\contentsline {subsubsection}{\numberline {7.2.9}Settings}{23}{subsubsection.7.2.9}
+\contentsline {section}{\numberline {8}Backend Architecture}{24}{section.8}
+\contentsline {subsection}{\numberline {8.1}database layout}{24}{subsection.8.1}
+\contentsline {subsection}{\numberline {8.2}authentication}{24}{subsection.8.2}
+\contentsline {subsubsection}{\numberline {8.2.1}API Endpoints}{24}{subsubsection.8.2.1}
+\contentsline {subsubsection}{\numberline {8.2.2}Models}{25}{subsubsection.8.2.2}
+\contentsline {subsubsection}{\numberline {8.2.3}Permissions}{25}{subsubsection.8.2.3}
+\contentsline {subsubsection}{\numberline {8.2.4}Views}{25}{subsubsection.8.2.4}
+\contentsline {subsection}{\numberline {8.3}schedule}{25}{subsection.8.3}
+\contentsline {subsubsection}{\numberline {8.3.1}API Endpoints}{25}{subsubsection.8.3.1}
+\contentsline {subsubsection}{\numberline {8.3.2}Models}{26}{subsubsection.8.3.2}
+\contentsline {subsubsection}{\numberline {8.3.3}Views}{26}{subsubsection.8.3.3}
+\contentsline {subsubsection}{\numberline {8.3.4}Commands}{26}{subsubsection.8.3.4}
+\contentsline {subsection}{\numberline {8.4}statistics}{26}{subsection.8.4}
+\contentsline {subsubsection}{\numberline {8.4.1}API Endpoints}{26}{subsubsection.8.4.1}
+\contentsline {subsubsection}{\numberline {8.4.2}Views}{26}{subsubsection.8.4.2}
+\contentsline {subsection}{\numberline {8.5}tallylist}{27}{subsection.8.5}
+\contentsline {subsubsection}{\numberline {8.5.1}API Endpoints}{27}{subsubsection.8.5.1}
+\contentsline {subsubsection}{\numberline {8.5.2}Models}{27}{subsubsection.8.5.2}
+\contentsline {subsubsection}{\numberline {8.5.3}Permissions}{27}{subsubsection.8.5.3}
+\contentsline {subsubsection}{\numberline {8.5.4}Views}{27}{subsubsection.8.5.4}
+\contentsline {subsection}{\numberline {8.6}server}{28}{subsection.8.6}
+\contentsline {section}{\numberline {9}Additional functionality}{29}{section.9}
+\contentsline {subsection}{\numberline {9.1}Cleaning assignment}{29}{subsection.9.1}
+\contentsline {subsection}{\numberline {9.2}Coffee pricing}{29}{subsection.9.2}
+\contentsline {subsection}{\numberline {9.3}Admin interface}{30}{subsection.9.3}
+\contentsline {subsubsection}{\numberline {9.3.1}Log Entries}{31}{subsubsection.9.3.1}
+\contentsline {subsubsection}{\numberline {9.3.2}Accounts}{31}{subsubsection.9.3.2}
+\contentsline {subsubsection}{\numberline {9.3.3}Groups}{31}{subsubsection.9.3.3}
+\contentsline {subsubsection}{\numberline {9.3.4}Schedule Entries}{31}{subsubsection.9.3.4}
+\contentsline {subsubsection}{\numberline {9.3.5}Tally List Entries}{31}{subsubsection.9.3.5}
+\contentsline {section}{\numberline {10}Application Setup and Deployment}{32}{section.10}
+\contentsline {subsection}{\numberline {10.1}Clone the repository}{32}{subsection.10.1}
+\contentsline {subsection}{\numberline {10.2}Install client dependencies}{32}{subsection.10.2}
+\contentsline {subsection}{\numberline {10.3}Install server dependencies}{32}{subsection.10.3}
+\contentsline {subsection}{\numberline {10.4}Configure apache}{33}{subsection.10.4}
+\contentsline {subsection}{\numberline {10.5}Adjust permissions}{33}{subsection.10.5}
+\contentsline {subsection}{\numberline {10.6}Restart apache}{33}{subsection.10.6}
+\contentsline {section}{\numberline {11}User manual}{34}{section.11}
+\contentsline {subsection}{\numberline {11.1}Tablet}{34}{subsection.11.1}
+\contentsline {subsection}{\numberline {11.2}Tutorials}{34}{subsection.11.2}
+\contentsline {subsection}{\numberline {11.3}Cleaning Checklist}{36}{subsection.11.3}
+\contentsline {subsection}{\numberline {11.4}Login}{36}{subsection.11.4}
+\contentsline {subsection}{\numberline {11.5}Tally List}{36}{subsection.11.5}
+\contentsline {subsection}{\numberline {11.6}Cleaning Schedule}{39}{subsection.11.6}
+\contentsline {subsection}{\numberline {11.7}Statistics}{39}{subsection.11.7}
+\contentsline {subsection}{\numberline {11.8}Settings}{39}{subsection.11.8}
+\contentsline {section}{\numberline {12}Conclusion}{41}{section.12}

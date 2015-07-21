@@ -1,0 +1,27 @@
+images
+
+\begin{center}
+  \makebox[\textwidth]{\includegraphics[width=\paperwidth]{...}}
+\end{center}
+
+
+code
+
+\begin{lstlisting}[language=python]
+COFFEE_PRICE = 0.25
+\end{lstlisting}
+
+
+Links zu Code raus
+
+Seitenumbrüche nach Kapiteln
+
+Kaputte Überschriften fixen (#Frontend Architecture)
+
+& in Überschriften ersetzen + Controllerüberschriften fixen
+
+Definition Lists?
+
+Flowchart + Klassendiagramm auf eigene Seite, Querformat
+
+Listen für Guest Account und Settings fixen
