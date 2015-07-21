@@ -105,7 +105,7 @@ On the other hand, the user has the possibility to revise the adding within half
 
 Like on the main page the user is shown a banner with his current balance and the amount of coffees on the list. Additonally, if the balance is low, a warning appears. 
 
-The user now has the possibilty to add a single or a double coffee to his tallylist by pressing the corresponding button. This will trigger the ```*addCoffee(amount)``` function in the ```tallylistContoller```. Of course, after adding the coffee, the banners are updated with the new amount of coffees and balance. 
+The user now has the possibilty to add a single or a double coffee to his tallylist by pressing the corresponding button. This will trigger the ```addCoffee(amount)``` function in the ```tallylistContoller```. Of course, after adding the coffee, the banners are updated with the new amount of coffees and balance. 
 
 As mentioned beforehand the user is able to revise the adding of the coffee by clicking on the bin symbol. This is only possible within the next half hour of adding. 
 
