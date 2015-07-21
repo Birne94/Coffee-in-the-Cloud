@@ -1,8 +1,8 @@
 # AngularJs
 
-In the Coffee in the Cloud-Application we use angularjs for our frontend and user interface. AnuglarJs is a
-javascript framework that allows the creation of MVC (Model-View-Controller) based web applications. Because of this
-the code will stay properly divided into three core parts that are described below.
+In the Coffee in the Cloud-Application we use AnuglarJs for our frontend and user interface. AnuglarJs is a
+Javascript framework that allows the creation of MVC (Model-View-Controller) based web applications. Because of this
+the code will stay properly divided into the three core parts that are described below.
 
 ![mvc architecture](../images/mvc.png "mvc architecture")
 
@@ -34,7 +34,7 @@ parts of our application.
 ## Views
 
 Views are responsible for displaying all data to the user. In the views we create a user interface that will be
-displayed on the client's browser. AngularJs extends the HTMl syntax and functionality to allow the creation of basic
+displayed in the client's browser. AngularJs extends the HTMl syntax and functionality to allow the creation of basic
 templates in these views.
 
 Each view is tied to a controller that determines its behavior.
