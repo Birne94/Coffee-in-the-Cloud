@@ -25,7 +25,7 @@ Django is a web framework also written in Python. It has a more complex structur
 functionality, which we would not have to implement ourselves. The core features we rely on are the session management,
 the object-relationship-management for creating our database and the url-routing for the API endpoints.
 
-We had some experience in working with django from previous projects and it fit perfectly to our requirements.
+We had some experience in working with django from previous projects and it fit our requirements perfectly.
 
 In addition to django we are using the ```rest_framework``` library to ease the creation of a restful API. This
 framework provides features to automatically create endpoints from models, data serialisation and validation.
