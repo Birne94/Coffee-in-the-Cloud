@@ -32,10 +32,9 @@ customization.
 
 ### Models
 
-**Account** This model extends the basic user model and extends to add neccessary fields like email address, name,
+**Account** This model extends the basic user model to add neccessary fields like email address, name,
 profile picture or user balance. Also different user settings are stored there. In order to replace the built in user
-model with our own we added an ```AccountManager``` class which handles account
-creation.
+model with our own we added an ```AccountManager``` class which handles account creation.
 
 **Settings** This model allows application wide settings. Currently it is used to store the global available balance.
 
