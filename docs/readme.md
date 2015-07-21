@@ -27,3 +27,4 @@ The application improves the coffee tracking and management for the local machin
 * [Additional Components](modules/others.md)
 * [Server Setup](setup.md)
 * [User Manual](user.md)
+* [Conclusion] (conclusion.md)
