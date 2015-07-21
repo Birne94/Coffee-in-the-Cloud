@@ -2,7 +2,7 @@
 
 ## General
 
-Like many other software projects, we used the scrum technique for coffe-in-the-cloud. That means we organised the project with Jira, which is an issue tracking software developed by Altassian. Our main communication tool for the team itself was Slack and Facebook messenger. We used Slack as it provides the possibility to integrate git notifications and many more. We had weekly standup meetings and biweekly sprints.
+Like many other software projects, we used the scrum technique for coffe-in-the-cloud. That means we organised the project with Jira, which is an issue tracking software developed by Altassian. Our main communication tool for the team itself was Slack and Facebook messenger. We used Slack as it provides the possibility to integrate Git notifications and many more. We had weekly stand-up meetings and biweekly sprints.
 
 ## Functional Requirements - Userstories
 All the user stories where assessed and discussed beforehand. The effort and the core features were determined. Below the userstories are explained in detail according to their sprints. 
@@ -11,7 +11,7 @@ All the user stories where assessed and discussed beforehand. The effort and the
 
 **Add Account**
 
-The admin can add an account to the system including first name, last name, email and a picture. The password will be created automatically and will be sent to the user via an email. Additionally he can activate his account through this email. 
+The admin can add an account to the system including the first name, last name, email and a picture. The password will be created automatically and sent to the user via an email. Additionally he can activate his account through this email. 
 
 **Edit Account**
 
@@ -67,7 +67,7 @@ To support the processes of cleaning and coffee making a photo tutorial is provi
 
 **Cleaning Schedule: Intelligent Assignment**
 
-The user responsible for cleaning is chosen by the system. It will take into account if somebody has marked himself as absent for a certain amount of time.
+The user responsible for cleaning is chosen by the system. It will take into account if somebody has marked himself as absent for a certain period of time.
 
 **Guest Account**
 
