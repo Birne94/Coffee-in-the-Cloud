@@ -2,7 +2,7 @@
 
 ## General
 
-Likewise many other software projects, we used for coffe-in-the-cloud the scrum technique. That means we organised the project with Jira, which is an issue tracking software developed by Altassian. Our main communication tool for the team itself was Slack and Facebook messanger. We used Slack as it provides the possibility to integrate git notifications and many more. We had weekly standup meetings and biweekly sprints. 
+Like many other software projects, we used the scrum technique for coffe-in-the-cloud. That means we organised the project with Jira, which is an issue tracking software developed by Altassian. Our main communication tool for the team itself was Slack and Facebook messanger. We used Slack as it provides the possibility to integrate git notifications and many more. We had weekly standup meetings and biweekly sprints.
 
 ## Functional Requirements - Userstories
 All the user stories where assessed and discussed beforehand. The effort and the core features were determined. In the following the userstories are explained in detail according to their sprints. 
@@ -27,7 +27,7 @@ The user can authenticate through username and password.
 
 **Picture Login**
 
-The user is displayed a set of picture on a sreen. Via clicking or touching on a picture, the user can authenticate. Next to the picture will be the name of the user.
+A set of pictures will be displayed to the user on a screen. Via clicking or touching on a picture, the user can authenticate. Next to the picture will be the name of the user.
 
 **Coffee Tracking**
 
@@ -53,7 +53,7 @@ When tracking coffee(s) the user gets a notification via email if he choses to. 
 
 **Statistics**
 
-From all data gathered over the statistics will be generated. The user can opt out of having his data displayed to others.
+The statistics will be generated from all data gathered. The user can opt out of having his data displayed to others.
 
 **Checklist: Cleaning**
 
@@ -67,11 +67,11 @@ To support the processes of cleaning and coffee making a photo tutorial is provi
 
 **Cleaning Schedule: Intelligent Assignment**
 
-The responsible user for cleaning is chosen by the system. It will take into account if somebody has marked himself as absent for a certain amount of time.
+The user responsible for cleaning is chosen by the system. It will take into account if somebody has marked himself as absent for a certain amount of time.
 
 **Guest Account**
 
-For tracking coffees a guest account exists. It allows guests of the chair to also track their coffees without having an own account.
+For tracking coffees a guest account exists. It allows guests of the chair to also track their coffees without having their own account.
 * The account should be accessible by the admin (login with admin credentials)
 * It should behave like a normal user account, e.g. it includes statistics
 * This account can be enabled or disabled by system administrators
@@ -114,7 +114,7 @@ As a user I want that a calendar invitation is included in the email that inform
 
 **Blame feature**
 
-I want to have a feature in tablet mode to blame someone who did not clean the porta filter. An "reminder" email is sent to the last coffee drinker (add something like "it might be possible that someone else did not clean but did not register the coffee").
+I want to have a feature in tablet mode to blame someone who did not clean the porta filter. A "reminder" email is sent to the last coffee drinker (add something like "it might be possible that someone else did not clean but did not register the coffee").
 
 
 ## XP-Techniques

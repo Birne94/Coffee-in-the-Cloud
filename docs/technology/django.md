@@ -5,7 +5,7 @@ our options to three different technologies some of us had already worked with.
 
 ## Flask
 
-Flask is a lightweight framework for creating web services written in Python. It offers basic routing and has has
+Flask is a lightweight framework for creating web services written in Python. It offers basic routing and has
 close to no overhead. While it is very easy to use it only provides very basic functionality and thus we would have
 to implement many core features like session management or database-models ourselves. Also flask has no strict project
 structure which could lead to an unstructured code base if not maintained properly. Because we didn't want to take this

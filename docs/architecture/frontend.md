@@ -46,7 +46,7 @@ The  **Main Page** is the first page seen when visiting the coffee-in-the-cloud 
 
 **welcomeController.js**
 
-The main task of the controller is to give an alert-message saying "Thank you for doing the cleaning!". This happens after someone did the cleaning and pressed the *Finished Cleaning* button. In case, something an erorr occured during the function call, another allert will tell you so. 
+The main task of the controller is to give an alert-message saying "Thank you for doing the cleaning!". This happens after someone did the cleaning and pressed the *Finished Cleaning* button. In the case that an erorr occured during the function call, another allert will tell you so.
 
 **welcome.html**
 
@@ -54,17 +54,17 @@ First of all the welcome view has to states depending on whether you are logged 
 
 ***Logged out***
 
-When first visiting the page without being logged in, you get greeted and you have the possibility to log in via a "sing in" button. Futhermore one is able to click on the Tutorials and Cleaning-Checklist navbar tab or click on the icons for tablet mode and admin interface in the footer. 
+When first visiting the page without being logged in, you get greeted and you have the possibility to log in via a "sign in" button. Futhermore one is able to click on the Tutorials and Cleaning-Checklist navbar tab or click on the icons for tablet mode and admin interface in the footer.
 
 ***Logged In***
 
-When logged in, different kind of banners can me seen. The one in blue, which is shown always, states how many coffees you have on the list and your current balance. If this balance is below 2.00 Euro, another red banner appears and kindly asks you to add more money to your account. By clicking on the x, this banner disappears.  
+When logged in, different kind of banners can be seen. The one in blue, which is always shown, states how many coffees you have on the list and your current balance. If this balance is below 2.00 Euro, another red banner appears and kindly asks you to add more money to your account. By clicking on the x, this banner disappears.
 
 In case you are selected for cleaning, a third banner in yellow can be seen beneath. There you can either close the banner by clicking on the x or tell the system, that you sucessfully finished the cleaning by clicking the check. This can alternatively be done when pressing the "finished cleaning"-Button.
 
 Moreover, you will get complimented if you are the number 1 coffee drinker. This is again shown by a blue banner stating "You have drunk most of the coffee so far. Good job!". It can be closed aswell. The data used for estimating the winner, are loaded beforehand in the loginController. (see below). 
 
-Of course, when logged in, one has access to all the other navbar tabs like Statistics or Tally List too. 
+Of course, one has access to all the other navbar tabs like Statistics or Tally List when logged in, too.
 
 ### Login 
 
@@ -76,16 +76,16 @@ The loginController has a lot of functionality as it loads all the necessary dat
 
 As mentioned in the paragraph before, the ranking is calculatet here. So everytime someone logs in, the controller compares the tally list entries of all the users and estimate the winner(s). 
 
-One of the global function in the loginController is *updateUser()*. This function is called in several occasions. For example, when the user logs in. It is responsible for updating the currently logged in user's data and loads the user object and his tally list from the server. Additionally it is checked whether or not the user is selected for cleaning.
+One of the global function in the loginController is *updateUser()*. This function is called on several occasions. For example, when the user logs in. It is responsible for updating the currently logged in user's data and loads the user object and his tally list from the server. Additionally it is checked whether or not the user is selected for cleaning.
 
 The second relatively huge global method is *updateTally()*, called when you add a coffee to your tallylist. 
 
-When the user wants to logout and presses the "sign out" button, the controller accomplish the logout process by calling the *logout()* function.
+When the user wants to logout and presses the "sign out" button, the controller accomplishes the logout process by calling the *logout()* function.
 
 
 **login-popup.html**
 
-The Login-Popup appears when the "sing in" button is clicked on. The user can now enter his login credentials composed of an email address and a password. By clicking "Login" the *login()* function is called in the loginController. Otherwise the user can abort the login process by simply pressing the "cancel" button. Once logged in, a short alert message welcomes the user and the user has now full access to the web-application. 
+The Login-Popup appears when the "sign in" button is clicked on. The user can now enter his login credentials consisting of an email address and a password. By clicking "Login" the *login()* function is called in the loginController. Otherwise the user can abort the login process by simply pressing the "cancel" button. Once logged in, a short alert message welcomes the user and the user has now full access to the web-application.
 
 ### Tally List
 
@@ -120,13 +120,13 @@ In order to compare his own coffee consumption with the consumption of others, w
 1. the overall coffee consumption
 2. the users coffee consumption
 3. the amount of single and double coffee consumed
-4. the users coffee consumption compared to the overall ones
+4. the users coffee consumption compared to the overall consumption
 
 The JavaScript framework  *chart.js* supplied us with some interesting chart types for example the "Radar-Chart" or "Doughnut-Chart". 
 
 **statisticsController.js** & **statistics.html**
 
-The procedure is rather simple. The statisticsController sends a request to the backend in order to get the necessary data. Then the data will be process according to the requierements of the diagramm type. Ensuing the diagramm is filled with the matching data. 
+The procedure is rather simple. The statisticsController sends a request to the backend in order to get the necessary data. Then the data will be processed according to the requierements of the diagramm type. Consequently the diagramms are filled with the matching data.
 
 
 ### Tutorials
@@ -141,7 +141,7 @@ In the *tutorialsController.js* the important method is *next(cb)*. It is called
 
 ### Cleaning Checklist
 
-Likewise the photo tutorial shows the user how to make perfect coffee, the cleaning checklist should support the cleaning of the machine. 
+Just like the photo tutorial shows the user how to make perfect coffee, the cleaning checklist should support the cleaning of the machine.
 
 **cleaningController.js** & **cleaning-checklist.html**
 
