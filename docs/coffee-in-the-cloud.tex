@@ -31,8 +31,8 @@ any employee's work day.
 \subsection{General}\label{general}
 
 Like many other software projects, we used the scrum technique for
-coffe-in-the-cloud. That means we organised the project with Jira, which
-is an issue tracking software developed by Altassian. Our main
+Coffee-in-the-Cloud. That means we organised the project with Jira,
+which is an issue tracking software developed by Altassian. Our main
 communication tool for the team itself was Slack and Facebook messenger.
 We used Slack as it provides the possibility to integrate Git
 notifications and many more. We had weekly stand-up meetings and
@@ -879,7 +879,7 @@ Each model is represented by a data table in our relational database.
 \subsection{authentication}\label{authentication}
 
 The \texttt{authentication} module is responsible for user management
-and extends the built in system django uses. While django provides a
+and extends the built-in system django uses. While django provides a
 simple authentication and security system we decided to extend it in
 order to allow more customization.
 
@@ -905,8 +905,8 @@ user's settings.
 
 \textbf{Account} This model extends the basic user model to add
 neccessary fields like email address, name, profile picture or user
-balance. Also different user settings are stored there. In order to
-replace the built in user model with our own we added an
+balance. Different user settings are stored there too. In order to
+replace the built-in user model with our own we added an
 \texttt{AccountManager} class which handles account creation.
 
 \textbf{Settings} This model allows application wide settings. Currently
@@ -1071,7 +1071,7 @@ the official documentation for details.
 
 \textbf{urls} This module contains the endpoint configuration. New views
 have to be registered here in order to make them accessable. Also the
-deployment of static files and the front end is configured here.
+deployment of static files and the frontend is configured here.
 
 \textbf{wsgi} This module contains startup information for deploying the
 server using wsgi.
@@ -1092,7 +1092,7 @@ Then the algorithm will assign users depending on their coffee
 consumption within the last four weeks.
 
 When searching for an algorithm that met our needs we came across
-several ideas. Our first approach was to either randomly or evenly
+several ideas. Our first approach was either to randomly or evenly
 assign users for cleaning. This would create a distribution where
 everybody would clean the same amount of times. Even though this would
 be fair in a scenario where all users drink the same amount coffee we
@@ -1128,8 +1128,8 @@ The following flowchart illustrates the algorithm:
 
 In order to change the price of a single coffee a server administrator
 has to change the project configuration which is found in the
-\href{../../server/server/settings.py}{\texttt{settings.py}} and change
-the \texttt{COFFEE\_PRICE} setting to the desired value. The default
+\href{../../server/server/settings.py}{\texttt{settings.py}} and alter
+the \texttt{COFFEE\_PRICE} setting into the desired value. The default
 value is \texttt{0.25} euros.
 
 \begin{lstlisting}[language=python]
@@ -1151,9 +1151,9 @@ manage those models he was given the permissions for.
 \caption{default administration view}
 \end{figure}
 
-This interface should be used with caution as we provided a front end
+This interface should be used with caution as we provided a frontend
 solution for most necessary functionality. Improper changes might
-intefere with the platform's integrity.
+interfere with the platform's integrity.
 
 \subsubsection{Log Entries}\label{log-entries}
 
@@ -1214,7 +1214,7 @@ components installed on your system:
 \item
   Node Package Manager (npm)
 \item
-  git
+  Git
 \end{itemize}
 
 \subsection{Clone the repository}\label{clone-the-repository}
@@ -1310,8 +1310,8 @@ coffee.
 \caption{coffee tracking}
 \end{figure}
 
-Afterwards you should see a notification that your coffee has been
-tracked successfully.
+Afterwards you should see a notification that your coffee has been added
+successfully.
 
 \subsection{Tutorials}\label{tutorials-1}
 
@@ -1334,7 +1334,7 @@ tap on the corresponding picture.
 If you are assigned for cleaning you can use the cleaning checklist to
 keep track of the necessary steps. By tapping on a step you can mark
 them as done. On the bottom you will find a button for resetting the
-checklist and marking the cleaning as done.
+checklist and marking the cleaning as finished.
 
 \begin{figure}[htbp]
 \centering
@@ -1353,8 +1353,9 @@ welcoming screen like this.
 \caption{welcome screen}
 \end{figure}
 
-In the top right corner you can sign in using your email and password.
-These credentials should be provided by a system administrator.
+In the top right corner you can sign in using your email address and
+password. These credentials should be provided by a system
+administrator.
 
 \begin{figure}[htbp]
 \centering
@@ -1377,7 +1378,7 @@ You can now access more modules than before.
 \subsection{Tally List}\label{tally-list-1}
 
 The tally list screen gives you an overview of the last ten coffees that
-have been booked to your account. Apart from that you will see your
+have been added to your account. Apart from that you will see your
 current balance.
 
 In case you wrongfully booked a coffee you can remove it by accessing
@@ -1407,8 +1408,8 @@ can mark it as done.
 
 \subsection{Statistics}\label{statistics-2}
 
-In case you wonder about how your own coffee consumption changed over
-time or how it compares to everyone else you can do so using this page.
+In case you wondered how your own coffee consumption changed over time
+or how it compares to everyone else you can do so using this page.
 
 \begin{figure}[htbp]
 \centering
@@ -1428,8 +1429,8 @@ option to change your account settings.
 \end{figure}
 
 In case you have the permission to manage the global balance you can do
-that here as well. When selected a user the amount will be added to his
-balance. Otherwise the global balance will be updated.
+that here as well. You can either select a user to update his amount or
+update the global balance.
 
 In order to substract money from the global balance you have to enter a
 negative number.

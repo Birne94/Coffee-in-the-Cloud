@@ -12,7 +12,7 @@ Each model is represented by a data table in our relational database.
 
 ## authentication
 
-The ```authentication``` module is responsible for user management and extends the built in system django uses. While
+The ```authentication``` module is responsible for user management and extends the built-in system django uses. While
 django provides a simple authentication and security system we decided to extend it in order to allow more
 customization.
 
@@ -33,7 +33,7 @@ customization.
 ### Models
 
 **Account** This model extends the basic user model to add neccessary fields like email address, name,
-profile picture or user balance. Also different user settings are stored there. In order to replace the built in user
+profile picture or user balance. Different user settings are stored there too. In order to replace the built-in user
 model with our own we added an ```AccountManager``` class which handles account creation.
 
 **Settings** This model allows application wide settings. Currently it is used to store the global available balance.
@@ -86,8 +86,7 @@ information. It overrides the saving behavior to automatically send an email.
 
 ### Commands
 
-**assignusers** This command assigns users for cleaing. It can be called by using ```manage.py assignusers
-<numberOfWeeks>```. The algorithm used is described more in detail in the ```Module Description``` chapter.
+**assignusers** This command assigns users for cleaing. It can be called by using ```manage.py assignusers <numberOfWeeks>```. The algorithm used is described more in detail in the ```Module Description``` chapter.
 
 ## statistics
 
@@ -163,6 +162,6 @@ The ```server``` module acts as a configuration module for django.
 **settings** This module contains basic django configuration, see the official documentation for details.
 
 **urls** This module contains the endpoint configuration. New views have to be registered here in order to make them
-accessable. Also the deployment of static files and the front end is configured here.
+accessable. Also the deployment of static files and the frontend is configured here.
 
 **wsgi** This module contains startup information for deploying the server using wsgi.

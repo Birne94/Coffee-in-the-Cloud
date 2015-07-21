@@ -17,7 +17,7 @@ most recent coffee.
 
 ![coffee tracking](images/app-tablet-track.png "coffee tracking")
 
-Afterwards you should see a notification that your coffee has been tracked successfully.
+Afterwards you should see a notification that your coffee has been added successfully.
 
 ## Tutorials
 
@@ -33,7 +33,7 @@ coffee, you have to tap on the corresponding picture.
 
 If you are assigned for cleaning you can use the cleaning checklist to keep track of the necessary steps. By tapping
 on a step you can mark them as done. On the bottom you will find a button for resetting the checklist and marking the
-cleaning as done.
+cleaning as finished.
 
 ![cleaning checklist](images/app-checklist.png "cleaning checklist")
 
@@ -43,8 +43,7 @@ When accessing the application through your browser you will see a welcoming scr
 
 ![welcome screen](images/app-welcome.png "welcome screen")
 
-In the top right corner you can sign in using your email and password. These credentials should be provided by a system
-administrator.
+In the top right corner you can sign in using your email address and password. These credentials should be provided by a system administrator.
 
 ![login screen](images/app-login.png "login screen")
 
@@ -57,7 +56,7 @@ You can now access more modules than before.
 
 ## Tally List
 
-The tally list screen gives you an overview of the last ten coffees that have been booked to your account. Apart from
+The tally list screen gives you an overview of the last ten coffees that have been added to your account. Apart from
 that you will see your current balance.
 
 In case you wrongfully booked a coffee you can remove it by accessing this page within half an hour.
@@ -75,7 +74,7 @@ If you are assigned for cleaning you will also get a notification and can mark i
 
 ## Statistics
 
-In case you wonder about how your own coffee consumption changed over time or how it compares to everyone else you can
+In case you wondered how your own coffee consumption changed over time or how it compares to everyone else you can
 do so using this page.
 
 ![statistics screen](images/app-statistics.png "statistics screen")
@@ -86,8 +85,7 @@ In the bottom line you will find a gear symbol under which you have the option t
 
 ![settings screen](images/app-settings.png "settings screen")
 
-In case you have the permission to manage the global balance you can do that here as well. When selected a user the amount
-will be added to his balance. Otherwise the global balance will be updated.
+In case you have the permission to manage the global balance you can do that here as well. You can either select a  user to update his amount or update the global balance. 
 
 In order to substract money from the global balance you have to enter a negative number.
 

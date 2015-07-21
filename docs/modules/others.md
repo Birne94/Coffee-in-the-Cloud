@@ -9,7 +9,7 @@ Our application includes an algorithm to automatically assign users for cleaning
 can be done through the server console by using the command ```manage.py assignusers 4```. Then the algorithm will
 assign users depending on their coffee consumption within the last four weeks.
 
-When searching for an algorithm that met our needs we came across several ideas. Our first approach was to either
+When searching for an algorithm that met our needs we came across several ideas. Our first approach was either to
 randomly or evenly assign users for cleaning. This would create a distribution where everybody would clean the same
 amount of times. Even though this would be fair in a scenario where all users drink the same amount coffee we had some
 concerns because for example a person who drinks one coffee a month would have to clean as often as somebody who drinks
@@ -33,7 +33,7 @@ The following flowchart illustrates the algorithm:
 ## Coffee pricing
 
 In order to change the price of a single coffee a server administrator has to change the project configuration which is
-found in the [```settings.py```](../../server/server/settings.py) and change the ```COFFEE_PRICE``` setting to the
+found in the [```settings.py```](../../server/server/settings.py) and alter the ```COFFEE_PRICE``` setting into the
 desired value. The default value is ```0.25``` euros.
 
 ```python
@@ -50,7 +50,7 @@ the permissions for.
 
 ![default administration view](../images/django-admin.png "default administration view")
 
-This interface should be used with caution as we provided a front end solution for most necessary functionality. Improper changes might intefere with the platform's integrity.
+This interface should be used with caution as we provided a frontend solution for most necessary functionality. Improper changes might interfere with the platform's integrity.
 
 ### Log Entries
 
