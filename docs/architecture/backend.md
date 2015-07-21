@@ -2,9 +2,13 @@
 
 The backend for our Coffee-in-the-Cloud application is written in Python using the django web service framework.
 
-In the current application release the following modules are used:
+In the current application release the following modules are used.
 
 ## database layout
+
+Each model is represented by a data table in our relational database. 
+
+![class diagram](../images/class-diagram.png "class diagram")
 
 ## authentication
 

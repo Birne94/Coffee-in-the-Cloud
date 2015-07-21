@@ -4,6 +4,8 @@ In the Coffee in the Cloud-Application we use angularjs for our frontend and use
 javascript framework that allows the creation of MVC (Model-View-Controller) based web applications. Because of this
 the code will stay properly divided into three core parts that are described below.
 
+![mvc architecture](../images/mvc.png "mvc architecture")
+
 In order to manage dependencies we use the node package manager (short npm) and bower. These allow installing of
 dependencies in a bulk. Because of this we do not have to ship them and can keep the code base clear.
 
