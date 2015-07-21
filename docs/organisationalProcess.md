@@ -2,20 +2,20 @@
 
 ## General
 
-Like many other software projects, we used the scrum technique for coffe-in-the-cloud. That means we organised the project with Jira, which is an issue tracking software developed by Altassian. Our main communication tool for the team itself was Slack and Facebook messanger. We used Slack as it provides the possibility to integrate git notifications and many more. We had weekly standup meetings and biweekly sprints.
+Like many other software projects, we used the scrum technique for coffe-in-the-cloud. That means we organised the project with Jira, which is an issue tracking software developed by Altassian. Our main communication tool for the team itself was Slack and Facebook messenger. We used Slack as it provides the possibility to integrate git notifications and many more. We had weekly standup meetings and biweekly sprints.
 
 ## Functional Requirements - Userstories
-All the user stories where assessed and discussed beforehand. The effort and the core features were determined. In the following the userstories are explained in detail according to their sprints. 
+All the user stories where assessed and discussed beforehand. The effort and the core features were determined. Below the userstories are explained in detail according to their sprints. 
 
 ### Sprint 1
 
 **Add Account**
 
-The admin can add an account to the system including first name, last name, email and a picture. The password will be created automatically and will be sent to the usa via an email. Additionally he can activate his account thourgh this email. 
+The admin can add an account to the system including first name, last name, email and a picture. The password will be created automatically and will be sent to the user via an email. Additionally he can activate his account through this email. 
 
 **Edit Account**
 
-When the user is logged in, he is able to do some changes. This includes the email adresse, the password and the profile picture. 
+When the user is logged in, he is able to do some changes. This includes the email address, the password and the profile picture. 
 
 **Remove Account**
 
@@ -23,7 +23,7 @@ The admin is able to remove an account if requested.
 
 **Login**
 
-The user can authenticate through username and password.
+The user can authenticate through email address and password.
 
 **Picture Login**
 
@@ -31,11 +31,11 @@ A set of pictures will be displayed to the user on a screen. Via clicking or tou
 
 **Coffee Tracking**
 
-When logged in, the user can add one or more coffees. He can undo this.
+When logged in, the user can add one or more coffees. He can undo this action within a limited time frame.
 
 **Cleaning Schedule**
 
-The user can see the cleaning schedule for the upcomming weak. 
+The user can see the cleaning schedule for the upcomming weaks. 
 
 ### Sprint 2
 
@@ -72,10 +72,10 @@ The user responsible for cleaning is chosen by the system. It will take into acc
 **Guest Account**
 
 For tracking coffees a guest account exists. It allows guests of the chair to also track their coffees without having their own account.
-* The account should be accessible by the admin (login with admin credentials)
-* It should behave like a normal user account, e.g. it includes statistics
-* This account can be enabled or disabled by system administrators
-* A summary email should be send to the admin every X days (configurable)
+* The account should be accessible by the admin (login with admin credentials).
+* It should behave like a normal user account, e.g. it includes statistics.
+* This account can be enabled or disabled by system administrators.
+* A summary email should be send to the admin every X days (configurable).
 
 **User Rankings**
 
@@ -87,30 +87,30 @@ As an administrator I want to see how much money is available for buying coffee.
 
 **Add cleaning checklist to tablet mode**
 
-The user wants to see the cleaning checklist although he is not logged in.
+The user wants to see the cleaning checklist even when he is not logged in.
 
 **Distinguish between weekly and bi-weekly cleaning in calender**
 
-As a user I want to see which kind of cleaning I should perform. Use different colors.
+As a user I want to see which kind of cleaning I should perform. The types should be easy to distinguish, for example by color.
 
 **Show a message on the main page if selected for cleaning**
 
-As a user I want to see whether I have to clean. This should be visible on the tablet as well as on the user page.
+As a user I want to see whether or not I have to clean today. This should be visible on the tablet as well as on the user page.
 
 **Settings page for users**
 
 As a user I want to be able to configure my account on a settings page.
 * email configuration
-* profile pic
+* profile picture
 * password
 
 **Extend cleaning checklist**
 
-Add restart Button and Finish Button to the coffee checklist. Cross out finished tasks
+Add restart button and finish button to the coffee checklist. Cross out finished tasks.
 
 **Include calender entry invitation in cleaning email**
 
-As a user I want that a calendar invitation is included in the email that informs me about my cleaning schedule.
+As a user I want a calendar invitation to be included in the email that informs me about my upcoming cleanings.
 
 **Blame feature**
 
@@ -119,15 +119,15 @@ I want to have a feature in tablet mode to blame someone who did not clean the p
 
 ## XP-Techniques
 
-In order to work efficiently and fullfill our users requirements as good as possible, we used some of the practices of extreme programming. In our opinion this was really successfull. 
+In order to work efficiently and fulfill our users requirements as good as possible, we used some of the practices of extreme programming. In our opinion these helped us improve the development workflow. 
 
 ### small releases
 
-We intregrated code early and often. As a result we had less bugs and always a running version of our software. Additonally we got the feedback quicker and it also incresed our self confidence. 
+We intregrated code early and steadily. As a result we had less bugs and always a running version of our software. Additonally we got the feedback quicker and it also increased our self confidence. 
 
 ### pair programming
 
-In the course of the weeks we realized, that we did much better work when developing together. Therefore we often implementen user stories in pairs where one was the driver (types code) and the partner tried to be completly engaged and understand  everything. 
+In the course of the weeks we realized, that we did much better work when developing together. Therefore we often implemented user stories in pairs where one was the driver (types code) and the partner tried to be completly engaged and provide additional thoughts.
 
 ### collective code ownership
 
