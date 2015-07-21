@@ -1,6 +1,6 @@
 ## Setup
 
-* Check out our repository from github.
+* Clone our repository from github.
 
 * Copy ```django.wsgi``` to ```server/apache/``` and adjust absolute path names.
 
