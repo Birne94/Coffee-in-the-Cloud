@@ -33,7 +33,7 @@ The following flowchart illustrates the algorithm:
 ## Coffee pricing
 
 In order to change the price of a single coffee a server administrator has to change the project configuration which is
-found in the [```settings.py```](../../server/server/settings.py) and changes the ```COFFEE_PRICE``` setting to the
+found in the [```settings.py```](../../server/server/settings.py) and alter the ```COFFEE_PRICE``` setting into the
 desired value. The default value is ```0.25``` euros.
 
 ```python
