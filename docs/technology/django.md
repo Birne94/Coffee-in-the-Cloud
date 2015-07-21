@@ -69,7 +69,7 @@ As we are using the ```rest_framework``` extension we do not have to handle json
 ourselves. Each view can so define different methods for viewing or manipulating data.
 
 For example a ```list``` method allows automatic rendering of an object list. ```post``` and ```get``` respectively
-handle POST and GET requests via HTTP.
+handle POST and GET requests via the HTTP protocol.
 
 The ```rest_framework``` also provides some debugging utility. For example when accessing an endpoint directly it
 displays additional information like available methods and allows drafting new requests. Apart from testing purposes
@@ -113,7 +113,7 @@ creating dynamic HTML responses, in our application we only use then for the ema
 
 ## Static file deployment
 
-In our application we use django to deploy all static files including our angularjs app. Because of this there is no
+In our application we use django to deploy all static files including our AngularJs app. Because of this there is no
 need for a secondary web server like apache. Any request that does not match a defined endpoint will be resolved within
 a given directory which is specified inside the server configuration.
 
@@ -128,14 +128,17 @@ to be added to this list manually.
 **DATABASES:** A list of available databases that can be accessed by the application. By default an sqlite3 connection
 is configured here.
 
-**LANGUAGE_CODE, TIME_ZONE:** This setting provides localisation. By default it is set to an English locale and the
-Central European Time zone.
+**LANGUAGE_CODE, TIME_ZONE:** This setting provides localisation to our application. By default it is set to an English
+locale and the Central European Time zone.
 
 **STATICFILES_DIRS:** A list of paths where django will search for static files. For our application it is important
 to include the client directory because otherwise it cannot be deployed.
 
 **MEDIA_ROOT:** A directory where django will store uploaded files which should be given as an absolute path. This
 directory has to be writable because otherwise any uploads will fail.
+
+**DEBUG:** This settings enables extended error messages. It is helpful for testing the application but should not be used
+in a productive environment.
 
 ## Custom settings
 
