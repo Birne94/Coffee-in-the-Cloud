@@ -6,6 +6,8 @@ In the current application release the following modules are used:
 
 ## database layout
 
+![class diagram](../images/class-diagram.png "class diagram")
+
 ## authentication
 
 The ```authentication``` module is responsible for user management and extends the built in system django uses. While
