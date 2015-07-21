@@ -1,15 +1,7 @@
 #Introduction
 
-Kaffee kochen gehört für die meisten Menschen zum täglichen leben. Die einen brauchen ihn um morgens in den Gang zu kommen,
-die anderen treffen sich nachmittags und genießen ihn in Gesellschaft. Die Menschen nutzen ihn bei jeder Gelegenheit als
-Pausengrund.
-Wie die verschiedenen Momente in denen Kaffee getrunken wird, gibt es auch verschiedene Arten ihn zu erwerben.
-Am Cafe neben an, vom Kaffeeautomat oder der Kaffeemaschine in der Küche. In einem Büro kommt es häufiger vor, dass sich
-Kollegen eine Maschine teilen. Aber wer kümmert sich um neue Bohnen, die Abrechnung oder die Reinigung?
-Dies sind Aufgaben, welche man nicht unbedingt von sich aus zusätzlich zur Arbeit übernimmt. Wie könnte also eine faire
-Verteilung dieser Aktivitäten aussehen und wie lassen diese sich einfach umsetzen? Hier bietet sich die Unterstzützung durch
-IT förmlich an. So kann diese genutzt werden um Aufzuzeichnen wer, wann, wie viele Kaffees trinkt und diese bequem abrechnen.
-Außerdem können statistisch Daten erhoben werden,um eine faire Verteilung der Reinigung vorzunehmen.
-Diese Aspekte motivierten uns Cornelius Pohl, Daniel Birnstiel und Theresa Zobel im Rahmen des tBPM Seminars SS15 am FG
-Weske eine Lösung der Kaffeemaschinenverwaltung im Büro zu erarbeiten. Ziel war es eine Software zu entwickeln,
-welche bei den eben genannten Aufgaben weitestgehen autonom arbeitet und jedem Kollegen den Arbeitsalltag erleichtert.
+Making coffee is a part of most people’s daily life. Some need it to get going in the morning, others meet in the afternoon and enjoy it in company.
+People use it on any occasion as a reason to take a break. Just like there are different occasions to drink it, there are different methods to acquire it; the coffee shop next door, a vending machine or the coffee machine in the kitchen. In an office it often occurs that colleagues share a machine. But who is responsible for buying new beans, the cleaning or payment? These are tasks that no one likes to take over voluntarily. So what exactly could a fair distribution of those activities look like, and how are they executed most easily? This question calls for an IT supported solution that could be used to track who drinks how many cups and when, in order to balance their accounts appropriately. Furthermore, statistical data can be collected that ensures a fair distribution of the cleaning tasks.
+Those aspects motivated us, Cornelius Pohl, Daniel Birnstiel and Theresa Zobel to develop a solution for coffee machine administration in the officein the context of the tBPM seminar, during the summer term 2015, at the BPT chair of professor Weske. The goal was to create a software that could work largely autonomously and simplify any employee’s work day.
+
+
