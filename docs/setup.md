@@ -5,7 +5,7 @@ In order to deploy our application you will need the following components instal
 * Python 2.7 including PIP
 * Apache including ```mod_wsgi```
 * Node Package Manager (npm)
-* git
+* Git
 
 ## Clone the repository
 
