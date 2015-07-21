@@ -50,7 +50,7 @@ the permissions for.
 
 ![default administration view](../images/django-admin.png "default administration view")
 
-This interface should be used with caution as we provided a front end solution for most necessary functionality.
+This interface should be used with caution as we provided a front end solution for most necessary functionality. Improper changes might intefere with the platform's integrity.
 
 ### Log Entries
 
