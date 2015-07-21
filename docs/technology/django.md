@@ -6,7 +6,7 @@ our options to three different technologies some of us had already worked with.
 ## Flask
 
 Flask is a lightweight framework for creating web services written in Python. It offers basic routing and has
-close to no overhead. While it is very easy to use it only provides very basic functionality and thus we would have
+nearly no overhead. While it is very easy to use it only provides very basic functionality and thus we would have
 to implement many core features like session management or database-models ourselves. Also flask has no strict project
 structure which could lead to an unstructured code base if not maintained properly. Because we didn't want to take this
 risk we decided against the flask framework.
@@ -14,18 +14,18 @@ risk we decided against the flask framework.
 ## node.js
 
 Node.js is a powerful framework for creating web services written in Javascript. As we were using node.js' package
-manager for managing our front end dependencies it seemed natural to use node.js for our backend as well. The downside
-to node.js was that none of us had already built a more complex platform using it, so we would have to slowly learn all
-necessary features. We also had no knowledge of available APIs and functionality which means we would have to
+manager for managing our frontend dependencies it seemed natural to use node.js for our backend as well. The downside
+was that none of us had already built a more complex platform using it, so we would have had to slowly learn all
+necessary features. We also had no knowledge of available APIs and functionality which means we would have had to
 familiarize ourselves with these before actually starting to develop our app.
 
 ## Django
 
 Django is a web framework also written in Python. It has a more complex structure but includes a lot of additional
-functionality we would not have to implement ourselves. The core features we rely on are session management,
-object-relationship-management for creating our database and url-routing for the API endpoints.
+functionality, which we would not have to implement ourselves. The core features we rely on are the session management,
+the object-relationship-management for creating our database and the url-routing for the API endpoints.
 
-We had some experience in working with django from previous projects and it integrated perfectly with our requirements.
+We had some experience in working with django from previous projects and it fit perfectly to our requirements.
 
 In addition to django we are using the ```rest_framework``` library to ease the creation of a restful API. This
 framework provides features to automatically create endpoints from models, data serialisation and validation.
@@ -44,8 +44,8 @@ A model is a class that describes the data structure of objects. Instances of th
 into and loaded from our database. Also changes are automatically tracked and can be reverted at any time.
 
 Models are defined in each module within a ```models.py``` file. This file then contains one class for each model.
-These in general are a subclass of the type ```django.db.models.Model``` and define all fields as python data types.
-In addition to simple data types like numbers and text django also provides complex data types like dates or files which
+In general these are a subclass of the type ```django.db.models.Model``` and define all fields as python data types.
+In addition to simple data types like numbers and text, django also provides complex data types like dates or files which
 are automatically validated. It supports all features that are important for a relational database.
 
 Apart from fields a model can also specify special behavior, for example for automatic validation when editing field
@@ -62,11 +62,11 @@ Permissions can be set automatically by the system or through the administration
 
 A view is responsible for converting model data into viewable information. In our case each view either loads models
 from the database and converts then into a json response or processes a request and changes a model's state. We
-separated our angularjs front end from the backend so our views will only represent the needed API endpoints and will
+separated our angularjs frontend from the backend so our views will only represent the needed API endpoints and will
 not create viewable HTML.
 
 As we are using the ```rest_framework``` extension we do not have to handle json conversion and object validation
-ourselves. Each view can so define different methods for viewing or manipulating data.
+ourselves. In this way each view can define different methods for viewing or manipulating data.
 
 For example a ```list``` method allows automatic rendering of an object list. ```post``` and ```get``` respectively
 handle POST and GET requests via the HTTP protocol.
@@ -84,7 +84,7 @@ can be found in the [```urls.py``` file](../../server/server/urls.py) and lists 
 
 A serializer is responsible for converting a model into a json representation. In most cases it defines a collection
 of fields that are publicly accessible. For special cases like account creation it is possible to add custom
-validation behavior, which in this example validates the password and then updates session information.
+validation behavior, which in this example validates the password and then updates the session information.
 
 ## Migrations
 
@@ -109,7 +109,7 @@ Commands can be used to run a special task periodically by connecting them with 
 ## Templates
 
 A template contains formatted text that can be dynamically filled with information. Usually these are used for
-creating dynamic HTML responses, in our application we only use then for the email functionality.
+creating dynamic HTML responses, in our application we only use them for the email functionality.
 
 ## Static file deployment
 
@@ -129,7 +129,7 @@ to be added to this list manually.
 is configured here.
 
 **LANGUAGE_CODE, TIME_ZONE:** This setting provides localisation to our application. By default it is set to an English
-locale and the Central European Time zone.
+locale and the Central European time zone.
 
 **STATICFILES_DIRS:** A list of paths where django will search for static files. For our application it is important
 to include the client directory because otherwise it cannot be deployed.
