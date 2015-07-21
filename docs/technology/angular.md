@@ -19,16 +19,16 @@ us to have multiple views within one application that are loaded dynamically.
 ## Models
 
 Models contain all kind of data we would like to use, for example users, tally list or calendar entries. In our
-application these are created and managed server side. The server also handles persisting the data into our database.
+application these are created and managed server-sided. The server also handles persisting the data into our database.
 Because of this the models are replaced by a service that fetches data from our server.
 
 ## Controllers
 
-Controllers are necessary to create useful data from the models we have stored. For every page that will ultimately
+Controllers are necessary to create useful data from the stored models. For every page that will ultimately
 be displayed in our application a controller fetches the data and prepares it for the user. This also includes
-validation of user generated information.
+validation of the user generated information.
 
-The controllers will be both implemented server and client side as they will manage the connection between these to
+The controllers will be both implemented server- and client-sided as they will manage the connection between these to
 parts of our application.
 
 ## Views
