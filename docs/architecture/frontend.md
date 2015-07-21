@@ -1,8 +1,8 @@
 # Frontend Architecture
 
-The frontend for our Coffee-in-the-Cloud application is written in Javascript using among others the angularJs and requireJs framework as well as bootstrap.
+The frontend for our Coffee-in-the-Cloud application is written in Javascript using among others the AngularJs and requireJs framework as well as bootstrap.
 
-Below we will explain the detailed structure of our application frontend.
+In the following we will explain the detailed structure of our application's frontend.
 
 ## Services
 
@@ -89,7 +89,7 @@ When the user wants to logout and presses the "sign out" button, the controller 
 
 **login-popup.html**
 
-The login-popup appears when the "sign in" button is clicked on. The user can now enter his login credentials consisting of an email address and a password. By clicking "Login" the ```login()``` function is called in the loginController. Otherwise the user can abort the login process by simply pressing the "cancel" button. Once logged in, a short alert message welcomes the user and he now has full access to the web-application.
+The login-popup appears when the "sign in" button is clicked on. The user can now enter his login credentials consisting of an email address and a password. By clicking "Login" the ```login()``` function is called in the loginController. Otherwise the user can abort the login process by simply pressing "cancel". Once logged in, a short alert message welcomes the user and he now has full access to the web-application.
 
 ### Tally List
 
@@ -115,7 +115,7 @@ As the cleaning of the coffee machine has to be scheduled, we built a calendar c
 
 **scheduleController.js** and **schedule.html**
 
-The controller sends a request to the backend in order to receive the necessary data for the calendar. How the algorithm works, will be explained later on. The data important for us is the person and the type of cleaning assigned. To distinguish the different kinds of cleaning we assigned them different colors. Additionally if the cleaning is finished, it will be shown as crossed out and in gray. Of course one can select between daily, weekly and monthly view in the calendar.
+The controller sends a request to the backend in order to receive the necessary data for the calendar. How the algorithm works, will be explained later on. The data important for us is the user and the type of cleaning assigned. To distinguish between the different kinds of cleaning we assigned them different colors. Additionally if the cleaning is finished, it will be shown as crossed out and in gray. Of course one can select between daily, weekly and monthly view in the calendar.
 
 For displaying an appealing calendar we use the [fullcalendar](http://fullcalendar.io/) library.
 
