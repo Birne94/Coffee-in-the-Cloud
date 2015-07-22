@@ -1,4 +1,5 @@
 \newpage
+\newpage
 \section{Introduction}\label{introduction}
 
 Making coffee is a part of most people's daily life. Some need it to get
@@ -26,6 +27,7 @@ to create a software that could work largely autonomously and simplify
 any employee's work day.
 
 \newpage
+\newpage
 \section{Organisational Process}\label{organisational-process}
 
 \subsection{General}\label{general}
@@ -38,8 +40,7 @@ We used Slack as it provides the possibility to integrate Git
 notifications and many more. We had weekly stand-up meetings and
 biweekly sprints.
 
-\subsection{Functional Requirements -
-Userstories}\label{functional-requirements---userstories}
+\subsection{Functional Requirements - Userstories}\label{functional-requirements---userstories}
 
 All the user stories where assessed and discussed beforehand. The effort
 and the core features were determined. Below the userstories are
@@ -80,7 +81,7 @@ action within a limited time frame.
 
 \subsubsection*{Cleaning Schedule}
 
-The user can see the cleaning schedule for the upcomming weaks.
+The user can see the cleaning schedule for the upcomming weeks.
 
 \subsubsection{Sprint 2}\label{sprint-2}
 
@@ -126,12 +127,14 @@ period of time.
 \subsubsection*{Guest Account}
 
 For tracking coffees a guest account exists. It allows guests of the
-chair to also track their coffees without having their own account. *
-The account should be accessible by the admin (login with admin
-credentials). * It should behave like a normal user account, e.g.~it
-includes statistics. * This account can be enabled or disabled by system
-administrators. * A summary email should be send to the admin every X
-days (configurable).
+chair to also track their coffees without having their own account.
+
+\begin{itemize}
+\item The account should be accessible by the admin (login with admin credentials).
+\item It should behave like a normal user account, e.g. it includes statistics.
+\item This account can be enabled or disabled by system administrators.
+\item A summary email should be send to the admin every X days (configurable).
+\end{itemize}
 
 \subsubsection*{User Rankings}
 
@@ -163,7 +166,12 @@ should be visible on the tablet as well as on the user page.
 \subsubsection*{Settings page for users}
 
 As a user I want to be able to configure my account on a settings page.
-* email configuration * profile picture * password
+
+\begin{itemize}
+\item email configuration
+\item profile picture
+\item password
+\end{itemize}
 
 \subsubsection*{Extend cleaning checklist}
 
@@ -184,14 +192,14 @@ not clean but did not register the coffee'').
 
 \subsection{XP-Techniques}\label{xp-techniques}
 
-In order to work efficiently and fulfill our users requirements as good
+In order to work efficiently and fulfil our users requirements as good
 as possible, we used some of the practices of extreme programming. In
 our opinion these helped us improve the development workflow.
 
 \subsubsection{small releases}\label{small-releases}
 
-We intregrated code early and steadily. As a result we had less bugs and
-always a running version of our software. Additonally we got the
+We integrated code early and steadily. As a result we had less bugs and
+always a running version of our software. Additionally we got the
 feedback quicker and it also increased our self confidence.
 
 \subsubsection{pair programming}\label{pair-programming}
@@ -199,15 +207,15 @@ feedback quicker and it also increased our self confidence.
 In the course of the weeks we realized, that we did much better work
 when developing together. Therefore we often implemented user stories in
 pairs where one was the driver (types code) and the partner tried to be
-completly engaged and provide additional thoughts.
+completely engaged and provide additional thoughts.
 
-\subsubsection{collective code
-ownership}\label{collective-code-ownership}
+\subsubsection{collective code ownership}\label{collective-code-ownership}
 
 As we often worked together on user stories, everybody was allowed to
 change the code of the others. This was reasonable because it avoids
-expert knowlegde.
+expert knowledge.
 
+\newpage
 \newpage
 \section{AngularJs}\label{angularjs}
 
@@ -276,21 +284,18 @@ introduce new tags or attributes.
 The client project contains of several type of resources that are
 separated in different folders.
 
-\textbf{/index.html} contains the main application and entry point.
-
-\textbf{/js/} contains controllers, directives, services and libraries
-installed by bower.
-
-\textbf{/less/} contains less stylesheets that will be compiled to css
-on deployment.
-
-\textbf{/public/} contains static images and stylesheets.
-
-\textbf{/views/} contains views as HTML files.
+\begin{description}
+\item[/index.html] contains the main application and entry point.
+\item[/js/] contains controllers, directives, services and libraries installed by bower.
+\item[/less/] contains less stylesheets that will be compiled to css on deployment.
+\item[/public/] contains static images and stylesheets.
+\item[/views/] contains views as HTML files.
+\end{description}
 
 All other files in the client directory are resource files needed for
 bower and node to include all needed dependencies.
 
+\newpage
 \newpage
 \section{Finding a backend framework}\label{finding-a-backend-framework}
 
@@ -337,6 +342,7 @@ to automatically create endpoints from models, data serialisation and
 validation.
 
 \newpage
+\newpage
 \section{Django - a short
 introduction}\label{django---a-short-introduction}
 
@@ -362,7 +368,7 @@ numbers and text, django also provides complex data types like dates or
 files which are automatically validated. It supports all features that
 are important for a relational database.
 
-Apart from fields a model can also specify special behavior, for example
+Apart from fields a model can also specify special behaviour, for example
 for automatic validation when editing field values or relationships
 between models.
 
@@ -379,8 +385,8 @@ administration interface.
 
 A view is responsible for converting model data into viewable
 information. In our case each view either loads models from the database
-and converts then into a json response or processes a request and
-changes a model's state. We separated our angularjs frontend from the
+and converts then into a JSON response or processes a request and
+changes a model's state. We separated our AngularJs frontend from the
 backend so our views will only represent the needed API endpoints and
 will not create viewable HTML.
 
@@ -406,15 +412,15 @@ documentation.
 
 In order to grant an application access to a newly created view it has
 to be registered in the routing system. This can be found in the
-\href{../../server/server/urls.py}{\texttt{urls.py} file} and lists all
+\texttt{urls.py} file and lists all
 API endpoints available.
 
 \subsection{Serializers}\label{serializers}
 
-A serializer is responsible for converting a model into a json
+A serializer is responsible for converting a model into a JSON
 representation. In most cases it defines a collection of fields that are
 publicly accessible. For special cases like account creation it is
-possible to add custom validation behavior, which in this example
+possible to add custom validation behaviour, which in this example
 validates the password and then updates the session information.
 
 \subsection{Migrations}\label{migrations}
@@ -461,45 +467,47 @@ server configuration.
 \subsection{Settings}\label{settings}
 
 To configure the server django provides a configuration file which can
-be found at
-\href{../../server/server/settings.py}{\texttt{/server/server/settings.py}
-file}. The most important settings are
+be found at \texttt{/server/server/settings.py} file. The most important settings are
 
-\textbf{INSTALLED\_APPS:} A list of installed modules and frameworks in
+\begin{description}
+\item[INSTALLED\_APPS] A list of installed modules and frameworks in
 this application. When a new module is created it has to be added to
 this list manually.
 
-\textbf{DATABASES:} A list of available databases that can be accessed
+\item[DATABASES] A list of available databases that can be accessed
 by the application. By default an sqlite3 connection is configured here.
 
-\textbf{LANGUAGE\_CODE, TIME\_ZONE:} This setting provides localisation
+\item[LANGUAGE\_CODE, TIME\_ZONE] This setting provides localisation
 to our application. By default it is set to an English locale and the
 Central European time zone.
 
-\textbf{STATICFILES\_DIRS:} A list of paths where django will search for
+\item[STATICFILES\_DIRS] A list of paths where django will search for
 static files. For our application it is important to include the client
 directory because otherwise it cannot be deployed.
 
-\textbf{MEDIA\_ROOT:} A directory where django will store uploaded files
+\item[MEDIA\_ROOT] A directory where django will store uploaded files
 which should be given as an absolute path. This directory has to be
-writable because otherwise any uploads will fail.
+writeable because otherwise any uploads will fail.
 
-\textbf{DEBUG:} This settings enables extended error messages. It is
+\item[DEBUG] This settings enables extended error messages. It is
 helpful for testing the application but should not be used in a
 productive environment.
+\end{description}
 
 \subsection{Custom settings}\label{custom-settings}
 
 Apart from default settings we use the configuration file to add our own
 options.
 
-\textbf{AUTH\_USER\_MODEL:} Name of the desired user model. In our
+\begin{description}
+\item[AUTH\_USER\_MODEL] Name of the desired user model. In our
 application we use an own model which includes additional fields.
 
-\textbf{COFFEE\_PRICE:} The price of a single coffee in euros.
+\item[COFFEE\_PRICE] The price of a single coffee in euros.
 
-\textbf{MAIL\_SERVER, MAIL\_SENDER:} Email configuration for
+\item[MAIL\_SERVER, MAIL\_SENDER] Email configuration for
 notifications, set to the HPI server by default.
+\end{description}
 
 \subsection{Administration interface}\label{administration-interface}
 
@@ -519,6 +527,7 @@ it.
 \end{figure}
 
 \newpage
+\newpage
 \section{Architectural Overview}\label{architectural-overview}
 
 The Coffee-in-the-Cloud application consists of a separated client and
@@ -531,6 +540,7 @@ described in detail within the next pages.
 \caption{architectural overview}
 \end{figure}
 
+\newpage
 \newpage
 \section{Frontend Architecture}\label{frontend-architecture}
 
@@ -556,22 +566,24 @@ actions together and enable parallel processing.
 
 The requests are divided into these categories:
 
-\textbf{user} mainly provides authentication functionality and allows
+\begin{description}
+\item[user] mainly provides authentication functionality and allows
 querying user objects.
 
-\textbf{tally} is responsible for adding or removing entries to a user's
+\item[tally] is responsible for adding or removing entries to a user's
 tally list.
 
-\textbf{schedule} provides functions to query the cleaning schedule.
+\item[schedule] provides functions to query the cleaning schedule.
 
-\textbf{statistics} fetches relevant data for generating statistics and
+\item[statistics] fetches relevant data for generating statistics and
 preprocesses it.
 
-\textbf{settings} allows fetching and storing a user's settings.
+\item[settings] allows fetching and storing a user's settings.
 
-\textbf{balance} allows a user to manage the global balance.
+\item[balance] allows a user to manage the global balance.
 
-\textbf{blame} encapsulates the blame feature.
+\item[blame] encapsulates the blame feature.
+\end{description}
 
 \subsubsection{status service}\label{status-service}
 
@@ -611,7 +623,7 @@ logged in.
 
 When first visiting the page without being logged in, you will be
 greeted and have the possibility to log in via a ``sign in'' button.
-Futhermore you are able to click on the tutorials and cleaning checklist
+Furthermore you are able to click on the tutorials and cleaning checklist
 navbar tab or click on the icons for tablet mode and admin interface in
 the footer.
 
@@ -625,13 +637,13 @@ clicking on the x, this banner disappears.
 
 In case you are selected for cleaning, a third banner in yellow can be
 seen beneath. There you can either close the banner by clicking on the x
-or tell the system, that you sucessfully finished the cleaning by
+or tell the system, that you successfully finished the cleaning by
 clicking the check. This can alternatively be done when pressing the
 ``finished cleaning''-Button.
 
 Moreover, you will get complimented if you are the number one coffee
 drinker. This is again shown by a blue banner stating ``You have drunk
-most of the coffee so far. Good job!''. It can be closed aswell. The
+most of the coffee so far. Good job!''. It can be closed as well. The
 data used for estimating the winner, is loaded on login in the
 loginController.
 
@@ -652,7 +664,7 @@ unnecessary repetitions we outsourced functions, which are called more
 often by different views, in the loginController.
 
 As mentioned in the paragraph before, the ranking is calculated here. So
-everytime someone logs in, the controller compares the tally list
+every time someone logs in, the controller compares the tally list
 entries of all the users and estimates the winner(s).
 
 One of the global function in the loginController is
@@ -667,7 +679,7 @@ tied to the login process. Instead we used AngularJs' event system to
 notify the controller if an update is needed.
 
 The second global method is \emph{updateTally()}, called when you add a
-coffee to your tallylist.
+coffee to your tally list.
 
 When the user wants to logout and presses the ``sign out'' button, the
 controller accomplishes the logout process by calling the
@@ -692,8 +704,8 @@ responsible.
 
 \subsubsection*{tallylistController.js}
 
-The \textbf{tallylistController} has two core methods. On the one hand,
-when a coffee is added to the tallylist the \texttt{addCoffee(amount)}
+The \texttt{tallylistController} has two core methods. On the one hand,
+when a coffee is added to the tally list the \texttt{addCoffee(amount)}
 function is called. The amount depends on whether the user decides to
 drink a single or a double coffee. Following this the two global methods
 \texttt{updateTally()} and \texttt{updateUser()} from the
@@ -702,16 +714,16 @@ drink a single or a double coffee. Following this the two global methods
 On the other hand, the user has the possibility to revise the adding
 within half an hour. Therefore the \texttt{removeCoffee(id)} is called
 with the matching coffee ID. This causes the entry to be removed from
-the users tallylist.
+the users tally list.
 
 \subsubsection*{tallylist.html}
 
 Like on the main page the user is shown a banner with his current
-balance and the amount of coffees on the list. Additonally, if the
+balance and the amount of coffees on the list. Additionally, if the
 balance is low, a warning appears.
 
-The user now has the possibilty to add a single or a double coffee to
-his tallylist by pressing the corresponding button. This will trigger
+The user now has the possibility to add a single or a double coffee to
+his tally list by pressing the corresponding button. This will trigger
 the \texttt{addCoffee(amount)} function in the
 \texttt{tallylistContoller}. Of course, after adding the coffee, the
 banners are updated with the new amount of coffees and balance.
@@ -726,7 +738,7 @@ As the cleaning of the coffee machine has to be scheduled, we built a
 calendar composed of the \texttt{scheduleController.js} and the
 \texttt{schedule.html}.
 
-\subsubsection*{scheduleController.js} and \textbf{schedule.html}
+\subsubsection*{scheduleController.js and schedule.html}
 
 The controller sends a request to the backend in order to receive the
 necessary data for the calendar. How the algorithm works, will be
@@ -760,20 +772,20 @@ comparisons. In the end we came up with four kinds:
 The Javascript framework \href{chartjs.org/docs/}{chartJs} supplied us
 with some interesting chart types we could add into our application.
 
-\subsubsection*{statisticsController.js} \& \textbf{statistics.html}
+\subsubsection*{statisticsController.js and statistics.html}
 
 The procedure is rather simple. The \texttt{statisticsController} sends
 a request to the backend in order to get the necessary data. Then the
-data will be processed according to the requierements of the diagram
+data will be processed according to the requirements of the diagram
 type. Consequently the diagrams are filled with the matching data.
 
 \subsubsection{Tutorials}\label{tutorials}
 
-The turorials page is one of the pages, which can be seen even if the
+The tutorials page is one of the pages, which can be seen even if the
 user is not logged in. It allows the user to have a step by step
 introduction to coffee making which is supported by pictures.
 
-\subsubsection*{tutorialsController.js} \& \textbf{tutorials.html}
+\subsubsection*{tutorialsController.js and tutorials.html}
 
 The controller automatically generates the picture tutorial from a
 dataset. In case the user has to make a decision different lines of
@@ -789,14 +801,14 @@ picture or set of pictures and displays them to the user.
 Just like the photo tutorial shows the user how to make perfect coffee,
 the cleaning checklist supports the cleaning of the machine.
 
-\subsubsection*{cleaningController.js} \& \textbf{cleaning-checklist.html}
+\subsubsection*{cleaningController.js and cleaning-checklist.html}
 
 In this controller all the steps required to clean the machine are
 included. Now depending on weekly or biweekly cleaning the right steps
 are shown to the user. He can switch between different types of cleaning
 by clicking one of the provided buttons. All the steps are listed and
 can be crossed out when finished. It is also possible so reset the list
-and start from the begining.
+and start from the beginning.
 
 After the cleaning is done, the user can mark is cleaning duty as done
 by simply pressing the \emph{Finished Cleaning} button, which is located
@@ -807,11 +819,11 @@ marked as done.
 \subsubsection{Picture Login - Tablet
 Mode}\label{picture-login---tablet-mode}
 
-One of the core features requiered was the tablet mode. Here the user
+One of the core features required was the tablet mode. Here the user
 does not need to log in with his login credentials but rather click on
 his picture to add a coffee to his account.
 
-\subsubsection*{pictureloginController.js} \& \textbf{picture-login.html}
+\subsubsection*{pictureloginController.js and picture-login.html}
 
 As the user does not login with his credentials, he has limited access
 to the website. That means, he is only able to see the tutorials and the
@@ -823,7 +835,7 @@ adding a coffee when logged in. So again after selecting the coffee size
 the \texttt{updateTally()} event is dispatched.
 
 Another feature especially implemented for the tablet mode is the blame
-button. If someone clicks on this button, the person last adding a coffe
+button. If someone clicks on this button, the person last adding a coffee
 will get a blame email and a reminder to clean up the kitchen in the
 future.
 
@@ -834,12 +846,12 @@ the permission to manage the global balance.
 
 \subsubsection*{settings.html}
 
-\textbf{\emph{basic user}}
+\subsubsection*{\emph{basic user}}
 
-The user is able to change his avatar for the picture login aswell as
-his password. Additionally the user can decice, if he wants the data
+The user is able to change his avatar for the picture login as well as
+his password. Additionally the user can decide, if he wants the data
 about his coffee consumption to be evaluated in the statistics and
-ranking. As receiving emails can be really annoying, we decided in favor
+ranking. As receiving emails can be really annoying, we decided in favour
 of an option to disable all notifications.
 
 \subsubsection*{\emph{admin user}}
@@ -851,13 +863,14 @@ money to users balance.
 
 The controller contains two important methods. \texttt{update()} is
 called, when the user submits his data. If he wants to change is
-passowrd he is required to enter his new password twice and the function
+password he is required to enter his new password twice and the function
 then validates the passwords.
 
 Moreover, the balance of a user can be changed by the admin. If so,
 \texttt{update\_balance()} is executed and shows an alert-message if it
 succeeded.
 
+\newpage
 \newpage
 \section{Backend Architecture}\label{backend-architecture}
 
@@ -885,58 +898,66 @@ order to allow more customization.
 
 \subsubsection{API Endpoints}\label{api-endpoints}
 
-\texttt{GET\ /api/v1/accounts/} Query a list of all registered accounts.
+\begin{description}
+\item[\texttt{GET\ /api/v1/accounts/}] Query a list of all registered accounts.
 
-\texttt{GET\ /api/v1/accounts/\{ID\}/} Query an account specified by
+\item[\texttt{GET\ /api/v1/accounts/\{ID\}/}] Query an account specified by
 \{ID\}.
 
-\texttt{POST\ /api/v1/auth/login/} Try to login a user with email and
+\item[\texttt{POST\ /api/v1/auth/login/}] Try to login a user with email and
 password.
 
-\texttt{POST/api/v1/auth/logout/} Logout the current user.
+\item[\texttt{POST/api/v1/auth/logout/}] Logout the current user.
 
-\texttt{GET\ /api/v1/auth/status/} Query the login status of the current
+\item[\texttt{GET\ /api/v1/auth/status/}] Query the login status of the current
 user.
 
-\texttt{GET+POST\ /api/v1/auth/settings/} Query or update the current
+\item[\texttt{GET+POST\ /api/v1/auth/settings/}] Query or update the current
 user's settings.
+\end{description}
 
 \subsubsection{Models}\label{models-2}
 
-\textbf{Account} This model extends the basic user model to add
-neccessary fields like email address, name, profile picture or user
+\begin{description}
+\item[Account] This model extends the basic user model to add
+necessary fields like email address, name, profile picture or user
 balance. Different user settings are stored there too. In order to
 replace the built-in user model with our own we added an
-\texttt{AccountManager} class which handles account creation.
+\item[AccountManager] class which handles account creation.
 
-\textbf{Settings} This model allows application wide settings. Currently
+\item[Settings] This model allows application wide settings. Currently
 it is used to store the global available balance.
+\end{description}
 
 \subsubsection{Permissions}\label{permissions-1}
 
-\textbf{IsAccountOwner} This permission checks if the currently logged
+\begin{description}
+\item[IsAccountOwner] This permission checks if the currently logged
 in user is the owner of the given account. This is needed in order to
 prevent users from editing another user's account.
 
-\textbf{IsBalanceAdministrator} This permission checks if the currently
+\item[IsBalanceAdministrator] This permission checks if the currently
 logged in user is allowed to manage a user's balance and view/change the
 global balance.
+\end{description}
 
 \subsubsection{Views}\label{views-2}
 
-\textbf{AccountViewSet} This view allows querying all accounts with all
+\begin{description}
+\item[AccountViewSet] This view allows querying all accounts with all
 details.
 
-\textbf{LoginView} This view handles and validates user logins.
+\item[LoginView] This view handles and validates user logins.
 
-\textbf{LogoutView} This view handles user logouts.
+\item[LogoutView] This view handles user logouts.
 
-\textbf{StatusView} This view allows querying the current login status.
+\item[StatusView] This view allows querying the current login status.
 If the user is logged in he will receive all account information as well
 as available permissions.
 
-\textbf{SettingsView} This view allows the user to view and change their
+\item[SettingsView] This view allows the user to view and change their
 settings. This includes changing the profile picture.
+\end{description}
 
 \subsection{schedule}\label{schedule}
 
@@ -946,34 +967,42 @@ assignment.
 
 \subsubsection{API Endpoints}\label{api-endpoints-1}
 
-\texttt{GET\ /api/v1/schedule/} Query the current cleaning schedule.
+\begin{description}
+\item[\texttt{GET\ /api/v1/schedule/}] Query the current cleaning schedule.
 
-\texttt{GET\ /api/v1/schedule/\{ID\}/} Query a specific schedule entry.
+\item[\texttt{GET\ /api/v1/schedule/\{ID\}/}] Query a specific schedule entry.
 
-\texttt{POST\ /api/v1/schedule/done/} Mark the current assignment as
+\item[\texttt{POST\ /api/v1/schedule/done/}] Mark the current assignment as
 done.
+\end{description}
 
 \subsubsection{Models}\label{models-3}
 
-\textbf{ScheduleEntry} This model represents one entry in the cleaning
+\begin{description}
+\item[ScheduleEntry] This model represents one entry in the cleaning
 schedule and contains user, type and date information. It overrides the
-saving behavior to automatically send an email.
+saving behaviour to automatically send an email.
+\end{description}
 
 \subsubsection{Views}\label{views-3}
 
-\textbf{ScheduleEntryViewSet} This view allows querying all schedule
+\begin{description}
+\item[ScheduleEntryViewSet] This view allows querying all schedule
 entries.
 
-\textbf{ScheduleDoneView} This view allows marking the currently
+\item[ScheduleDoneView] This view allows marking the currently
 assigned cleaning as done.
+\end{description}
 
 \subsubsection{Commands}\label{commands}
 
-\textbf{assignusers} This command assigns users for cleaing. It can be
+\begin{description}
+\item[assignusers] This command assigns users for cleaing. It can be
 called by using
 \texttt{manage.py\ assignusers\ \textless{}numberOfWeeks\textgreater{}}.
 The algorithm used is described more in detail in the
 \texttt{Module\ Description} chapter.
+\end{description}
 
 \subsection{statistics}\label{statistics-1}
 
@@ -983,25 +1012,29 @@ permissions.
 
 \subsubsection{API Endpoints}\label{api-endpoints-2}
 
-\texttt{/api/v1/statistics/} Query statistics for all tally list
+\begin{description}
+\item[\texttt{/api/v1/statistics/}] Query statistics for all tally list
 entries.
 
-\texttt{/api/v1/statistics/own/} Query statistics for the current user's
+\item[\texttt{/api/v1/statistics/own/}] Query statistics for the current user's
 tally list entries.
 
-\texttt{/api/v1/statistics/type/} Query statistics by coffee type
+\item[\texttt{/api/v1/statistics/type/}] Query statistics by coffee type
 (single/double).
+\end{description}
 
 \subsubsection{Views}\label{views-4}
 
-\textbf{StatisticsView} This view groups all coffees by months and
+\begin{description}
+\item[StatisticsView] This view groups all coffees by months and
 returns them to the application.
 
-\textbf{StatisticsOwnView} This view groups the current user's coffees
+\item[StatisticsOwnView] This view groups the current user's coffees
 by months and returns them to the application.
 
-\textbf{StatisticsCoffeeTypeView} This view groups all coffees by the
+\item[StatisticsCoffeeTypeView] This view groups all coffees by the
 amount (single or double) and returns them to the application.
+\end{description}
 
 \subsection{tallylist}\label{tallylist}
 
@@ -1011,70 +1044,80 @@ features.
 
 \subsubsection{API Endpoints}\label{api-endpoints-3}
 
-\texttt{GET\ /api/v1/tally/} Query the current user's tally list.
+\begin{description}
+\item[\texttt{GET\ /api/v1/tally/}] Query the current user's tally list.
 
-\texttt{GET\ /api/v1/tally-all/} Query all tally list entries.
+\item[\texttt{GET\ /api/v1/tally-all/}] Query all tally list entries.
 
-\texttt{GET\ /api/v1/tally/\{ID\}/} Query a specific tally list entry.
+\item[\texttt{GET\ /api/v1/tally/\{ID\}/}] Query a specific tally list entry.
 
-\texttt{GET\ /api/v1/accounts/\{ID\}/tally/} Query a specific user's
+\item[\texttt{GET\ /api/v1/accounts/\{ID\}/tally/}] Query a specific user's
 tally list.
 
-\texttt{GET+POST\ /api/v1/manage/balance/} Query and modify the global
+\item[\texttt{GET+POST\ /api/v1/manage/balance/}] Query and modify the global
 balance.
 
-\texttt{GET+POST\ /api/v1/blame/} Blame the last user to have tracked a
+\item[\texttt{GET+POST\ /api/v1/blame/}] Blame the last user to have tracked a
 coffee.
+\end{description}
 
 \subsubsection{Models}\label{models-4}
 
-\textbf{TallyListEntry} This model represents one entry on the tally
+\begin{description}
+\item[TallyListEntry] This model represents one entry on the tally
 list. It contains functionality to automatically notify the user when
 the coffee was tracked. Apart from that the user's balance gets updated
-aswell.
+as well.
+\end{description}
 
 \subsubsection{Permissions}\label{permissions-2}
 
-\textbf{IsTallyUser} This permission checks if a tally list entry
+\begin{description}
+\item[IsTallyUser] This permission checks if a tally list entry
 belongs to the current user.
 
-\textbf{IsRecentTally} This permission check if a tally list entry is
+\item[IsRecentTally] This permission check if a tally list entry is
 recent and thus can be removed.
+\end{description}
 
 \subsubsection{Views}\label{views-5}
 
-\textbf{TallyListEntryViewSet} This view allows fetching all tally list
+\begin{description}
+\item[TallyListEntryViewSet] This view allows fetching all tally list
 entries for the current user.
 
-\textbf{TallyListAllEntryViewSet} This view allows fetching all tally
+\item[TallyListAllEntryViewSet] This view allows fetching all tally
 list entries.
 
-\textbf{AccountTallyListEntryViewSet} This view allows fetching or
+\item[AccountTallyListEntryViewSet] This view allows fetching or
 adding tally list entries for/to a specific user.
 
-\textbf{BlameView} This view allows blaming the last user that tracked a
+\item[BlameView] This view allows blaming the last user that tracked a
 coffee.
 
-\textbf{GlobalBalanceView} This view allows viewing and updating the
+\item[GlobalBalanceView] This view allows viewing and updating the
 global and user specific balance. Accessing this view requires the
 \texttt{IsBalanceAdministrator} permission.
+\end{description}
 
 \subsection{server}\label{server}
 
 The \texttt{server} module acts as a configuration module for django.
 
-\textbf{mail} This module contains functionality for sending
+\begin{description}
+\item[mail] This module contains functionality for sending
 notification emails.
 
-\textbf{settings} This module contains basic django configuration, see
+\item[settings] This module contains basic django configuration, see
 the official documentation for details.
 
-\textbf{urls} This module contains the endpoint configuration. New views
-have to be registered here in order to make them accessable. Also the
+\item[urls] This module contains the endpoint configuration. New views
+have to be registered here in order to make them accessible. Also the
 deployment of static files and the frontend is configured here.
 
-\textbf{wsgi} This module contains startup information for deploying the
+\item[wsgi] This module contains startup information for deploying the
 server using wsgi.
+\end{description}
 
 \newpage
 \section{Additional functionality}\label{additional-functionality}
@@ -1128,7 +1171,7 @@ The following flowchart illustrates the algorithm:
 
 In order to change the price of a single coffee a server administrator
 has to change the project configuration which is found in the
-\href{../../server/server/settings.py}{\texttt{settings.py}} and alter
+\texttt{settings.py} file and alter
 the \texttt{COFFEE\_PRICE} setting into the desired value. The default
 value is \texttt{0.25} euros.
 
@@ -1169,12 +1212,12 @@ used to reset a user's password and to assign permissions or groups.
 For every model django provides three different permissions that have to
 be assigned:
 
-\textbf{add} The user can add a new object.
-
-\textbf{change} The user can modify an existing object.
-
-\textbf{delete} The user can remove an existing object from the
+\begin{description}
+\item[add] The user can add a new object.
+\item[change] The user can modify an existing object.
+\item[delete] The user can remove an existing object from the
 database.
+\end{description}
 
 As long as a user has access to one of these permissions he will see the
 model in his administration interface.
@@ -1199,6 +1242,7 @@ Displays a list of all tally list entries and their respective users.
 These can be added in case a coffee was wrongfully added and the default
 deleting time expired.
 
+\newpage
 \newpage
 \section{Application Setup and
 Deployment}\label{application-setup-and-deployment}
@@ -1279,6 +1323,7 @@ Make the \texttt{server} directory, \texttt{server/db.sqlite3} and
 
 After restarting apache the application should be accessible.
 
+\newpage
 \newpage
 \section{User manual}\label{user-manual}
 
@@ -1441,6 +1486,7 @@ negative number.
 \caption{global balance settings}
 \end{figure}
 
+\newpage
 \newpage
 \section{Conclusion}\label{conclusion}
 
