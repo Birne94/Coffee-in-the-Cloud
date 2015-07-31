@@ -11,8 +11,6 @@ requirejs.config({
 		angularRoute: "bower_components/angular-route/angular-route",
 		bootstrap: "bower_components/bootstrap/dist/js/bootstrap",
 		alertify: "bower_components/alertify/alertify",
-		forge: "bower_components/forge/js/forge.min",
-		filesize: "/node_modules/file-size/index",
 		fullcalendar: "bower_components/fullcalendar/dist/fullcalendar",
 		moment: "bower_components/moment/min/moment.min",
 		chart: "bower_components/Chart.js/Chart.min"
